@@ -1,0 +1,168 @@
+#!/usr/bin/env python3
+"""Build data/posts.json for Spectrum from the live Substack archive.
+
+Walks the published chain newest -> oldest via Substack's public post API,
+extracts the facts the page needs (title, subtitle, date, series, excerpt,
+key lines, cross-links), merges the human-curated layers (data/tags.json,
+data/shelf.json), and writes data/posts.json.
+
+Facts come from the archive. Judgment (tags, shelf) stays in files you edit.
+Run on Tycho; the egress proxy elsewhere blocks pulse.itesydht.com.
+
+    python3 build.py            # rebuild
+    python3 build.py --check    # exit 1 if posts.json would change (for cron)
+"""
+import html, json, re, sys, time, urllib.request
+from datetime import datetime, timezone
+from pathlib import Path
+
+PUB = "https://pulse.itesydht.com"
+ROOT = Path(__file__).resolve().parent
+DATA = ROOT / "data"
+UA = {"User-Agent": "spectrum-build/1.0 (+https://spectrum.itesydht.com)"}
+
+def get(url):
+    req = urllib.request.Request(url, headers=UA)
+    with urllib.request.urlopen(req, timeout=20) as r:
+        return json.load(r)
+
+def strip_html(s):
+    s = re.sub(r"<[^>]+>", " ", s or "")
+    return re.sub(r"\s+", " ", html.unescape(s)).strip()
+
+def newest_slug():
+    d = get(f"{PUB}/api/v1/archive?sort=new&limit=1")
+    posts = d["posts"] if isinstance(d, dict) else d
+    return posts[0]["slug"]
+
+SERIES_RE = re.compile(r'<p[^>]*>\s*Part of\s+<a[^>]*href="[^"]*/p/([a-z0-9-]+)(?:#(?:%C2%A7|§)?([a-z0-9-]+))?"[^>]*>\s*(?:the\s+)?([^<]+?)\s*</a>', re.I)
+LINK_RE = re.compile(r'href="https?://pulse\.itesydht\.com/p/([a-z0-9-]+)(?:[#?][^"]*)?"', re.I)
+PARA_RE = re.compile(r"<p[^>]*>(.*?)</p>", re.S)
+BOLD_RE = re.compile(r"<strong>(.*?)</strong>", re.S)
+
+def extract(post):
+    body = post.get("body_html") or ""
+    series = None
+    m = SERIES_RE.search(body)
+    if m:
+        series = {"name": m.group(3).strip(), "slug": m.group(1), "anchor": m.group(2)}
+    paras = [strip_html(p) for p in PARA_RE.findall(body)]
+    paras = [p for p in paras if p and not p.lower().startswith("part of ") and len(p) > 40]
+    excerpt = paras[0] if paras else (post.get("subtitle") or "")
+    if len(excerpt) > 230:
+        cut = excerpt[:230]
+        excerpt = cut[: cut.rfind(" ")] + "…"
+    links = []
+    for s in LINK_RE.findall(body):
+        if s != post["slug"] and s not in links:
+            links.append(s)
+    bold = []
+    for b in BOLD_RE.findall(body):
+        t = strip_html(b)
+        if t and t not in bold:
+            bold.append(t)
+    return {
+        "slug": post["slug"],
+        "url": f"{PUB}/p/{post['slug']}",
+        "title": (post.get("title") or "").strip(),
+        "subtitle": (post.get("subtitle") or "").strip(),
+        "date": post["post_date"][:10],
+        "wordcount": post.get("wordcount"),
+        "cover_image": post.get("cover_image"),
+        "series": series,
+        "excerpt": excerpt,
+        "links_to": links,
+        "bold_lines": bold[:6],
+        "keywords": [],
+        "_type": post.get("type"),
+    }
+
+def walk():
+    slug = newest_slug()
+    out, seen, pages = [], set(), []
+    while slug and slug not in seen:
+        seen.add(slug)
+        p = get(f"{PUB}/api/v1/posts/{slug}")
+        rec = extract(p)
+        (pages if p.get("type") == "page" else out).append(rec)
+        slug = p.get("previous_post_slug")
+        time.sleep(0.2)
+    return out, pages
+
+def series_index(slugs, known):
+    """Parse each series page into sections -> ordered post slugs."""
+    result = []
+    for slug in slugs:
+        p = get(f"{PUB}/api/v1/posts/{slug}")
+        body = p.get("body_html") or ""
+        sections, current = [], None
+        # headings open sections; links inside add posts
+        for tok in re.finditer(r"<h[23][^>]*(?:id=\"([^\"]*)\")?[^>]*>(.*?)</h[23]>|href=\"https?://pulse\.itesydht\.com/p/([a-z0-9-]+)[^\"]*\"", body, re.S | re.I):
+            if tok.group(2) is not None:
+                name = strip_html(tok.group(2))
+                current = {"name": name, "anchor": tok.group(1) or re.sub(r"[^a-z0-9]+", "-", name.lower()).strip("-"), "posts": []}
+                sections.append(current)
+            elif tok.group(3) and tok.group(3) in known and tok.group(3) != slug:
+                tgt = current if current else (sections.append({"name": strip_html(p.get("title") or ""), "anchor": None, "posts": []}) or sections[-1])
+                if tok.group(3) not in tgt["posts"]:
+                    tgt["posts"].append(tok.group(3))
+                current = current or tgt
+        sections = [s for s in sections if s["posts"]]
+        result.append({
+            "slug": slug, "title": (p.get("title") or "").strip(), "heading": strip_html(p.get("subtitle") or ""),
+            "url": f"{PUB}/p/{slug}", "type": "page", "updated": (p.get("updated_at") or "")[:10],
+            "sections": sections, "posts": [s for sec in sections for s in sec["posts"]],
+        })
+    return result
+
+def load_json(path, default):
+    try:
+        return json.loads(path.read_text())
+    except FileNotFoundError:
+        return default
+
+def main(check=False):
+    posts, pages = walk()
+    posts.sort(key=lambda r: r["date"])
+    for i, r in enumerate(posts, 1):
+        r["n"] = i
+    known = {r["slug"] for r in posts}
+    series_slugs = []
+    for r in posts:
+        if r["series"] and r["series"]["slug"] not in series_slugs:
+            series_slugs.append(r["series"]["slug"])
+    for pg in pages:
+        if pg["slug"] not in series_slugs and any(l in known for l in pg["links_to"]):
+            series_slugs.append(pg["slug"])
+    series = series_index(series_slugs, known)
+
+    tags = load_json(DATA / "tags.json", {})
+    untagged = []
+    for r in posts:
+        r["keywords"] = tags.get(r["slug"], [])
+        if not r["keywords"]:
+            untagged.append(r["slug"])
+        r.pop("_type", None)
+    shelf = load_json(DATA / "shelf.json", [])
+
+    out = {
+        "generated": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+        "publication": {"name": "I Tried Everything So You Don't Have To", "url": PUB},
+        "theme": {"bg": "#1C1C1E", "pop": "#B8860B", "headings": "Lora"},
+        "series": series,
+        "posts": posts,
+        "books": shelf,
+    }
+    target = DATA / "posts.json"
+    old = load_json(target, {})
+    changed = {k: v for k, v in out.items() if k != "generated"} != {k: v for k, v in old.items() if k != "generated"}
+    if check:
+        print(f"{len(posts)} posts; {'CHANGED' if changed else 'unchanged'}")
+        sys.exit(1 if changed else 0)
+    target.write_text(json.dumps(out, indent=1, ensure_ascii=False) + "\n")
+    print(f"wrote {target.relative_to(ROOT)}: {len(posts)} posts, {len(series)} series, {len(shelf)} on the shelf")
+    if untagged:
+        print(f"untagged ({len(untagged)}), add to data/tags.json: {', '.join(untagged)}")
+
+if __name__ == "__main__":
+    main(check="--check" in sys.argv)

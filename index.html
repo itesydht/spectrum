@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spectrum</title>
+<meta name="description" content="Every story from I Tried Everything So You Don't Have To, tuned by band and frequency.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#1C1C1E; --bg1:#2a2a2c; --bg2:#3b3b3c; --bg3:#5c5c5d;
+    --fg:#ffffff; --fg2:#a4a4a5; --fg3:#7d7d7e;
+    --pop:#B8860B; --pop-20:rgba(184,134,11,.2); --pop-40:rgba(184,134,11,.4);
+    --heading:Lora,Georgia,serif; --body:Inter,system-ui,-apple-system,sans-serif;
+    --r:10px;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+
+  /* header */
+  header{border-bottom:1px solid var(--bg2);padding:18px 0 14px}
+  .brand{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+  .brand a.home{display:flex;align-items:center;gap:12px}
+  .brand .dot{width:12px;height:12px;border-radius:50%;background:var(--pop);box-shadow:0 0 0 4px var(--pop-20)}
+  .brand .pub{font-family:var(--heading);font-weight:600;font-size:17px;letter-spacing:.1px}
+  .brand .pub small{display:block;font-family:var(--body);font-weight:400;font-size:12px;color:var(--fg2);letter-spacing:.3px}
+  nav{display:flex;gap:18px;font-size:13.5px;color:var(--fg2)}
+  nav a:hover{color:var(--fg)} nav a.on{color:var(--pop)}
+
+  /* hero / tuner */
+  .hero{padding:44px 0 10px}
+  .hero h1{font-family:var(--heading);font-weight:600;font-size:clamp(34px,5.5vw,52px);line-height:1.02;margin:0 0 10px}
+  .hero h1 span{color:var(--pop)}
+  .hero p{color:var(--fg2);margin:0 0 22px;max-width:60ch;font-size:15.5px;line-height:1.5}
+  .tuner{position:relative}
+  .tuner input{width:100%;background:var(--bg1);border:1px solid var(--bg2);color:var(--fg);font:500 20px/1.2 var(--body);padding:18px 54px 18px 20px;border-radius:14px;outline:none;transition:border-color .15s,box-shadow .15s}
+  .tuner input::placeholder{color:var(--fg3)}
+  .tuner input:focus{border-color:var(--pop);box-shadow:0 0 0 4px var(--pop-20)}
+  .tuner .k{position:absolute;right:14px;top:50%;transform:translateY(-50%);font-size:11px;color:var(--fg3);border:1px solid var(--bg2);padding:3px 7px;border-radius:6px}
+  .tuner .clear{position:absolute;right:14px;top:50%;transform:translateY(-50%);background:var(--bg2);border:0;color:var(--fg);width:28px;height:28px;border-radius:50%;cursor:pointer;display:none}
+  .tuner.has .clear{display:block} .tuner.has .k{display:none}
+
+  /* dial strip: a tiny spectrum visualization of the archive */
+  .dial{display:flex;gap:3px;align-items:flex-end;height:34px;margin:18px 0 6px;padding:0 2px}
+  .dial i{flex:1;background:var(--bg2);border-radius:2px 2px 0 0;min-height:6px;transition:background .2s,opacity .2s;cursor:pointer}
+  .dial i.hit{background:var(--pop)} .dial i.dim{opacity:.35}
+  .dial-cap{display:flex;justify-content:space-between;font-size:11px;color:var(--fg3);letter-spacing:.3px;margin-bottom:18px}
+
+  /* chips */
+  .bands{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 6px}
+  .chip{background:transparent;border:1px solid var(--bg2);color:var(--fg2);font:500 12.5px var(--body);padding:7px 12px;border-radius:999px;cursor:pointer;transition:all .12s}
+  .chip:hover{border-color:var(--bg3);color:var(--fg)}
+  .chip.on{background:var(--pop);border-color:var(--pop);color:#1C1C1E}
+  .chip .n{opacity:.6;margin-left:5px;font-weight:400}
+  .lbl{font-size:11px;letter-spacing:1.2px;text-transform:uppercase;color:var(--fg3);margin:16px 0 8px}
+  .freqs{display:flex;flex-wrap:wrap;gap:6px}
+  .freqs .chip{padding:5px 10px;font-size:12px}
+
+  /* results */
+  .meta{display:flex;justify-content:space-between;align-items:baseline;margin:26px 0 12px;color:var(--fg2);font-size:13px}
+  .meta b{color:var(--fg);font-weight:600}
+  .meta .sort{display:flex;gap:12px} .meta .sort a{cursor:pointer} .meta .sort a.on{color:var(--pop)}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px;padding-bottom:60px}
+  .card{background:var(--bg1);border:1px solid var(--bg2);border-radius:var(--r);padding:18px 18px 16px;display:flex;flex-direction:column;gap:8px;transition:border-color .15s,transform .15s;position:relative}
+  .card:hover{border-color:var(--pop-40);transform:translateY(-1px)}
+  .card .top{display:flex;justify-content:space-between;font-size:11.5px;color:var(--fg3);letter-spacing:.3px}
+  .card .top .no{color:var(--pop);font-weight:600}
+  .card h3{font-family:var(--heading);font-weight:600;font-size:19px;line-height:1.2;margin:2px 0 0}
+  .card h3 mark,.card .sub mark,.card .ex mark{background:var(--pop-40);color:var(--fg);border-radius:3px;padding:0 1px}
+  .card .sub{font-family:var(--heading);font-style:italic;color:var(--fg2);font-size:14px;margin-top:-2px}
+  .card .ex{color:var(--fg2);font-size:13.5px;line-height:1.5;flex:1}
+  .card .tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:4px}
+  .card .tags span{font-size:11px;color:var(--fg3);border:1px solid var(--bg2);padding:2px 7px;border-radius:999px}
+  .card .tags span.band{color:var(--pop);border-color:var(--pop-40)}
+  .card .foot{display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--fg3);margin-top:6px}
+  .card .foot .read{color:var(--pop);font-weight:500}
+  .card .foot .read::after{content:" →"}
+  .card .links{cursor:pointer} .card .links:hover{color:var(--fg)}
+  .card.open .ex{-webkit-line-clamp:unset}
+  .card .more{display:none;border-top:1px solid var(--bg2);padding-top:10px;margin-top:6px;font-size:13px;color:var(--fg2)}
+  .card.open .more{display:block}
+  .card .more a{display:block;padding:4px 0;color:var(--fg)}
+  .card .more a:hover{color:var(--pop)}
+  .card .more .mlbl{font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--fg3);margin:4px 0 2px}
+  .card .more .key{font-family:var(--heading);font-style:italic;color:var(--fg);padding:3px 0}
+
+  .empty{grid-column:1/-1;text-align:center;color:var(--fg2);padding:60px 20px;border:1px dashed var(--bg2);border-radius:var(--r)}
+  .empty b{display:block;font-family:var(--heading);font-size:20px;color:var(--fg);margin-bottom:6px}
+
+  /* shelf */
+  .shelf-note{color:var(--fg2);font-size:14px;line-height:1.55;max-width:62ch;margin:0 0 18px}
+  .book .top .no{color:var(--fg2)}
+  .book h3{font-size:18px}
+  .book .by{color:var(--fg2);font-size:13px;margin-top:-4px}
+
+  footer{border-top:1px solid var(--bg2);padding:26px 0 40px;color:var(--fg3);font-size:12.5px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+  footer a{color:var(--fg2)} footer a:hover{color:var(--pop)}
+  .tag{font-family:var(--heading);font-style:italic;color:var(--fg2)}
+  @media (max-width:640px){
+    .hero{padding:30px 0 8px} .tuner input{font-size:17px;padding:15px 48px 15px 16px}
+    .grid{grid-template-columns:1fr}
+    .meta{flex-direction:column;gap:6px;align-items:flex-start}
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap brand">
+    <a class="home" href="https://pulse.itesydht.com" title="Back to the newsletter">
+      <span class="dot"></span>
+      <span class="pub">I Tried Everything So You Don't Have To<small>Spectrum · every story, tuned</small></span>
+    </a>
+    <nav>
+      <a href="https://pulse.itesydht.com">Pulse</a>
+      <a href="#stories" id="nav-stories" class="on">Stories</a>
+      <a href="#shelf" id="nav-shelf">Shelf</a>
+      <a href="https://pulse.itesydht.com/about">About</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <h1 id="h1">Find the <span>story</span> you're looking for.</h1>
+    <p id="lede">Pulse is the Tuesday transmission. Spectrum is the whole band: every story, every series, every thread, on one dial. Start typing.</p>
+    <div class="tuner" id="tuner">
+      <input id="q" type="search" autocomplete="off" spellcheck="false" placeholder="memory, agents, Skippy, leadership, Claude…" aria-label="Tune the archive">
+      <span class="k">/</span>
+      <button class="clear" id="clear" aria-label="Clear">×</button>
+    </div>
+    <div class="dial" id="dial" title="Every story, oldest to newest. Gold bars match your tuning."></div>
+    <div class="dial-cap"><span id="dial-first"></span><span id="dial-count"></span><span id="dial-last"></span></div>
+
+    <div id="stories-filters">
+      <div class="bands" id="bands"></div>
+      <div class="lbl">Frequencies</div>
+      <div class="freqs" id="freqs"></div>
+    </div>
+  </section>
+
+  <section id="view-stories">
+    <div class="meta">
+      <div><b id="count">0</b> <span id="count-word">stories</span> <span id="active"></span></div>
+      <div class="sort"><a id="s-new" class="on">Newest</a><a id="s-old">Oldest</a><a id="s-rel">Best match</a></div>
+    </div>
+    <div class="grid" id="grid"></div>
+  </section>
+
+  <section id="view-shelf" hidden>
+    <div class="meta"><div><b id="bcount">0</b> books</div></div>
+    <p class="shelf-note">The shelf is what I keep going back to: the books, talks, and papers behind the stories. Each one links to the stories it informed, and those stories link back here.</p>
+    <div class="grid" id="shelf"></div>
+  </section>
+</main>
+
+<footer class="wrap">
+  <span>© Eddy Simmons · <a href="https://pulse.itesydht.com">pulse.itesydht.com</a></span>
+  <span class="tag">Uncomplicated systems. Uncommon results.</span>
+</footer>
+
+<script>
+(async function(){
+  const $=s=>document.querySelector(s);
+  const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  let data;
+  try{ data=await (await fetch('data/posts.json')).json(); }
+  catch(e){ data=window.__SPECTRUM__||{posts:[],books:[],series:[]}; }
+  const posts=(data.posts||[]).slice().sort((a,b)=>a.n-b.n);
+  const books=data.books||[];
+  const seriesList=data.series||[];
+  const bySlug=Object.fromEntries(posts.map(p=>[p.slug,p]));
+  // reverse links: who links to me
+  posts.forEach(p=>p.linked_from=[]);
+  posts.forEach(p=>(p.links_to||[]).forEach(s=>bySlug[s]&&bySlug[s].linked_from.push(p.slug)));
+  books.forEach(b=>(b.stories||[]).forEach(s=>{ if(bySlug[s]){ (bySlug[s].books=bySlug[s].books||[]).push(b); }}));
+  // bands come from the series index pages (authoritative), falling back to the in-post "Part of" line
+  seriesList.forEach(S=>(S.sections||[]).forEach(sec=>sec.posts.forEach(s=>{ if(bySlug[s]) bySlug[s].series={name:sec.name,parent:S.title,slug:S.slug,anchor:sec.anchor}; })));
+  posts.forEach(p=>{ if(!p.series) p.series={name:'Standalone'}; });
+
+  const fmt=d=>new Date(d+'T12:00:00').toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});
+  const fmtS=d=>new Date(d+'T12:00:00').toLocaleDateString('en-US',{month:'short',year:'2-digit'});
+
+  // state
+  let q='', band=null, freqs=new Set(), sort='new', view=(location.hash==='#shelf'?'shelf':'stories');
+
+  // bands (series) and frequencies (keywords)
+  const bandCounts={}; posts.forEach(p=>{const k=p.series.name; bandCounts[k]=(bandCounts[k]||0)+1;});
+  const kwCounts={}; posts.forEach(p=>(p.keywords||[]).forEach(k=>kwCounts[k]=(kwCounts[k]||0)+1));
+  const topKw=Object.entries(kwCounts).sort((a,b)=>b[1]-a[1]).slice(0,22);
+
+  function renderChips(){
+    $('#bands').innerHTML=['All',...Object.keys(bandCounts).sort((a,b)=>bandCounts[b]-bandCounts[a])].map(b=>{
+      const on=(b==='All'&&!band)||b===band;
+      const n=b==='All'?posts.length:bandCounts[b];
+      return `<button class="chip ${on?'on':''}" data-band="${esc(b)}">${esc(b)}<span class="n">${n}</span></button>`;
+    }).join('');
+    $('#freqs').innerHTML=topKw.map(([k,n])=>`<button class="chip ${freqs.has(k)?'on':''}" data-kw="${esc(k)}">${esc(k)}<span class="n">${n}</span></button>`).join('');
+  }
+
+  // scoring
+  const norm=s=>String(s||'').toLowerCase();
+  function score(p,terms){
+    if(!terms.length) return 1;
+    let s=0;
+    const T=norm(p.title), S=norm(p.subtitle), E=norm(p.excerpt), K=(p.keywords||[]).join(' ').toLowerCase(), B=(p.bold_lines||[]).join(' ').toLowerCase(), Ser=norm(p.series?.name);
+    for(const t of terms){
+      let hit=0;
+      if(T.includes(t)) hit+=10; if(T.startsWith(t)) hit+=4;
+      if(S.includes(t)) hit+=6;
+      if(K.includes(t)) hit+=5;
+      if(Ser.includes(t)) hit+=3;
+      if(B.includes(t)) hit+=3;
+      if(E.includes(t)) hit+=2;
+      if(!hit) return 0; // every term must land somewhere
+      s+=hit;
+    }
+    return s;
+  }
+  function hl(text,terms){
+    if(!terms.length||!text) return esc(text);
+    let out=esc(text);
+    terms.forEach(t=>{ if(t.length<2) return; const re=new RegExp('('+t.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+')','ig'); out=out.replace(re,'<mark>$1</mark>'); });
+    return out;
+  }
+
+  function filtered(){
+    const terms=norm(q).split(/\s+/).filter(Boolean);
+    let list=posts.map(p=>({p,s:score(p,terms)})).filter(x=>x.s>0);
+    if(band) list=list.filter(x=>x.p.series.name===band);
+    if(freqs.size) list=list.filter(x=>[...freqs].every(k=>(x.p.keywords||[]).includes(k)));
+    if(sort==='rel'&&terms.length) list.sort((a,b)=>b.s-a.s||b.p.n-a.p.n);
+    else if(sort==='old') list.sort((a,b)=>a.p.n-b.p.n);
+    else list.sort((a,b)=>b.p.n-a.p.n);
+    return {list,terms};
+  }
+
+  function card(p,terms){
+    const band=p.series.name!=='Standalone'?p.series.name:null;
+    const tags=[band?`<span class="band">${esc(band)}</span>`:'',...(p.keywords||[]).slice(0,4).map(k=>`<span>${esc(k)}</span>`)].join('');
+    const nLinks=(p.links_to||[]).length+(p.linked_from||[]).length+(p.books||[]).length;
+    const more=`
+      ${(p.bold_lines||[]).length?`<div class="mlbl">The line</div><div class="key">${esc(p.bold_lines[0])}</div>`:''}
+      ${(p.links_to||[]).length?`<div class="mlbl">Builds on</div>${p.links_to.map(s=>bySlug[s]?`<a href="${bySlug[s].url}">№${bySlug[s].n} · ${esc(bySlug[s].title)}</a>`:'').join('')}`:''}
+      ${(p.linked_from||[]).length?`<div class="mlbl">Picked up in</div>${p.linked_from.map(s=>`<a href="${bySlug[s].url}">№${bySlug[s].n} · ${esc(bySlug[s].title)}</a>`).join('')}`:''}
+      ${(p.books||[]).length?`<div class="mlbl">On the shelf</div>${p.books.map(b=>`<a href="#shelf">${esc(b.title)}</a>`).join('')}`:''}`;
+    return `<article class="card" data-slug="${esc(p.slug)}">
+      <div class="top"><span class="no">№ ${p.n}</span><span>${fmt(p.date)}</span></div>
+      <h3><a href="${esc(p.url)}">${hl(p.title,terms)}</a></h3>
+      ${p.subtitle?`<div class="sub">${hl(p.subtitle,terms)}</div>`:''}
+      <div class="ex">${hl(p.excerpt,terms)}</div>
+      <div class="tags">${tags}</div>
+      <div class="foot">
+        <span class="links" data-toggle="${esc(p.slug)}">${nLinks?`${nLinks} connection${nLinks>1?'s':''} · ${p.wordcount||''} words`:`${p.wordcount||''} words`}</span>
+        <a class="read" href="${esc(p.url)}">Read</a>
+      </div>
+      <div class="more">${more}</div>
+    </article>`;
+  }
+
+  function renderDial(hits){
+    const el=$('#dial');
+    if(!el.children.length){
+      el.innerHTML=posts.map(p=>`<i data-n="${p.n}" style="height:${Math.max(6,Math.min(34,(p.wordcount||600)/40))}px" title="№${p.n} · ${esc(p.title)}"></i>`).join('');
+      $('#dial-first').textContent=posts.length?fmtS(posts[0].date):''; $('#dial-last').textContent=posts.length?fmtS(posts[posts.length-1].date):'';
+    }
+    const set=new Set(hits.map(x=>x.p.n));
+    const tuned=hits.length!==posts.length;
+    [...el.children].forEach(i=>{const n=+i.dataset.n; i.classList.toggle('hit',tuned&&set.has(n)); i.classList.toggle('dim',tuned&&!set.has(n));});
+    $('#dial-count').textContent=tuned?`${hits.length} of ${posts.length} lit`:`${posts.length} stories, every Tuesday`;
+  }
+
+  function render(){
+    renderChips();
+    const {list,terms}=filtered();
+    $('#count').textContent=list.length; $('#count-word').textContent=list.length===1?'story':'stories';
+    const act=[band?`in ${band}`:'',freqs.size?`· ${[...freqs].join(', ')}`:'',q?`· “${q}”`:''].filter(Boolean).join(' ');
+    $('#active').textContent=act;
+    $('#grid').innerHTML=list.length?list.map(x=>card(x.p,terms)).join(''):`<div class="empty"><b>Nothing on that frequency yet.</b>Try a broader word, or clear a chip. Or tell me what you were hoping to find.</div>`;
+    renderDial(list);
+    $('#tuner').classList.toggle('has',!!q);
+    ['new','old','rel'].forEach(s=>$('#s-'+s).classList.toggle('on',sort===s));
+  }
+
+  function renderShelf(){
+    $('#bcount').textContent=books.length;
+    $('#shelf').innerHTML=books.length?books.map((b,i)=>`<article class="card book">
+      <div class="top"><span class="no">${esc(b.kind||'Book')}</span><span>${esc(b.year||'')}</span></div>
+      <h3>${b.url?`<a href="${esc(b.url)}">${esc(b.title)}</a>`:esc(b.title)}</h3>
+      <div class="by">${esc(b.author||'')}</div>
+      <div class="ex">${esc(b.why||'')}</div>
+      <div class="tags">${(b.tags||[]).map(k=>`<span>${esc(k)}</span>`).join('')}</div>
+      ${(b.stories||[]).length?`<div class="more" style="display:block"><div class="mlbl">Behind</div>${b.stories.map(s=>bySlug[s]?`<a href="${bySlug[s].url}">№${bySlug[s].n} · ${esc(bySlug[s].title)}</a>`:'').join('')}</div>`:''}
+    </article>`).join(''):`<div class="empty"><b>The shelf is being stocked.</b>First titles land soon.</div>`;
+  }
+
+  function setView(v){
+    view=v;
+    $('#view-stories').hidden=v!=='stories'; $('#stories-filters').hidden=v!=='stories';
+    $('#view-shelf').hidden=v!=='shelf';
+    $('#nav-stories').classList.toggle('on',v==='stories'); $('#nav-shelf').classList.toggle('on',v==='shelf');
+    $('#h1').innerHTML=v==='shelf'?'What\'s on the <span>shelf</span>.':'Find the <span>story</span> you\'re looking for.';
+    $('#lede').textContent=v==='shelf'?'The books, talks, and papers behind the stories, and the stories they shaped.':'Pulse is the Tuesday transmission. Spectrum is the whole band: every story, every series, every thread, on one dial. Start typing.';
+    if(v==='shelf') renderShelf(); else render();
+  }
+
+  // events
+  $('#q').addEventListener('input',e=>{q=e.target.value; if(q&&sort==='new') sort='rel'; if(!q&&sort==='rel') sort='new'; render();});
+  $('#clear').addEventListener('click',()=>{q='';$('#q').value='';sort='new';render();$('#q').focus();});
+  document.addEventListener('keydown',e=>{ if(e.key==='/'&&document.activeElement!==$('#q')){e.preventDefault();$('#q').focus();} if(e.key==='Escape'){$('#q').blur();} });
+  $('#bands').addEventListener('click',e=>{const b=e.target.closest('[data-band]'); if(!b) return; band=b.dataset.band==='All'?null:b.dataset.band; render();});
+  $('#freqs').addEventListener('click',e=>{const b=e.target.closest('[data-kw]'); if(!b) return; const k=b.dataset.kw; freqs.has(k)?freqs.delete(k):freqs.add(k); render();});
+  $('#grid').addEventListener('click',e=>{const t=e.target.closest('[data-toggle]'); if(!t) return; t.closest('.card').classList.toggle('open');});
+  $('#dial').addEventListener('click',e=>{const i=e.target.closest('i[data-n]'); if(!i) return; const el=document.querySelector(`.card[data-slug="${posts[+i.dataset.n-1].slug}"]`); el&&el.scrollIntoView({behavior:'smooth',block:'center'}); el&&el.classList.add('open');});
+  ['new','old','rel'].forEach(s=>$('#s-'+s).addEventListener('click',()=>{sort=s;render();}));
+  window.addEventListener('hashchange',()=>setView(location.hash==='#shelf'?'shelf':'stories'));
+
+  setView(view);
+  if(window.matchMedia('(min-width:700px)').matches) $('#q').focus();
+})();
+</script>
+</body>
+</html>

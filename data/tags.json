@@ -1,0 +1,315 @@
+{
+ "the-scale": [
+  "health",
+  "weight loss",
+  "habits",
+  "discipline",
+  "nutrition",
+  "personal",
+  "systems thinking"
+ ],
+ "the-shamrock": [
+  "fitness",
+  "running",
+  "discipline",
+  "friendship",
+  "habits",
+  "personal",
+  "systems thinking"
+ ],
+ "feelings-are-data": [
+  "feelings",
+  "emotional resolution",
+  "family",
+  "discipline",
+  "personal",
+  "self-knowledge",
+  "systems thinking"
+ ],
+ "the-chaos-test": [
+  "health",
+  "family",
+  "resilience",
+  "simplicity",
+  "habits",
+  "nutrition",
+  "personal",
+  "systems thinking"
+ ],
+ "the-loss-of-leadership": [
+  "leadership",
+  "career",
+  "building",
+  "engineering",
+  "team",
+  "organizational architecture",
+  "personal"
+ ],
+ "the-thinking-partner": [
+  "claude",
+  "thinking partner",
+  "neurodivergence",
+  "voice dictation",
+  "self-knowledge",
+  "ai tools",
+  "personal"
+ ],
+ "meet-claude": [
+  "claude",
+  "context window",
+  "memory",
+  "how-to",
+  "prompting",
+  "ai tools"
+ ],
+ "the-garage-gym": [
+  "health",
+  "fitness",
+  "habits",
+  "discipline",
+  "resilience",
+  "personal",
+  "simplicity"
+ ],
+ "totaling-the-prius": [
+  "personal",
+  "story",
+  "optimization",
+  "career",
+  "resilience",
+  "humor"
+ ],
+ "disagree-and-commit": [
+  "pets",
+  "family",
+  "commitment",
+  "systems thinking",
+  "habits",
+  "personal",
+  "household"
+ ],
+ "freeipodscom": [
+  "career",
+  "layoff",
+  "resilience",
+  "startup",
+  "money",
+  "capability",
+  "personal",
+  "engineering"
+ ],
+ "a-house-to-live-in": [
+  "building",
+  "self-knowledge",
+  "agents",
+  "newsletter",
+  "shipping",
+  "personal",
+  "we are bob"
+ ],
+ "claude-chat-claude-code-and-me": [
+  "claude",
+  "agents",
+  "the expanse",
+  "github",
+  "coordination",
+  "naming",
+  "claude code",
+  "systems thinking"
+ ],
+ "the-emulation-layer": [
+  "neurodivergence",
+  "masking",
+  "self-knowledge",
+  "communication",
+  "personal",
+  "vulnerability",
+  "systems thinking"
+ ],
+ "the-master-control-project": [
+  "master control",
+  "capture",
+  "mcp",
+  "github",
+  "friction",
+  "claude",
+  "agents",
+  "systems thinking"
+ ],
+ "the-memory-problem": [
+  "paracortex",
+  "memory",
+  "mcp",
+  "claude",
+  "building",
+  "simplification",
+  "master control",
+  "avoidance"
+ ],
+ "model-context-protocol": [
+  "mcp",
+  "paracortex",
+  "architecture",
+  "intuition",
+  "agents",
+  "claude",
+  "engineering",
+  "simplification"
+ ],
+ "the-simplest-system": [
+  "systems thinking",
+  "simplicity",
+  "habits",
+  "memory",
+  "personal",
+  "travel",
+  "design"
+ ],
+ "confidence-man": [
+  "agents",
+  "confabulation",
+  "verification",
+  "trust",
+  "skippy",
+  "claude",
+  "paracortex",
+  "master finance"
+ ],
+ "hand-crafted-with-ai": [
+  "writing",
+  "ai detection",
+  "substack",
+  "voice",
+  "process",
+  "claude",
+  "authorship",
+  "newsletter"
+ ],
+ "the-day-i-killed-fred": [
+  "agents",
+  "mcp",
+  "tightbeam",
+  "mac mini",
+  "simplification",
+  "the expanse",
+  "claude",
+  "infrastructure"
+ ],
+ "wisdom-removed": [
+  "family",
+  "habits",
+  "discipline",
+  "feelings",
+  "parenting",
+  "personal",
+  "systems thinking"
+ ],
+ "drinking-from-the-garden-hose": [
+  "potable information",
+  "trust",
+  "information",
+  "verification",
+  "agents",
+  "governance",
+  "metaphor"
+ ],
+ "the-effort-of-being-a-team": [
+  "skippy",
+  "family",
+  "coordination",
+  "agents",
+  "team",
+  "grok bots",
+  "product design",
+  "household"
+ ],
+ "montana": [
+  "pets",
+  "family",
+  "grief",
+  "kindness",
+  "personal",
+  "tribute"
+ ],
+ "the-man-behind-the-curtain": [
+  "skippy",
+  "family",
+  "product discovery",
+  "wizard of oz",
+  "agents",
+  "pets",
+  "household"
+ ],
+ "big-ideas": [
+  "leadership",
+  "ideas",
+  "writing",
+  "productivity",
+  "self-knowledge",
+  "ai tools",
+  "newsletter"
+ ],
+ "taking-a-walk": [
+  "leadership",
+  "self-leadership",
+  "feelings",
+  "resilience",
+  "grief",
+  "discipline",
+  "personal"
+ ],
+ "i-am-the-root": [
+  "skippy",
+  "family",
+  "authority",
+  "agents",
+  "security",
+  "personality",
+  "household"
+ ],
+ "even-ai-needs-the-why": [
+  "leadership",
+  "ai transformation",
+  "vision",
+  "trust",
+  "change management",
+  "organizations",
+  "team"
+ ],
+ "claude-was-wrong": [
+  "jev",
+  "claude",
+  "paracorpus",
+  "judgment",
+  "pushback",
+  "primitives",
+  "systems thinking"
+ ],
+ "the-whole-haystack": [
+  "paracorpus",
+  "research",
+  "jev",
+  "memory",
+  "mac mini",
+  "information",
+  "agents"
+ ],
+ "rage-against-the-machine": [
+  "ai fear",
+  "learning",
+  "judgment",
+  "family",
+  "research",
+  "jobs",
+  "claude"
+ ],
+ "whos-driving": [
+  "agents",
+  "family",
+  "skippy",
+  "grok bots",
+  "facts over instructions",
+  "errors",
+  "household"
+ ]
+}

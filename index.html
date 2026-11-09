@@ -98,6 +98,11 @@
   .now{border:1px solid var(--pop-40);background:var(--pop-20);border-radius:var(--r);padding:12px 16px;margin:0 0 14px;font-size:13.5px;color:var(--fg)}
   .now b{color:var(--pop);font-weight:600;letter-spacing:.8px;text-transform:uppercase;font-size:11px;margin-right:10px}
   .now a{color:var(--fg)} .now a:hover{color:var(--pop)}
+  .named{font-size:13px;color:var(--fg2);line-height:1.45} .named span{color:var(--pop);font-size:11px;letter-spacing:1px;text-transform:uppercase;margin-right:6px}
+  .card .titles a{display:flex;align-items:center;gap:8px;color:var(--fg2)} .card .titles a:hover{color:var(--fg)}
+  .card .titles small{color:var(--fg3);min-width:1.4em;text-align:right}
+  .tick{width:8px;height:8px;border-radius:50%;border:1px solid var(--bg3);flex:none} .tick.done{background:var(--pop);border-color:var(--pop)} .tick.part{background:var(--pop-40);border-color:var(--pop)}
+  .card.open .titles{display:block}
   /* library */
   .shelf-note{color:var(--fg2);font-size:14px;line-height:1.55;max-width:62ch;margin:0 0 18px}
   .book .top .no{color:var(--fg2);text-transform:uppercase;letter-spacing:.8px;font-size:10.5px}
@@ -185,9 +190,9 @@
   try{ data=await (await fetch('data/posts.json')).json(); }
   catch(e){ data=window.__SPECTRUM__||{posts:[],books:[],series:[]}; }
   const posts=(data.posts||[]).slice().sort((a,b)=>a.n-b.n);
-  const books=(data.library||data.books||[]).map((b,i)=>Object.assign({i,kind:'book',band:'library',stories:[],tags:[]},b));
-  const BANDS={behind:'Behind the stories',namesakes:'Namesakes',library:'Library'};
-  const KINDS={book:'Book',podcast:'Podcast',video:'Video',talk:'Talk',paper:'Paper',site:'Site',tool:'Tool'};
+  const books=(data.library||data.books||[]).map((b,i)=>Object.assign({i,kind:'book',stories:[],tags:[],titles:[]},b,{bands:b.bands||[b.band||'nonfiction']}));
+  const BANDS={namesakes:'Namesakes',behind:'Behind the stories',nonfiction:'Nonfiction',fiction:'Fiction'};
+  const KINDS={series:'Series',book:'Book',podcast:'Podcast',video:'Video',talk:'Talk',paper:'Paper',site:'Site',tool:'Tool'};
   const seriesList=data.series||[];
   const bySlug=Object.fromEntries(posts.map(p=>[p.slug,p]));
   // reverse links: who links to me
@@ -325,15 +330,15 @@
   function libFiltered(){
     const terms=norm(q).split(/\s+/).filter(Boolean).map(stem);
     return books.filter(b=>{
-      if(lband&&b.band!==lband) return false;
+      if(lband&&!b.bands.includes(lband)) return false;
       if(lkind&&b.kind!==lkind) return false;
       if(!terms.length) return true;
-      const ws=words([b.title,b.author,b.why,b.named,(b.tags||[]).join(' '),(b.stories||[]).map(s=>bySlug[s]?.title||'').join(' ')].join(' '));
+      const ws=words([b.title,b.author,b.narrator,b.why,b.named,b.summary,(b.tags||[]).join(' '),(b.titles||[]).map(t=>t.title).join(' '),(b.stories||[]).map(s=>bySlug[s]?.title||'').join(' ')].join(' '));
       return terms.every(t=>hitsIn(ws,t));
     });
   }
   function renderLibrary(){
-    const bc={}; books.forEach(b=>bc[b.band]=(bc[b.band]||0)+1);
+    const bc={}; books.forEach(b=>b.bands.forEach(k=>bc[k]=(bc[k]||0)+1));
     const kc={}; books.forEach(b=>kc[b.kind]=(kc[b.kind]||0)+1);
     $('#lbands').innerHTML=[['',`All<span class="n">${books.length}</span>`],...Object.keys(BANDS).filter(k=>bc[k]).map(k=>[k,`${BANDS[k]}<span class="n">${bc[k]}</span>`])]
       .map(([k,l])=>`<button class="chip ${(lband||'')===k?'on':''}" data-lband="${k}">${l}</button>`).join('');
@@ -343,14 +348,18 @@
     const list=libFiltered();
     $('#bcount').textContent=list.length; $('#bcount-word').textContent=list.length===1?'item':'items';
     $('#lactive').textContent=[lband?`in ${BANDS[lband]}`:'',lkind?`· ${KINDS[lkind]||lkind}`:'',q?`· "${q}"`:''].filter(Boolean).join(' ');
-    $('#library').innerHTML=list.length?list.map(b=>`<article class="card book">
-      <div class="top"><span class="no">${esc(KINDS[b.kind]||b.kind)}${b.band!=='library'?` · ${esc(BANDS[b.band])}`:''}</span><span>${esc(b.year||'')}${b.status==='reading'?' · reading':''}</span></div>
+    const prog=b=>{ if(!b.count||b.count<2) return b.titles?.[0]?.finished?'finished':(b.titles?.[0]?.in_progress?'in progress':''); return `${b.finished} of ${b.count} finished`; };
+    $('#library').innerHTML=list.length?list.map(b=>`<article class="card book ${b.kind==='series'?'series':''}" data-i="${b.i}">
+      <div class="top"><span class="no">${esc(KINDS[b.kind]||b.kind)}${b.bands.filter(x=>x==='namesakes'||x==='behind').map(x=>` · ${esc(BANDS[x])}`).join('')}</span><span>${esc(prog(b))}${b.status==='reading'?' · reading now':''}</span></div>
       <h3>${b.url?`<a href="${esc(b.url)}">${esc(b.title)}</a>`:esc(b.title)}</h3>
-      ${b.author?`<div class="by">${esc(b.author)}</div>`:''}
-      ${b.why?`<div class="ex">${esc(b.why)}</div>`:'<div class="ex"></div>'}
-      ${b.named?`<div class="key" style="font-family:var(--heading);font-style:italic;color:var(--fg);font-size:13.5px">Named: ${esc(b.named)}</div>`:''}
+      ${b.author?`<div class="by">${esc(b.author)}${b.narrator&&b.kind!=='series'?` <span style="color:var(--fg3)">· read by ${esc(b.narrator)}</span>`:''}</div>`:''}
+      ${b.why?`<div class="key" style="font-family:var(--heading);font-style:italic;color:var(--fg);font-size:14px;line-height:1.4">${esc(b.why)}</div>`:''}
+      ${b.summary?`<div class="ex">${esc(b.summary)}</div>`:'<div class="ex"></div>'}
+      ${b.named?`<div class="named"><span>Named</span> ${esc(b.named)}</div>`:''}
       <div class="tags">${(b.tags||[]).map(k=>`<span>${esc(k)}</span>`).join('')}</div>
       ${(b.stories||[]).length?`<div class="more" style="display:block"><div class="mlbl">Behind</div>${b.stories.map(s=>bySlug[s]?`<a href="#${esc(s)}">№${bySlug[s].n} · ${esc(bySlug[s].title)}</a>`:'').join('')}</div>`:''}
+      ${b.count>1?`<div class="foot"><span class="links" data-titles="${b.i}">${b.count} titles</span>${b.url?`<a class="read" href="${esc(b.url)}">Audible</a>`:''}</div>
+      <div class="more titles">${b.titles.map(t=>`<a href="${esc(t.url)}"><span class="tick ${t.finished?'done':(t.in_progress?'part':'')}"></span>${t.n<999?`<small>${t.n}</small> `:''}${esc(t.title)}</a>`).join('')}</div>`:''}
     </article>`).join(''):`<div class="empty"><b>Nothing on that frequency.</b>Try another word or clear a chip.</div>`;
     renderDial([]); $('#dial').style.display='none'; $('.dial-cap').style.display='none';
   }
@@ -361,7 +370,7 @@
     $('#view-library').hidden=v!=='library';
     $('#nav-stories').classList.toggle('on',v==='stories'); $('#nav-library').classList.toggle('on',v==='library');
     $('#h1').innerHTML=v==='library'?'The <span>library</span> behind the stories.':'Find the <span>story</span> you\'re looking for.';
-    $('#lede').textContent=v==='library'?'Books, podcasts, and talks I keep going back to, and the stories each one shaped. Type to tune.':'Pulse is the Tuesday transmission. Spectrum is the whole band: every story, every series, every thread, on one dial. Start typing.';
+    $('#lede').textContent=v==='library'?'What I\'ve listened to and read, by series, with the stories each one shaped and the names it gave this place. Gold dot: finished. Type to tune.':'Pulse is the Tuesday transmission. Spectrum is the whole band: every story, every series, every thread, on one dial. Start typing.';
     $('#q').placeholder=v==='library'?'Expanse, Dune, leadership, habits…':'memory, agents, Skippy, leadership, Claude…';
     if(v==='library') renderLibrary(); else { $('#dial').style.display=''; $('.dial-cap').style.display=''; render(); }
     if(v==='stories'&&openSlug){ const el=document.querySelector(`.card[data-slug="${openSlug}"]`); if(el){ setTimeout(()=>el.scrollIntoView({behavior:'smooth',block:'start'}),50); } }
@@ -378,6 +387,7 @@
   $('#grid').addEventListener('click',e=>{const t=e.target.closest('[data-toggle]'); if(!t) return; t.closest('.card').classList.toggle('open');});
   $('#dial').addEventListener('click',e=>{const i=e.target.closest('i[data-n]'); if(!i) return; const el=document.querySelector(`.card[data-slug="${posts[+i.dataset.n-1].slug}"]`); el&&el.scrollIntoView({behavior:'smooth',block:'center'}); el&&el.classList.add('open');});
   ['new','old','rel'].forEach(s=>$('#s-'+s).addEventListener('click',()=>{sort=s;render();}));
+  $('#library').addEventListener('click',e=>{const t=e.target.closest('[data-titles]'); if(!t) return; t.closest('.card').classList.toggle('open');});
   $('#lbands').addEventListener('click',e=>{const b=e.target.closest('[data-lband]'); if(!b) return; lband=b.dataset.lband||null; renderLibrary();});
   $('#lkinds').addEventListener('click',e=>{const b=e.target.closest('[data-lkind]'); if(!b) return; lkind=lkind===b.dataset.lkind?null:b.dataset.lkind; renderLibrary();});
   window.addEventListener('hashchange',()=>{ readHash(); setView(view); });

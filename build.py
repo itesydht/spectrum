@@ -39,6 +39,27 @@ SERIES_RE = re.compile(r'<p[^>]*>\s*Part of\s+<a[^>]*href="[^"]*/p/([a-z0-9-]+)(
 LINK_RE = re.compile(r'href="https?://pulse\.itesydht\.com/p/([a-z0-9-]+)(?:[#?][^"]*)?"', re.I)
 PARA_RE = re.compile(r"<p[^>]*>(.*?)</p>", re.S)
 BOLD_RE = re.compile(r"<strong>(.*?)</strong>", re.S)
+STOP = set("""a an the and or but if then so of to in on at by for from with without into onto over under about
+as is are was were be been being am do does did done have has had having will would can could should shall may might
+must not no nor yes it its this that these those there here where when why how what which who whom whose i me my mine
+we us our you your he him his she her they them their one ones all any some each every few more most other such only
+own same than too very just also even still again back out up down off than then once because while after before
+than very really thing things way ways lot lots got get gets getting go goes going went come comes came make makes made
+like said say says take took know knew think thought see saw look looked use used using new old first last next much
+many well good bad big small long short right left around through between against during within along across""".split())
+TERM_RE = re.compile(r"[a-z0-9][a-z0-9'-]+")
+
+def terms_of(text, limit=700):
+    """Unique body words a reader might type, minus stopwords; what the story says somewhere."""
+    seen, out = set(), []
+    for w in TERM_RE.findall(text.lower()):
+        w = w.strip("'-")
+        if len(w) < 3 or w in STOP or w.isdigit() or w in seen:
+            continue
+        seen.add(w); out.append(w)
+        if len(out) >= limit:
+            break
+    return sorted(out)
 
 def extract(post):
     body = post.get("body_html") or ""
@@ -47,6 +68,7 @@ def extract(post):
     if m:
         series = {"name": m.group(3).strip(), "slug": m.group(1), "anchor": m.group(2)}
     paras = [strip_html(p) for p in PARA_RE.findall(body)]
+    full_text = " ".join(paras)
     paras = [p for p in paras if p and not p.lower().startswith("part of ") and len(p) > 40]
     excerpt = paras[0] if paras else (post.get("subtitle") or "")
     if len(excerpt) > 230:
@@ -74,6 +96,7 @@ def extract(post):
         "links_to": links,
         "bold_lines": bold[:6],
         "keywords": [],
+        "terms": terms_of(full_text),
         "_type": post.get("type"),
     }
 

@@ -202,20 +202,29 @@
   }
 
   // scoring
+  // Matching: a query term matches a word if it is a prefix of that word, after folding
+  // simple plurals (dogs -> dog). Word-start matching keeps "pet" out of "competence".
   const norm=s=>String(s||'').toLowerCase();
+  const stem=w=>w.length>3&&w.endsWith('s')&&!w.endsWith('ss')?w.slice(0,-1):w;
+  const words=s=>norm(s).split(/[^a-z0-9']+/).filter(Boolean).map(stem);
+  const hitsIn=(ws,t)=>ws.some(w=>w.startsWith(t));
+  posts.forEach(p=>{
+    p._w={ T:words(p.title), S:words(p.subtitle), K:words((p.keywords||[]).join(' ')), B:words((p.bold_lines||[]).join(' ')), E:words(p.excerpt), X:(p.terms||[]).map(stem), Ser:words(p.series?.name) };
+  });
   function score(p,terms){
     if(!terms.length) return 1;
-    let s=0;
-    const T=norm(p.title), S=norm(p.subtitle), E=norm(p.excerpt), K=(p.keywords||[]).join(' ').toLowerCase(), B=(p.bold_lines||[]).join(' ').toLowerCase(), Ser=norm(p.series?.name);
-    for(const t of terms){
+    let s=0; const w=p._w;
+    for(const raw of terms){
+      const t=stem(raw);
       let hit=0;
-      if(T.includes(t)) hit+=10; if(T.startsWith(t)) hit+=4;
-      if(S.includes(t)) hit+=6;
-      if(K.includes(t)) hit+=5;
-      if(Ser.includes(t)) hit+=3;
-      if(B.includes(t)) hit+=3;
-      if(E.includes(t)) hit+=2;
-      if(!hit) return 0; // every term must land somewhere
+      if(hitsIn(w.T,t)) hit+=10;
+      if(hitsIn(w.S,t)) hit+=6;
+      if(hitsIn(w.K,t)) hit+=5;
+      if(hitsIn(w.Ser,t)) hit+=3;
+      if(hitsIn(w.B,t)) hit+=3;
+      if(hitsIn(w.E,t)) hit+=2;
+      if(hitsIn(w.X,t)) hit+=1;   // full-text terms: the story says it somewhere
+      if(!hit) return 0;          // every term must land somewhere
       s+=hit;
     }
     return s;
@@ -223,7 +232,7 @@
   function hl(text,terms){
     if(!terms.length||!text) return esc(text);
     let out=esc(text);
-    terms.forEach(t=>{ if(t.length<2) return; const re=new RegExp('('+t.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+')','ig'); out=out.replace(re,'<mark>$1</mark>'); });
+    terms.forEach(t=>{ if(t.length<2) return; const re=new RegExp('\\b('+stem(t).replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+'[a-z0-9]*)','ig'); out=out.replace(re,'<mark>$1</mark>'); });
     return out;
   }
 

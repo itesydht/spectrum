@@ -4,7 +4,7 @@
 Walks the published chain newest -> oldest via Substack's public post API,
 extracts the facts the page needs (title, subtitle, date, series, excerpt,
 key lines, cross-links), merges the human-curated layers (data/tags.json,
-data/shelf.json), and writes data/posts.json.
+data/library.json), and writes data/posts.json.
 
 Facts come from the archive. Judgment (tags, shelf) stays in files you edit.
 Run on Tycho; the egress proxy elsewhere blocks pulse.itesydht.com.
@@ -37,6 +37,8 @@ def newest_slug():
 
 SERIES_RE = re.compile(r'<p[^>]*>\s*Part of\s+<a[^>]*href="[^"]*/p/([a-z0-9-]+)(?:#(?:%C2%A7|§)?([a-z0-9-]+))?"[^>]*>\s*(?:the\s+)?([^<]+?)\s*</a>', re.I)
 LINK_RE = re.compile(r'href="https?://pulse\.itesydht\.com/p/([a-z0-9-]+)(?:[#?][^"]*)?"', re.I)
+EXT_RE = re.compile(r'<a[^>]*href="(https?://[^"]+)"[^>]*>(.*?)</a>', re.S | re.I)
+SKIP_HOSTS = ("pulse.itesydht.com", "substack.com", "substackcdn.com", "amazonaws.com", "spectrum.itesydht.com")
 PARA_RE = re.compile(r"<p[^>]*>(.*?)</p>", re.S)
 BOLD_RE = re.compile(r"<strong>(.*?)</strong>", re.S)
 STOP = set("""a an the and or but if then so of to in on at by for from with without into onto over under about
@@ -78,6 +80,15 @@ def extract(post):
     for s in LINK_RE.findall(body):
         if s != post["slug"] and s not in links:
             links.append(s)
+    cites = []
+    for href, text in EXT_RE.findall(body):
+        if any(h in href for h in SKIP_HOSTS):
+            continue
+        label = strip_html(text)
+        if not label or href in [c["url"] for c in cites]:
+            continue
+        host = re.sub(r"^www\.", "", href.split("/")[2])
+        cites.append({"url": href.split("?utm")[0], "label": label[:80], "host": host})
     bold = []
     for b in BOLD_RE.findall(body):
         t = strip_html(b)
@@ -94,6 +105,7 @@ def extract(post):
         "series": series,
         "excerpt": excerpt,
         "links_to": links,
+        "cites": cites,
         "bold_lines": bold[:6],
         "keywords": [],
         "terms": terms_of(full_text),
@@ -166,7 +178,7 @@ def main(check=False):
         if not r["keywords"]:
             untagged.append(r["slug"])
         r.pop("_type", None)
-    shelf = load_json(DATA / "shelf.json", [])
+    library = load_json(DATA / "library.json", [])
 
     out = {
         "generated": datetime.now(timezone.utc).isoformat(timespec="seconds"),
@@ -174,7 +186,7 @@ def main(check=False):
         "theme": {"bg": "#1C1C1E", "pop": "#B8860B", "headings": "Lora"},
         "series": series,
         "posts": posts,
-        "books": shelf,
+        "library": library,
     }
     target = DATA / "posts.json"
     old = load_json(target, {})
@@ -183,7 +195,7 @@ def main(check=False):
         print(f"{len(posts)} posts; {'CHANGED' if changed else 'unchanged'}")
         sys.exit(1 if changed else 0)
     target.write_text(json.dumps(out, indent=1, ensure_ascii=False) + "\n")
-    print(f"wrote {target.relative_to(ROOT)}: {len(posts)} posts, {len(series)} series, {len(shelf)} on the shelf")
+    print(f"wrote {target.relative_to(ROOT)}: {len(posts)} posts, {len(series)} series, {len(library)} in the library")
     if untagged:
         print(f"untagged ({len(untagged)}), add to data/tags.json: {', '.join(untagged)}")
 

@@ -1,0 +1,459 @@
+[
+ {
+  "kind": "book",
+  "band": "behind",
+  "title": "Team Topologies",
+  "author": "Matthew Skelton",
+  "url": "https://www.audible.com/pd/Team-Topologies-Organizing-Business-and-Technology-Teams-for-Fast-Flow-Audiobook/B07VZ2JKQP",
+  "why": "",
+  "tags": [
+   "teams",
+   "engineering",
+   "org design"
+  ],
+  "stories": [
+   "the-effort-of-being-a-team",
+   "the-loss-of-leadership"
+  ]
+ },
+ {
+  "kind": "book",
+  "band": "behind",
+  "title": "Accelerate",
+  "author": "Nicole Forsgren PhD",
+  "url": "https://www.audible.com/pd/Accelerate-Building-and-Scaling-High-Performing-Technology-Organizations-Audiobook/B07BLZDZFQ",
+  "why": "",
+  "tags": [
+   "engineering",
+   "devops",
+   "leadership"
+  ],
+  "stories": [
+   "the-loss-of-leadership",
+   "even-ai-needs-the-why"
+  ]
+ },
+ {
+  "kind": "book",
+  "band": "behind",
+  "title": "Staff Engineer",
+  "author": "Will Larson",
+  "url": "https://www.audible.com/pd/Staff-Engineer-Audiobook/B097CNMWWD",
+  "why": "",
+  "tags": [
+   "engineering",
+   "leadership",
+   "career"
+  ],
+  "stories": [
+   "the-loss-of-leadership",
+   "big-ideas"
+  ]
+ },
+ {
+  "kind": "book",
+  "band": "behind",
+  "title": "Empowered",
+  "author": "Marty Cagan",
+  "url": "https://www.audible.com/pd/Empowered-Audiobook/1663709777",
+  "why": "",
+  "tags": [
+   "product",
+   "leadership"
+  ],
+  "stories": [
+   "even-ai-needs-the-why",
+   "the-man-behind-the-curtain"
+  ]
+ },
+ {
+  "kind": "book",
+  "band": "behind",
+  "title": "Ask Your Developer",
+  "author": "Jeff Lawson",
+  "url": "https://www.audible.com/pd/Ask-Your-Developer-Audiobook/0063018314",
+  "why": "",
+  "tags": [
+   "engineering",
+   "leadership"
+  ],
+  "stories": [
+   "the-loss-of-leadership"
+  ]
+ },
+ {
+  "kind": "book",
+  "band": "behind",
+  "title": "No Rules Rules",
+  "author": "Reed Hastings",
+  "url": "https://www.audible.com/pd/No-Rules-Rules-Audiobook/1984891170",
+  "why": "",
+  "tags": [
+   "culture",
+   "leadership"
+  ],
+  "stories": [
+   "even-ai-needs-the-why"
+  ]
+ },
+ {
+  "kind": "book",
+  "band": "behind",
+  "title": "Extreme Ownership",
+  "author": "Jocko Willink",
+  "url": "https://www.audible.com/pd/Extreme-Ownership-Audiobook/B015TVHUA2",
+  "why": "",
+  "tags": [
+   "leadership",
+   "ownership"
+  ],
+  "stories": [
+   "disagree-and-commit",
+   "taking-a-walk"
+  ]
+ },
+ {
+  "kind": "book",
+  "band": "behind",
+  "title": "Atomic Habits",
+  "author": "James Clear",
+  "url": "https://www.audible.com/pd/Atomic-Habits-Audiobook/1524779261",
+  "why": "",
+  "tags": [
+   "habits",
+   "systems thinking"
+  ],
+  "stories": [
+   "the-simplest-system",
+   "the-scale",
+   "the-garage-gym"
+  ]
+ },
+ {
+  "kind": "book",
+  "band": "behind",
+  "title": "Can't Hurt Me",
+  "author": "David Goggins",
+  "url": "https://www.audible.com/pd/Cant-Hurt-Me-Audiobook/B07KKMNZCH",
+  "why": "",
+  "tags": [
+   "discipline",
+   "resilience"
+  ],
+  "stories": [
+   "the-scale",
+   "the-shamrock"
+  ]
+ },
+ {
+  "kind": "book",
+  "band": "behind",
+  "title": "Never Finished",
+  "author": "David Goggins",
+  "url": "https://www.audible.com/pd/Never-Finished-Audiobook/B0BJ34FWZ3",
+  "why": "",
+  "tags": [
+   "discipline",
+   "resilience"
+  ],
+  "stories": [
+   "the-shamrock",
+   "wisdom-removed"
+  ]
+ },
+ {
+  "kind": "book",
+  "band": "behind",
+  "title": "Algorithms to Live By",
+  "author": "Brian Christian",
+  "url": "https://www.audible.com/pd/Algorithms-to-Live-By-Audiobook/B01D24NLWO",
+  "why": "",
+  "tags": [
+   "systems thinking",
+   "decisions"
+  ],
+  "stories": [
+   "the-simplest-system",
+   "the-whole-haystack"
+  ]
+ },
+ {
+  "kind": "book",
+  "band": "behind",
+  "title": "Think Like a Rocket Scientist",
+  "author": "Ozan Varol",
+  "url": "https://www.audible.com/pd/Think-Like-a-Rocket-Scientist-Audiobook/1549144936",
+  "why": "",
+  "tags": [
+   "thinking",
+   "first principles"
+  ],
+  "stories": [
+   "big-ideas",
+   "the-chaos-test"
+  ]
+ },
+ {
+  "kind": "book",
+  "band": "behind",
+  "title": "Never Split the Difference",
+  "author": "Chris Voss",
+  "url": "https://www.audible.com/pd/Never-Split-the-Difference-Audiobook/B01CF5O89G",
+  "why": "",
+  "tags": [
+   "negotiation",
+   "communication"
+  ],
+  "stories": [
+   "disagree-and-commit"
+  ]
+ },
+ {
+  "kind": "book",
+  "band": "behind",
+  "title": "Crucial Conversations (Third Edition)",
+  "author": "Joseph Grenny",
+  "url": "https://www.audible.com/pd/Crucial-Conversations-Third-Edition-Audiobook/B09MV39LHQ",
+  "why": "",
+  "tags": [
+   "communication",
+   "conflict"
+  ],
+  "stories": [
+   "disagree-and-commit",
+   "feelings-are-data"
+  ]
+ },
+ {
+  "kind": "book",
+  "band": "behind",
+  "title": "Nonviolent Communication",
+  "author": "PhD Marshall Rosenberg",
+  "url": "https://www.audible.com/pd/Nonviolent-Communication-Audiobook/B00TJJNSQG",
+  "why": "",
+  "tags": [
+   "communication",
+   "feelings"
+  ],
+  "stories": [
+   "feelings-are-data",
+   "the-emulation-layer"
+  ]
+ },
+ {
+  "kind": "book",
+  "band": "behind",
+  "title": "Emotional Intelligence 2.0",
+  "author": "Travis Bradberry",
+  "url": "https://www.audible.com/pd/Emotional-Intelligence-20-Audiobook/B003HU6KLI",
+  "why": "",
+  "tags": [
+   "feelings",
+   "self-knowledge"
+  ],
+  "stories": [
+   "feelings-are-data",
+   "taking-a-walk"
+  ]
+ },
+ {
+  "kind": "book",
+  "band": "behind",
+  "title": "The Body Keeps the Score",
+  "author": "Bessel van der Kolk M.D.",
+  "url": "https://www.audible.com/pd/The-Body-Keeps-the-Score-Audiobook/0593412702",
+  "why": "",
+  "tags": [
+   "feelings",
+   "resilience"
+  ],
+  "stories": [
+   "taking-a-walk",
+   "wisdom-removed"
+  ]
+ },
+ {
+  "kind": "book",
+  "band": "behind",
+  "title": "Man's Search for Meaning",
+  "author": "Viktor E. Frankl",
+  "url": "https://www.audible.com/pd/Mans-Search-for-Meaning-Audiobook/B0CYNPSBNG",
+  "why": "",
+  "tags": [
+   "meaning",
+   "resilience"
+  ],
+  "stories": [
+   "taking-a-walk",
+   "montana"
+  ]
+ },
+ {
+  "kind": "book",
+  "band": "behind",
+  "title": "Elon Musk",
+  "author": "Walter Isaacson",
+  "url": "https://www.audible.com/pd/Elon-Musk-Audiobook/B0BX4SCV1V",
+  "why": "",
+  "tags": [
+   "tesla algorithm",
+   "first principles"
+  ],
+  "stories": [
+   "the-simplest-system",
+   "the-master-control-project"
+  ]
+ },
+ {
+  "kind": "book",
+  "band": "behind",
+  "title": "Superintelligence",
+  "author": "Nick Bostrom",
+  "url": "https://www.audible.com/pd/Superintelligence-Audiobook/B00LPMD72K",
+  "why": "",
+  "tags": [
+   "ai",
+   "risk"
+  ],
+  "stories": [
+   "rage-against-the-machine",
+   "confidence-man"
+  ]
+ },
+ {
+  "kind": "book",
+  "band": "behind",
+  "title": "Irreplaceable",
+  "author": "Pascal Bornet",
+  "url": "https://www.audible.com/pd/Irreplaceable-Audiobook/B0DGVRNBJF",
+  "why": "",
+  "tags": [
+   "ai",
+   "work"
+  ],
+  "stories": [
+   "rage-against-the-machine",
+   "even-ai-needs-the-why"
+  ]
+ },
+ {
+  "kind": "book",
+  "band": "behind",
+  "title": "Rewired",
+  "author": "Eric Lamarre",
+  "url": "https://www.audible.com/pd/Rewired-Audiobook/B0CGMNF9PN",
+  "why": "",
+  "tags": [
+   "ai transformation",
+   "leadership"
+  ],
+  "stories": [
+   "even-ai-needs-the-why"
+  ]
+ },
+ {
+  "kind": "book",
+  "band": "behind",
+  "title": "Strengths Based Leadership",
+  "author": "Tom Rath",
+  "url": "https://www.audible.com/pd/Strengths-Based-Leadership-Audiobook/B002V8H0I4",
+  "why": "",
+  "tags": [
+   "leadership",
+   "strengths"
+  ],
+  "stories": [
+   "taking-a-walk",
+   "big-ideas"
+  ]
+ },
+ {
+  "kind": "book",
+  "band": "behind",
+  "title": "ADD-Friendly Ways to Organize Your Life Second Edition",
+  "author": "Judith Kolberg",
+  "url": "https://www.audible.com/pd/ADD-Friendly-Ways-to-Organize-Your-Life-Second-Edition-Audiobook/B076HY9PB7",
+  "why": "",
+  "tags": [
+   "neurodivergence",
+   "systems thinking"
+  ],
+  "stories": [
+   "the-emulation-layer",
+   "the-thinking-partner"
+  ]
+ },
+ {
+  "kind": "book",
+  "band": "behind",
+  "title": "The Artist's Way",
+  "author": "Julia Cameron",
+  "url": "https://www.audible.com/pd/The-Artists-Way-25th-Anniversary-Edition-Audiobook/0593452526",
+  "why": "",
+  "tags": [
+   "writing",
+   "creativity"
+  ],
+  "stories": [
+   "hand-crafted-with-ai",
+   "big-ideas"
+  ]
+ },
+ {
+  "kind": "book",
+  "band": "namesakes",
+  "title": "The Expanse",
+  "author": "James S. A. Corey",
+  "url": "https://www.audible.com/pd/Leviathan-Wakes-Audiobook/B073H9PF2D",
+  "why": "",
+  "named": "Holden (chat), Naomi (builder), Alex (reviewer), Amos, Miller, Tycho (the Mac Mini), the Rocinante, Tightbeam",
+  "tags": [
+   "the expanse",
+   "sci-fi",
+   "namesakes"
+  ],
+  "stories": [
+   "claude-chat-claude-code-and-me",
+   "the-master-control-project",
+   "the-day-i-killed-fred"
+  ]
+ },
+ {
+  "kind": "book",
+  "band": "namesakes",
+  "title": "Bobiverse",
+  "author": "Dennis E. Taylor",
+  "url": "https://www.audible.com/pd/We-Are-Legion-We-Are-Bob-Audiobook/B01L082HJ2",
+  "why": "",
+  "named": "Bob (chief of staff bot) and the We Are Bob project",
+  "tags": [
+   "bobiverse",
+   "sci-fi",
+   "namesakes"
+  ],
+  "stories": [
+   "whos-driving",
+   "a-house-to-live-in"
+  ]
+ },
+ {
+  "kind": "book",
+  "band": "namesakes",
+  "title": "Expeditionary Force",
+  "author": "Craig Alanson",
+  "url": "https://www.audible.com/pd/Columbus-Day-Audiobook/B01N48VJFJ",
+  "why": "",
+  "named": "Skippy",
+  "tags": [
+   "expeditionary force",
+   "sci-fi",
+   "namesakes"
+  ],
+  "stories": [
+   "the-effort-of-being-a-team",
+   "i-am-the-root",
+   "the-man-behind-the-curtain",
+   "whos-driving"
+  ]
+ }
+]

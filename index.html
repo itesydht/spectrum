@@ -91,9 +91,16 @@
   .empty{grid-column:1/-1;text-align:center;color:var(--fg2);padding:60px 20px;border:1px dashed var(--bg2);border-radius:var(--r)}
   .empty b{display:block;font-family:var(--heading);font-size:20px;color:var(--fg);margin-bottom:6px}
 
-  /* shelf */
+  .perma{color:var(--fg3);font-size:12px;margin-left:8px;text-decoration:none} .perma:hover{color:var(--pop)}
+  .card .cover{display:none;width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:6px;margin:4px 0 2px;background:var(--bg2)}
+  .card.open .cover{display:block}
+  .card .more .cite{display:flex;justify-content:space-between;gap:10px} .card .more .cite small{color:var(--fg3);flex:none}
+  .now{border:1px solid var(--pop-40);background:var(--pop-20);border-radius:var(--r);padding:12px 16px;margin:0 0 14px;font-size:13.5px;color:var(--fg)}
+  .now b{color:var(--pop);font-weight:600;letter-spacing:.8px;text-transform:uppercase;font-size:11px;margin-right:10px}
+  .now a{color:var(--fg)} .now a:hover{color:var(--pop)}
+  /* library */
   .shelf-note{color:var(--fg2);font-size:14px;line-height:1.55;max-width:62ch;margin:0 0 18px}
-  .book .top .no{color:var(--fg2)}
+  .book .top .no{color:var(--fg2);text-transform:uppercase;letter-spacing:.8px;font-size:10.5px}
   .book h3{font-size:18px}
   .book .by{color:var(--fg2);font-size:13px;margin-top:-4px}
 
@@ -117,7 +124,7 @@
     <nav>
       <a href="https://pulse.itesydht.com">Pulse</a>
       <a href="#stories" id="nav-stories" class="on">Stories</a>
-      <a href="#shelf" id="nav-shelf">Shelf</a>
+      <a href="#library" id="nav-library">Library</a>
       <a href="https://pulse.itesydht.com/about">About</a>
     </nav>
   </div>
@@ -150,10 +157,15 @@
     <div class="grid" id="grid"></div>
   </section>
 
-  <section id="view-shelf" hidden>
-    <div class="meta"><div><b id="bcount">0</b> books</div></div>
-    <p class="shelf-note">The shelf is what I keep going back to: the books, talks, and papers behind the stories. Each one links to the stories it informed, and those stories link back here.</p>
-    <div class="grid" id="shelf"></div>
+  <section id="view-library" hidden>
+    <div id="library-filters">
+      <div class="bands" id="lbands"></div>
+      <div class="lbl">Kind</div>
+      <div class="freqs" id="lkinds"></div>
+    </div>
+    <div class="meta"><div><b id="bcount">0</b> <span id="bcount-word">items</span> <span id="lactive"></span></div></div>
+    <div id="reading-now"></div>
+    <div class="grid" id="library"></div>
   </section>
 </main>
 
@@ -170,7 +182,9 @@
   try{ data=await (await fetch('data/posts.json')).json(); }
   catch(e){ data=window.__SPECTRUM__||{posts:[],books:[],series:[]}; }
   const posts=(data.posts||[]).slice().sort((a,b)=>a.n-b.n);
-  const books=data.books||[];
+  const books=(data.library||data.books||[]).map((b,i)=>Object.assign({i,kind:'book',band:'library',stories:[],tags:[]},b));
+  const BANDS={behind:'Behind the stories',namesakes:'Namesakes',library:'Library'};
+  const KINDS={book:'Book',podcast:'Podcast',video:'Video',talk:'Talk',paper:'Paper',site:'Site',tool:'Tool'};
   const seriesList=data.series||[];
   const bySlug=Object.fromEntries(posts.map(p=>[p.slug,p]));
   // reverse links: who links to me
@@ -185,7 +199,13 @@
   const fmtS=d=>new Date(d+'T12:00:00').toLocaleDateString('en-US',{month:'short',year:'2-digit'});
 
   // state
-  let q='', band=null, freqs=new Set(), sort='new', view=(location.hash==='#shelf'?'shelf':'stories');
+  let q='', band=null, freqs=new Set(), sort='new', view='stories', lband=null, lkind=null, openSlug=null;
+  function readHash(){
+    const h=decodeURIComponent(location.hash.replace(/^#/,''));
+    if(h==='library'){ view='library'; openSlug=null; }
+    else if(bySlug[h]){ view='stories'; openSlug=h; }
+    else { view='stories'; openSlug=null; }
+  }
 
   // bands (series) and frequencies (keywords)
   const bandCounts={}; posts.forEach(p=>{const k=p.series.name; bandCounts[k]=(bandCounts[k]||0)+1;});
@@ -250,13 +270,16 @@
   function card(p,terms){
     const band=p.series.name!=='Standalone'?p.series.name:null;
     const tags=[band?`<span class="band">${esc(band)}</span>`:'',...(p.keywords||[]).slice(0,4).map(k=>`<span>${esc(k)}</span>`)].join('');
-    const nLinks=(p.links_to||[]).length+(p.linked_from||[]).length+(p.books||[]).length;
+    const nLinks=(p.links_to||[]).length+(p.linked_from||[]).length+(p.books||[]).length+(p.cites||[]).length;
     const more=`
+      ${p.cover_image?`<img class="cover" loading="lazy" src="${esc(p.cover_image)}" alt="">`:''}
       ${(p.bold_lines||[]).length?`<div class="mlbl">The line</div><div class="key">${esc(p.bold_lines[0])}</div>`:''}
       ${(p.links_to||[]).length?`<div class="mlbl">Builds on</div>${p.links_to.map(s=>bySlug[s]?`<a href="${bySlug[s].url}">№${bySlug[s].n} · ${esc(bySlug[s].title)}</a>`:'').join('')}`:''}
       ${(p.linked_from||[]).length?`<div class="mlbl">Picked up in</div>${p.linked_from.map(s=>`<a href="${bySlug[s].url}">№${bySlug[s].n} · ${esc(bySlug[s].title)}</a>`).join('')}`:''}
-      ${(p.books||[]).length?`<div class="mlbl">On the shelf</div>${p.books.map(b=>`<a href="#shelf">${esc(b.title)}</a>`).join('')}`:''}`;
-    return `<article class="card" data-slug="${esc(p.slug)}">
+      ${(p.books||[]).length?`<div class="mlbl">From the library</div>${p.books.map(b=>`<a href="${b.url?esc(b.url):'#library'}">${esc(b.title)}${b.author?` <small style="color:var(--fg3)">· ${esc(b.author)}</small>`:''}</a>`).join('')}`:''}
+      ${(p.cites||[]).length?`<div class="mlbl">Cited</div>${p.cites.map(c=>`<a class="cite" href="${esc(c.url)}"><span>${esc(c.label)}</span><small>${esc(c.host)}</small></a>`).join('')}`:''}
+      <div class="mlbl" style="margin-top:10px"><a class="perma" style="margin:0" href="${esc(p.url)}">Read the story →</a> <a class="perma" href="#${esc(p.slug)}" title="Link to this card">§ link</a></div>`;
+    return `<article class="card ${openSlug===p.slug?'open':''}" data-slug="${esc(p.slug)}">
       <div class="top"><span class="no">№ ${p.n}</span><span>${fmt(p.date)}</span></div>
       <h3><a href="${esc(p.url)}">${hl(p.title,terms)}</a></h3>
       ${p.subtitle?`<div class="sub">${hl(p.subtitle,terms)}</div>`:''}
@@ -294,40 +317,66 @@
     ['new','old','rel'].forEach(s=>$('#s-'+s).classList.toggle('on',sort===s));
   }
 
-  function renderShelf(){
-    $('#bcount').textContent=books.length;
-    $('#shelf').innerHTML=books.length?books.map((b,i)=>`<article class="card book">
-      <div class="top"><span class="no">${esc(b.kind||'Book')}</span><span>${esc(b.year||'')}</span></div>
+  function libFiltered(){
+    const terms=norm(q).split(/\s+/).filter(Boolean).map(stem);
+    return books.filter(b=>{
+      if(lband&&b.band!==lband) return false;
+      if(lkind&&b.kind!==lkind) return false;
+      if(!terms.length) return true;
+      const ws=words([b.title,b.author,b.why,b.named,(b.tags||[]).join(' '),(b.stories||[]).map(s=>bySlug[s]?.title||'').join(' ')].join(' '));
+      return terms.every(t=>hitsIn(ws,t));
+    });
+  }
+  function renderLibrary(){
+    const bc={}; books.forEach(b=>bc[b.band]=(bc[b.band]||0)+1);
+    const kc={}; books.forEach(b=>kc[b.kind]=(kc[b.kind]||0)+1);
+    $('#lbands').innerHTML=[['',`All<span class="n">${books.length}</span>`],...Object.keys(BANDS).filter(k=>bc[k]).map(k=>[k,`${BANDS[k]}<span class="n">${bc[k]}</span>`])]
+      .map(([k,l])=>`<button class="chip ${(lband||'')===k?'on':''}" data-lband="${k}">${l}</button>`).join('');
+    $('#lkinds').innerHTML=Object.keys(kc).map(k=>`<button class="chip ${lkind===k?'on':''}" data-lkind="${k}">${KINDS[k]||k}<span class="n">${kc[k]}</span></button>`).join('');
+    const now=books.filter(b=>b.status==='reading');
+    $('#reading-now').innerHTML=now.length?`<div class="now"><b>Reading now</b>${now.map(b=>`${b.url?`<a href="${esc(b.url)}">${esc(b.title)}</a>`:esc(b.title)}${b.author?` <span style="color:var(--fg2)">· ${esc(b.author)}</span>`:''}`).join(' &nbsp;·&nbsp; ')}</div>`:'';
+    const list=libFiltered();
+    $('#bcount').textContent=list.length; $('#bcount-word').textContent=list.length===1?'item':'items';
+    $('#lactive').textContent=[lband?`in ${BANDS[lband]}`:'',lkind?`· ${KINDS[lkind]||lkind}`:'',q?`· "${q}"`:''].filter(Boolean).join(' ');
+    $('#library').innerHTML=list.length?list.map(b=>`<article class="card book">
+      <div class="top"><span class="no">${esc(KINDS[b.kind]||b.kind)}${b.band!=='library'?` · ${esc(BANDS[b.band])}`:''}</span><span>${esc(b.year||'')}${b.status==='reading'?' · reading':''}</span></div>
       <h3>${b.url?`<a href="${esc(b.url)}">${esc(b.title)}</a>`:esc(b.title)}</h3>
-      <div class="by">${esc(b.author||'')}</div>
-      <div class="ex">${esc(b.why||'')}</div>
+      ${b.author?`<div class="by">${esc(b.author)}</div>`:''}
+      ${b.why?`<div class="ex">${esc(b.why)}</div>`:'<div class="ex"></div>'}
+      ${b.named?`<div class="key" style="font-family:var(--heading);font-style:italic;color:var(--fg);font-size:13.5px">Named: ${esc(b.named)}</div>`:''}
       <div class="tags">${(b.tags||[]).map(k=>`<span>${esc(k)}</span>`).join('')}</div>
-      ${(b.stories||[]).length?`<div class="more" style="display:block"><div class="mlbl">Behind</div>${b.stories.map(s=>bySlug[s]?`<a href="${bySlug[s].url}">№${bySlug[s].n} · ${esc(bySlug[s].title)}</a>`:'').join('')}</div>`:''}
-    </article>`).join(''):`<div class="empty"><b>The shelf is being stocked.</b>First titles land soon.</div>`;
+      ${(b.stories||[]).length?`<div class="more" style="display:block"><div class="mlbl">Behind</div>${b.stories.map(s=>bySlug[s]?`<a href="#${esc(s)}">№${bySlug[s].n} · ${esc(bySlug[s].title)}</a>`:'').join('')}</div>`:''}
+    </article>`).join(''):`<div class="empty"><b>Nothing on that frequency.</b>Try another word or clear a chip.</div>`;
+    renderDial([]); $('#dial').style.display='none'; $('.dial-cap').style.display='none';
   }
 
   function setView(v){
     view=v;
     $('#view-stories').hidden=v!=='stories'; $('#stories-filters').hidden=v!=='stories';
-    $('#view-shelf').hidden=v!=='shelf';
-    $('#nav-stories').classList.toggle('on',v==='stories'); $('#nav-shelf').classList.toggle('on',v==='shelf');
-    $('#h1').innerHTML=v==='shelf'?'What\'s on the <span>shelf</span>.':'Find the <span>story</span> you\'re looking for.';
-    $('#lede').textContent=v==='shelf'?'The books, talks, and papers behind the stories, and the stories they shaped.':'Pulse is the Tuesday transmission. Spectrum is the whole band: every story, every series, every thread, on one dial. Start typing.';
-    if(v==='shelf') renderShelf(); else render();
+    $('#view-library').hidden=v!=='library';
+    $('#nav-stories').classList.toggle('on',v==='stories'); $('#nav-library').classList.toggle('on',v==='library');
+    $('#h1').innerHTML=v==='library'?'The <span>library</span> behind the stories.':'Find the <span>story</span> you\'re looking for.';
+    $('#lede').textContent=v==='library'?'Books, podcasts, and talks I keep going back to, and the stories each one shaped. Type to tune.':'Pulse is the Tuesday transmission. Spectrum is the whole band: every story, every series, every thread, on one dial. Start typing.';
+    $('#q').placeholder=v==='library'?'Expanse, Dune, leadership, habits…':'memory, agents, Skippy, leadership, Claude…';
+    if(v==='library') renderLibrary(); else { $('#dial').style.display=''; $('.dial-cap').style.display=''; render(); }
+    if(v==='stories'&&openSlug){ const el=document.querySelector(`.card[data-slug="${openSlug}"]`); if(el){ el.scrollIntoView({behavior:'smooth',block:'start'}); } }
   }
 
   // events
-  $('#q').addEventListener('input',e=>{q=e.target.value; if(q&&sort==='new') sort='rel'; if(!q&&sort==='rel') sort='new'; render();});
-  $('#clear').addEventListener('click',()=>{q='';$('#q').value='';sort='new';render();$('#q').focus();});
+  const rerender=()=>view==='library'?renderLibrary():render();
+  $('#q').addEventListener('input',e=>{q=e.target.value; if(q&&sort==='new') sort='rel'; if(!q&&sort==='rel') sort='new'; $('#tuner').classList.toggle('has',!!q); rerender();});
+  $('#clear').addEventListener('click',()=>{q='';$('#q').value='';sort='new';$('#tuner').classList.remove('has');rerender();$('#q').focus();});
   document.addEventListener('keydown',e=>{ if(e.key==='/'&&document.activeElement!==$('#q')){e.preventDefault();$('#q').focus();} if(e.key==='Escape'){$('#q').blur();} });
   $('#bands').addEventListener('click',e=>{const b=e.target.closest('[data-band]'); if(!b) return; band=b.dataset.band==='All'?null:b.dataset.band; render();});
   $('#freqs').addEventListener('click',e=>{const b=e.target.closest('[data-kw]'); if(!b) return; const k=b.dataset.kw; freqs.has(k)?freqs.delete(k):freqs.add(k); render();});
   $('#grid').addEventListener('click',e=>{const t=e.target.closest('[data-toggle]'); if(!t) return; t.closest('.card').classList.toggle('open');});
   $('#dial').addEventListener('click',e=>{const i=e.target.closest('i[data-n]'); if(!i) return; const el=document.querySelector(`.card[data-slug="${posts[+i.dataset.n-1].slug}"]`); el&&el.scrollIntoView({behavior:'smooth',block:'center'}); el&&el.classList.add('open');});
   ['new','old','rel'].forEach(s=>$('#s-'+s).addEventListener('click',()=>{sort=s;render();}));
-  window.addEventListener('hashchange',()=>setView(location.hash==='#shelf'?'shelf':'stories'));
+  $('#lbands').addEventListener('click',e=>{const b=e.target.closest('[data-lband]'); if(!b) return; lband=b.dataset.lband||null; renderLibrary();});
+  $('#lkinds').addEventListener('click',e=>{const b=e.target.closest('[data-lkind]'); if(!b) return; lkind=lkind===b.dataset.lkind?null:b.dataset.lkind; renderLibrary();});
+  window.addEventListener('hashchange',()=>{ readHash(); setView(view); });
 
-  setView(view);
+  readHash(); setView(view);
   if(window.matchMedia('(min-width:700px)').matches) $('#q').focus();
 })();
 </script>

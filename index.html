@@ -348,7 +348,8 @@
   catch(e){ data=window.__SPECTRUM__||{posts:[],books:[],series:[]}; }
   const posts=(data.posts||[]).slice().sort((a,b)=>a.n-b.n);
   const books=(data.library||data.books||[]).map((b,i)=>Object.assign({i,kind:'book',stories:[],cited:[],tags:[],titles:[],shelf:'Other'},b,{bands:b.bands||[b.band||'nonfiction']}));
-  const BANDS={namesakes:'Namesakes',behind:'Behind the stories'};
+  const BANDS={source:'Source material',namesakes:'Namesakes',behind:'Behind the stories'};
+  const isSource=b=>b.bands.includes('behind')||b.bands.includes('namesakes');
   const SHELVES=[...new Set(books.map(b=>b.shelf))];
   const KINDS={series:'Series',book:'Book',podcast:'Podcast',video:'Video',talk:'Talk',paper:'Paper',site:'Site',tool:'Tool'};
   const seriesList=data.series||[];
@@ -365,7 +366,7 @@
   const fmtS=d=>new Date(d+'T12:00:00').toLocaleDateString('en-US',{month:'short',year:'2-digit'});
 
   // state
-  let q='', band=null, freqs=new Set(), sort='new', view='stories', lband=null, lkind=null, openSlug=null, shown=null;
+  let q='', band=null, freqs=new Set(), sort='new', view='stories', lband='source', lkind=null, openSlug=null, shown=null;
   function readHash(){
     const h=decodeURIComponent(location.hash.replace(/^#/,''));
     if(h==='library'){ view='library'; openSlug=null; }
@@ -533,7 +534,8 @@
   function libFiltered(){
     const terms=norm(q).split(/\s+/).filter(Boolean).map(stem);
     return books.filter(b=>{
-      if(lband&&!(b.bands.includes(lband)||b.shelf===lband)) return false;
+      if(lband==='source'){ if(!isSource(b)) return false; }
+      else if(lband&&!(b.bands.includes(lband)||b.shelf===lband)) return false;
       if(lkind&&b.kind!==lkind) return false;
       if(!terms.length) return true;
       const ws=words([b.title,b.author,b.narrator,b.why,b.named,b.summary,b.shelf,(b.tags||[]).join(' '),(b.titles||[]).map(t=>t.title).join(' '),[...(b.cited||[]),...(b.stories||[])].map(s=>bySlug[s]?.title||'').join(' ')].join(' '));
@@ -541,11 +543,11 @@
     });
   }
   function renderLibrary(){
-    const bc={}; books.forEach(b=>{b.bands.forEach(k=>bc[k]=(bc[k]||0)+1); bc[b.shelf]=(bc[b.shelf]||0)+1;});
+    const bc={}; books.forEach(b=>{b.bands.forEach(k=>bc[k]=(bc[k]||0)+1); bc[b.shelf]=(bc[b.shelf]||0)+1; if(isSource(b)) bc.source=(bc.source||0)+1;});
     const kc={}; books.forEach(b=>kc[b.kind]=(kc[b.kind]||0)+1);
     const order=['Science Fiction','Leadership / Business','Psychology / Mental Performance','Negotiation / Communication','Health / Performance','Finance / Strategy','Memoir / Biography','Fiction / Other','Other'];
     const shelves=SHELVES.slice().sort((a,b)=>(order.indexOf(a)+1||99)-(order.indexOf(b)+1||99));
-    $('#lbands').innerHTML=[['',`All<span class="n">${books.length}</span>`],...Object.keys(BANDS).filter(k=>bc[k]).map(k=>[k,`${BANDS[k]}<span class="n">${bc[k]}</span>`]),...shelves.map(k=>[k,`${esc(k)}<span class="n">${bc[k]}</span>`])]
+    $('#lbands').innerHTML=[['source',`Source material<span class="n">${bc.source||0}</span>`],['',`Everything I've read<span class="n">${books.length}</span>`],...Object.keys(BANDS).filter(k=>k!=='source'&&bc[k]).map(k=>[k,`${BANDS[k]}<span class="n">${bc[k]}</span>`]),...shelves.map(k=>[k,`${esc(k)}<span class="n">${bc[k]}</span>`])]
       .map(([k,l])=>`<button class="chip ${(lband||'')===k?'on':''}" data-lband="${esc(k)}">${l}</button>`).join('');
     $('#lkinds').innerHTML=Object.keys(kc).map(k=>`<button class="chip ${lkind===k?'on':''}" data-lkind="${k}">${KINDS[k]||k}<span class="n">${kc[k]}</span></button>`).join('');
     const now=books.filter(b=>b.status==='reading');
@@ -600,6 +602,7 @@
   $('#dial').addEventListener('click',e=>{const i=e.target.closest('i[data-n]'); if(!i) return; openStory(posts[+i.dataset.n-1].slug);});
   ['new','old','rel'].forEach(s=>$('#s-'+s).addEventListener('click',()=>{sort=s;render();}));
   $('#lbands').addEventListener('click',e=>{const b=e.target.closest('[data-lband]'); if(!b) return; lband=b.dataset.lband||null; renderLibrary();});
+  $('#q').addEventListener('input',()=>{ if(view==='library'&&lband==='source'&&$('#q').value.trim()){ lband=null; renderLibrary(); } });
   $('#lkinds').addEventListener('click',e=>{const b=e.target.closest('[data-lkind]'); if(!b) return; lkind=lkind===b.dataset.lkind?null:b.dataset.lkind; renderLibrary();});
   readHash(); setView(view); if(openSlug) openStory(openSlug);
   if(window.matchMedia('(min-width:700px)').matches) $('#q').focus();

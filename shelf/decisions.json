@@ -126,7 +126,9 @@
     "whos-driving"
    ],
    "cited": [
-    "a-house-to-live-in"
+    "a-house-to-live-in",
+    "the-master-control-project",
+    "whos-driving"
    ],
    "match": [
     "Bob Johansson",
@@ -152,7 +154,8 @@
    "match": [
     "Jocko",
     "Willink"
-   ]
+   ],
+   "summary": "Jocko Willink and Leif Babin take lessons from leading SEAL teams in Ramadi and apply them to business: the leader owns every outcome, including the ones that were someone else's fault; plans stay simple; priorities get executed one at a time; and leading up the chain matters as much as leading down."
   },
   "Crucial Conversations": {
    "why": "",
@@ -185,7 +188,8 @@
     "the-loss-of-leadership",
     "even-ai-needs-the-why"
    ],
-   "cited": []
+   "cited": [],
+   "summary": "Nicole Forsgren, Jez Humble, and Gene Kim report four years of State of DevOps survey research and the four metrics that separate high performers from the rest: deployment frequency, lead time for changes, change failure rate, and time to restore. The argument is that software delivery performance predicts organizational performance, and that culture, architecture, and continuous delivery practices are what drive it."
   },
   "ADD-Friendly Ways to Organize Your Life Second Edition": {
    "why": "",
@@ -217,7 +221,8 @@
     "the-simplest-system",
     "the-whole-haystack"
    ],
-   "cited": []
+   "cited": [],
+   "summary": "Brian Christian and Tom Griffiths take problems computer science has solved, like when to stop searching, how to schedule, how to cache, and when to explore versus exploit, and show how the same math applies to apartments, closets, and calendars. The payoff is permission: some problems are hard for everyone, and the optimal strategy still gets it wrong a known share of the time."
   },
   "Ask Your Developer": {
    "why": "",
@@ -232,7 +237,8 @@
    "stories": [
     "the-loss-of-leadership"
    ],
-   "cited": []
+   "cited": [],
+   "summary": "Twilio founder Jeff Lawson argues that every company is now a software company and that the winners treat developers as creative partners rather than order-takers. Small autonomous teams, clear customer problems, and the discipline to build what differentiates you and buy the rest. A CEO's book about why the people closest to the code should be in the room."
   },
   "Atomic Habits": {
    "why": "",
@@ -269,9 +275,8 @@
     "the-shamrock"
    ],
    "cited": [],
-   "match": [
-    "Goggins"
-   ]
+   "match": [],
+   "summary": "David Goggins's memoir: an abusive childhood, obesity, and a dead-end job, then a self-made transformation into a Navy SEAL and ultra-endurance athlete. The method is callousing the mind by doing the thing you least want to do, with the 40 percent rule and the accountability mirror as the tools. Blunt, profane, and effective for a certain kind of reader."
   },
   "Elon Musk": {
    "why": "",
@@ -287,7 +292,9 @@
     "the-simplest-system",
     "the-master-control-project"
    ],
-   "cited": []
+   "cited": [],
+   "shelf": "Memoir / Biography",
+   "summary": "Walter Isaacson shadowed Musk for two years and interviewed everyone around him for this biography, from a brutal South African childhood through PayPal, Tesla, SpaceX, Neuralink, and the Twitter purchase. It is a portrait of risk tolerance and cruelty in the same person, and of how much of the drive comes from the same place as the damage."
   },
   "Emotional Intelligence 2.0": {
    "why": "",
@@ -322,7 +329,8 @@
    "match": [
     "Cagan",
     "Marty Cagan"
-   ]
+   ],
+   "summary": "Marty Cagan and Chris Jones on what it takes to run product teams that are given problems to solve rather than features to build: coaching, staffing, product vision and strategy, team objectives, and the leadership behaviors that make or break autonomy. The sequel to Inspired, aimed at the managers rather than the product people."
   },
   "Irreplaceable": {
    "why": "",
@@ -354,7 +362,8 @@
     "taking-a-walk",
     "montana"
    ],
-   "cited": []
+   "cited": [],
+   "summary": "Viktor Frankl's account of surviving Auschwitz and Dachau, followed by the outline of logotherapy, the psychology he built from it. The thesis is that people can endure almost anything if they find meaning in it, and that the last human freedom is choosing one's attitude in a given set of circumstances. Short, and one of the most reread books of the twentieth century."
   },
   "Never Finished": {
    "why": "",
@@ -422,7 +431,8 @@
    "cited": [],
    "match": [
     "Rosenberg"
-   ]
+   ],
+   "summary": "Marshall Rosenberg's method for saying hard things without attacking: observe without judging, name the feeling, name the need behind it, and make a clear request. The claim is that most conflict is unmet needs expressed as blame, and that the four steps work in marriages, boardrooms, and classrooms alike. Earnest, sometimes awkward, and widely used."
   },
   "Rewired: The McKinsey Guide to Outcompeting in the Age of Digital and AI": {
    "why": "",
@@ -486,7 +496,8 @@
     "rage-against-the-machine",
     "confidence-man"
    ],
-   "cited": []
+   "cited": [],
+   "shelf": "Fiction / Other"
   },
   "Team Topologies": {
    "why": "",
@@ -540,7 +551,8 @@
    ],
    "match": [
     "van der Kolk"
-   ]
+   ],
+   "summary": "Bessel van der Kolk's synthesis of three decades of trauma research: how overwhelming experience rewires the brain and the body, why talk alone often fails, and what helps, from EMDR and yoga to neurofeedback and theater. The book that moved trauma from a psychiatric niche into general conversation, and the source of the idea that feelings are information rather than instructions."
   },
   "Think Like a Rocket Scientist": {
    "why": "",
@@ -556,12 +568,15 @@
     "big-ideas",
     "the-chaos-test"
    ],
-   "cited": []
+   "cited": [],
+   "shelf": "Psychology / Mental Performance",
+   "summary": "Ozan Varol, a former Mars rover engineer turned law professor, distills nine strategies from aerospace into everyday thinking: reason from first principles, run thought experiments, test as you fly, and treat failure and success as equally suspect. Light on rocket science, heavy on how to question defaults."
   },
   "Dungeon Crawler Carl": {
    "match": [
     "Dungeon Crawler"
-   ]
+   ],
+   "summary": "Matt Dinniman's first Dungeon Crawler book. Coast Guard veteran Carl and his ex's cat, Princess Donut, survive the night Earth is turned into a televised alien dungeon game, and start descending through its floors as the galaxy watches and bets. LitRPG with real jokes and real stakes; the audiobook performance is a big part of the appeal."
   },
   "Essentialism": {
    "match": [
@@ -574,13 +589,96 @@
    ]
   },
   "Networking for People Who Hate Networking, Second Edition": {
-   "summary": "Devora Zack's case that introverts don't need to fake extroversion to build a network. Fewer rooms, deeper conversations, follow-up that actually happens; a plan for people who find the standard advice exhausting and a little dishonest."
+   "summary": "Devora Zack's case that introverts don't need to fake extroversion to build a network. Fewer rooms, deeper conversations, follow-up that actually happens; a plan for people who find the standard advice exhausting and a little dishonest.",
+   "shelf": "Negotiation / Communication"
   },
   "Notes on Being a Man": {
-   "summary": "Scott Galloway on why boys and young men are falling behind in school, work, and relationships, and what a decent modern masculinity looks like: provide, protect, procreate reframed as responsibility, physical and financial strength, and showing up for other people."
+   "summary": "Scott Galloway on why boys and young men are falling behind in school, work, and relationships, and what a decent modern masculinity looks like: provide, protect, procreate reframed as responsibility, physical and financial strength, and showing up for other people.",
+   "shelf": "Psychology / Mental Performance"
   },
   "Dune": {
    "summary": "Frank Herbert's Dune and its sequels, with the prequels Brian Herbert and Kevin J. Anderson wrote from his notes: Arrakis, the spice, the Fremen, and Paul Atreides becoming something his own mother fears. Politics, ecology, and religion as one system, written in 1965 and still the template for the genre."
+  },
+  "Remembrance of Earth's Past (Three-Body)": {
+   "author": "Cixin Liu",
+   "summary": "Cixin Liu's trilogy (The Three-Body Problem, The Dark Forest, Death's End) about first contact set in motion during China's Cultural Revolution, and the centuries of consequence that follow. Hard science fiction with a cosmology of its own; the dark forest idea alone has outlived the books. Baoshu's authorized sequel, The Redemption of Time, is shelved alongside."
+  },
+  "Greenlights": {
+   "shelf": "Memoir / Biography",
+   "summary": "Matthew McConaughey's memoir, built from thirty-five years of diaries, about the moments life said yes, including the ones that looked like no at the time. Rom-com purgatory, the pivot to Dallas Buyers Club, a year in a trailer, his father's death. Read by the author, which is most of the appeal."
+  },
+  "A Promised Land": {
+   "shelf": "Memoir / Biography"
+  },
+  "Shadow Cell": {
+   "shelf": "Memoir / Biography",
+   "summary": "Andrew Bustamante's memoir of his years as a CIA covert operative, written with his wife and fellow officer Jihi Bustamante. Recruitment, training at the Farm, operations overseas, and the slow toll of living two lives, ending with the decision to leave. A spy memoir that spends as much time on marriage and trust as on tradecraft."
+  },
+  "Still Just a Geek": {
+   "shelf": "Memoir / Biography"
+  },
+  "Making It So": {
+   "shelf": "Memoir / Biography"
+  },
+  "Born a Crime": {
+   "shelf": "Memoir / Biography"
+  },
+  "The Decision": {
+   "shelf": "Psychology / Mental Performance",
+   "summary": "Kevin Hart's Audible Original, part memoir and part motivational talk, framed around the idea that life is a series of decisions and that the big ones get made in small, repeated choices. Comedy as a career case study: failed sets, a flop sitcom, and the work ethic that turned both into material."
+  },
+  "The Value of Others": {
+   "shelf": "Psychology / Mental Performance"
+  },
+  "The Art of Raising a Puppy": {
+   "shelf": "Fiction / Other",
+   "summary": "The Monks of New Skete, who have bred and trained German shepherds at their monastery for decades, on the first year of a dog's life: choosing a breeder, the critical socialization weeks, crate training, leadership without force, and the relationship the training is really building. The standard text for people who want a dog, not a project."
+  },
+  "The Immortality Key": {
+   "shelf": "Fiction / Other",
+   "summary": "Brian Muraresku's investigation into whether the religious rites of ancient Greece used psychedelic sacraments, and whether that practice carried into early Christianity. Part archaeology, part travelogue, built on chemistry done on ancient vessels. It is a hypothesis argued with enthusiasm, not a consensus history, and reads best that way."
+  },
+  "All Systems Red": {
+   "summary": "The first Murderbot novella. A security unit that has quietly hacked its own governor module would rather watch serials than talk to the humans it is contracted to protect, until a survey mission goes wrong and it has to decide how much of itself to reveal. Dry, fast, and the entry point to Martha Wells's series."
+  },
+  "Children of Time": {
+   "summary": "Adrian Tchaikovsky's novel of a terraforming project gone sideways: a nanovirus meant to uplift monkeys lands on spiders instead, and over thousands of years they build a civilization while the last humans arrive in a failing ark ship. Two species, one planet, and a question about what intelligence owes to intelligence."
+  },
+  "The Hitchhiker's Guide to the Galaxy": {
+   "summary": "Douglas Adams's first Hitchhiker novel. Arthur Dent is rescued from the demolition of Earth by his friend Ford Prefect, a researcher for the Guide, and bounces across the galaxy with a depressed robot, a two-headed president, and the answer to everything. The comedy that taught a generation of engineers how to be funny about systems."
+  },
+  "12 Rules for Life": {
+   "summary": "Jordan Peterson's twelve rules, from standing up straight to telling the truth, each worked out through psychology, myth, and his clinical practice. The argument underneath is that meaning is found by taking on responsibility, not by chasing comfort. Polarizing, long, and more careful than its reputation in either direction."
+  },
+  "Glucose Revolution": {
+   "summary": "Jessie Inchauspe's case that blood glucose spikes drive hunger, fatigue, and cravings, and that a handful of ordering and pairing tricks (vegetables first, protein with carbs, a walk after meals) flatten them. Practical and easy to try; the broader health claims are the author's framing rather than settled science, and critics have pushed back on some of them."
+  },
+  "The Power of Now": {
+   "summary": "Eckhart Tolle's spiritual teaching that suffering comes from identifying with the thinking mind and its past and future, and that presence, attention to this moment, is the way out. Written as questions and answers. Religious in spirit without a religion; take the promises as a practice to try, not a clinical claim."
+  },
+  "The Wandering Earth": {
+   "summary": "Cixin Liu's story collection, led by the title novella in which humanity bolts engines to the planet and drives it out of the solar system ahead of the sun's death. The rest range from a child's-eye view of a dying village to a mountain-climbing alien. Big ideas told plainly, and the quickest way to see what Liu does before committing to Three-Body."
+  },
+  "Roadkill": {
+   "summary": "Dennis E. Taylor's standalone: a young man hits something invisible on a back road and finds an alien, its ship, and its technology, then has to decide what to do with them while the rest of the world closes in. Light, quick, and in the same conversational register as the Bobiverse."
+  },
+  "The Singularity Trap": {
+   "summary": "Dennis E. Taylor's standalone about an asteroid miner who touches something he should not have and begins turning into a machine, while Earth argues over whether he is a threat. A first-contact and transhumanism story told at thriller pace, with Taylor's usual engineer's view of how things would actually break."
+  },
+  "Forever Strong™": {
+   "summary": "Dr. Gabrielle Lyon's case for muscle as the organ of longevity: protein targets most people miss, resistance training as medicine, and a reframing of obesity as under-muscled rather than over-fat. Practical plans for food and lifting, with the argument that healthy aging starts with skeletal muscle decades before it looks like a problem."
+  },
+  "Secrets to Winning at Office Politics": {
+   "summary": "Marie McIntyre's guide to the part of work nobody admits to: how influence actually flows, how to read power without becoming a schemer, and how to stop sabotaging yourself in meetings. Framed as political intelligence for people who find the whole subject distasteful but keep losing to those who don't."
+  },
+  "Solve for Happy": {
+   "summary": "Mo Gawdat, then chief business officer at Google X, lost his son Ali to a routine surgery and wrote this book from the engineering model of happiness he had built years earlier: happiness is greater than or equal to your perception of events minus your expectations of how life should be. Six illusions to drop, seven blind spots to correct, five truths to hold."
+  },
+  "Starry Messenger": {
+   "summary": "Neil deGrasse Tyson applies a cosmic perspective to earthbound arguments: politics, race, gender, war, law, and what we eat. The thread is that science is a way of knowing that cuts through tribal certainty, and that seeing Earth from far enough away changes what seems worth fighting over. Essays, not astrophysics."
+  },
+  "This Is Your Brain on Food": {
+   "summary": "Dr. Uma Naidoo, a Harvard psychiatrist and trained chef, on the gut-brain connection and how food affects anxiety, depression, ADHD, sleep, and memory. Condition by condition, what the evidence says to eat and avoid, with recipes. Nutritional psychiatry for a general reader."
   }
  }
 }

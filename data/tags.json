@@ -1,138 +1,102 @@
 {
  "the-scale": [
   "health",
-  "weight loss",
   "habits",
-  "discipline",
   "nutrition",
-  "personal",
   "systems thinking"
  ],
  "the-shamrock": [
   "fitness",
-  "running",
-  "discipline",
-  "friendship",
   "habits",
-  "personal",
-  "systems thinking"
+  "systems thinking",
+  "resilience"
  ],
  "feelings-are-data": [
-  "feelings",
-  "emotional resolution",
+  "emotions",
   "family",
-  "discipline",
-  "personal",
+  "habits",
   "self-knowledge",
-  "systems thinking"
+  "systems thinking",
+  "parenting",
+  "communication"
  ],
  "the-chaos-test": [
   "health",
   "family",
   "resilience",
-  "simplicity",
+  "simplification",
   "habits",
   "nutrition",
-  "personal",
   "systems thinking"
  ],
  "the-loss-of-leadership": [
   "leadership",
   "career",
-  "building",
   "engineering",
-  "team",
-  "organizational architecture",
-  "personal"
+  "teams"
  ],
  "the-thinking-partner": [
   "claude",
-  "thinking partner",
-  "neurodivergence",
-  "voice dictation",
-  "self-knowledge",
   "ai tools",
-  "personal"
+  "neurodivergence",
+  "self-knowledge",
+  "communication"
  ],
  "meet-claude": [
   "claude",
-  "context window",
-  "memory",
-  "how-to",
-  "prompting",
   "ai tools"
  ],
  "the-garage-gym": [
   "health",
   "fitness",
   "habits",
-  "discipline",
   "resilience",
-  "personal",
-  "simplicity"
+  "simplification"
  ],
  "totaling-the-prius": [
-  "personal",
-  "story",
-  "optimization",
-  "career",
+  "systems thinking",
   "resilience",
-  "humor"
+  "self-knowledge"
  ],
  "disagree-and-commit": [
   "pets",
   "family",
-  "commitment",
-  "systems thinking",
   "habits",
-  "personal",
-  "household"
+  "systems thinking"
  ],
  "freeipodscom": [
   "career",
-  "layoff",
   "resilience",
-  "startup",
-  "money",
-  "capability",
-  "personal",
   "engineering"
  ],
  "a-house-to-live-in": [
-  "building",
+  "engineering",
   "self-knowledge",
   "agents",
-  "newsletter",
-  "shipping",
-  "personal",
-  "we are bob"
+  "writing",
+  "product design",
+  "science fiction"
  ],
  "claude-chat-claude-code-and-me": [
   "claude",
   "agents",
-  "the expanse",
-  "github",
+  "science fiction",
+  "ai infrastructure",
   "coordination",
-  "naming",
-  "claude code",
   "systems thinking"
  ],
  "the-emulation-layer": [
   "neurodivergence",
-  "masking",
   "self-knowledge",
   "communication",
-  "personal",
-  "vulnerability",
   "systems thinking"
  ],
  "the-master-control-project": [
   "master control",
-  "capture",
+  "memory",
   "mcp",
-  "github",
-  "friction",
-  "claude",
+  "ai infrastructure",
+  "simplification",
   "agents",
   "systems thinking"
  ],
@@ -141,175 +105,135 @@
   "memory",
   "mcp",
   "claude",
-  "building",
   "simplification",
   "master control",
-  "avoidance"
+  "self-knowledge"
  ],
  "model-context-protocol": [
   "mcp",
   "paracortex",
-  "architecture",
-  "intuition",
+  "ai infrastructure",
+  "judgment",
   "agents",
-  "claude",
-  "engineering",
   "simplification"
  ],
  "the-simplest-system": [
   "systems thinking",
-  "simplicity",
-  "habits",
-  "memory",
-  "personal",
-  "travel",
-  "design"
+  "simplification",
+  "habits"
  ],
  "confidence-man": [
   "agents",
-  "confabulation",
   "verification",
   "trust",
   "skippy",
-  "claude",
-  "paracortex",
-  "master finance"
+  "claude"
  ],
  "hand-crafted-with-ai": [
   "writing",
-  "ai detection",
-  "substack",
-  "voice",
-  "process",
   "claude",
-  "authorship",
-  "newsletter"
+  "ai tools"
  ],
  "the-day-i-killed-fred": [
   "agents",
   "mcp",
-  "tightbeam",
-  "mac mini",
+  "ai infrastructure",
   "simplification",
-  "the expanse",
-  "claude",
-  "infrastructure"
+  "science fiction",
+  "claude"
  ],
  "wisdom-removed": [
   "family",
   "habits",
-  "discipline",
-  "feelings",
+  "emotions",
   "parenting",
-  "personal",
   "systems thinking"
  ],
  "drinking-from-the-garden-hose": [
-  "potable information",
   "trust",
-  "information",
+  "research",
   "verification",
   "agents",
-  "governance",
-  "metaphor"
+  "ai governance"
  ],
  "the-effort-of-being-a-team": [
   "skippy",
   "family",
   "coordination",
-  "agents",
-  "team",
-  "grok bots",
+  "teams",
   "product design",
-  "household"
+  "parenting"
  ],
  "montana": [
   "pets",
   "family",
-  "grief",
-  "kindness",
-  "personal",
-  "tribute"
+  "grief"
  ],
  "the-man-behind-the-curtain": [
   "skippy",
   "family",
-  "product discovery",
-  "wizard of oz",
+  "product design",
   "agents",
   "pets",
-  "household"
+  "parenting"
  ],
  "big-ideas": [
   "leadership",
-  "ideas",
   "writing",
-  "productivity",
   "self-knowledge",
   "ai tools",
-  "newsletter"
+  "communication"
  ],
  "taking-a-walk": [
   "leadership",
-  "self-leadership",
-  "feelings",
+  "emotions",
   "resilience",
   "grief",
-  "discipline",
-  "personal"
+  "habits"
  ],
  "i-am-the-root": [
   "skippy",
   "family",
-  "authority",
+  "ai governance",
   "agents",
-  "security",
-  "personality",
-  "household"
+  "product design"
  ],
  "even-ai-needs-the-why": [
   "leadership",
-  "ai transformation",
-  "vision",
   "trust",
-  "change management",
-  "organizations",
-  "team"
+  "teams",
+  "communication",
+  "ai tools"
  ],
  "claude-was-wrong": [
-  "jev",
+  "judgment",
   "claude",
   "paracorpus",
-  "judgment",
-  "pushback",
-  "primitives",
+  "product design",
   "systems thinking"
  ],
  "the-whole-haystack": [
   "paracorpus",
   "research",
-  "jev",
+  "judgment",
   "memory",
-  "mac mini",
-  "information",
+  "ai infrastructure",
   "agents"
  ],
  "rage-against-the-machine": [
-  "ai fear",
-  "learning",
+  "leadership",
+  "self-knowledge",
   "judgment",
   "family",
   "research",
-  "jobs",
+  "career",
   "claude"
  ],
  "whos-driving": [
   "agents",
   "family",
   "skippy",
-  "grok bots",
-  "facts over instructions",
-  "errors",
-  "household"
+  "verification",
+  "coordination"
  ]
 }

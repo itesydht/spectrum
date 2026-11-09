@@ -60,8 +60,15 @@ def short_title(t):
     head = t.split(":")[0].strip()
     return head if len(head) >= 8 else t.strip()
 
+CRED = re.compile(r"\s*\b(PhD|Ph\.D\.?|MD|M\.D\.?|D\.O\.?|MA|CCC|LCSW|Esq\.?)\b\.?", re.I)
 def clean_author(a):
-    return a.split(",")[0].split(" — ")[0].replace(" - translator","").strip()
+    names = []
+    for part in re.split(r",|;| — ", a or ""):
+        part = part.replace(" - translator", "").replace("- translator", "")
+        if "translator" in part.lower() or "narrator" in part.lower(): continue
+        part = CRED.sub("", part).strip(" ,")
+        if part and part not in names: names.append(part)
+    return ", ".join(names)
 
 HYPE = re.compile(r"(best.?sell|copies sold|#1|million|award|now a major|new york times|instant|phenomen|international|languages|translated|wall street journal|usa today)", re.I)
 def nodash(t):
@@ -106,7 +113,7 @@ def main():
             "bands": [], "why": "", "named": "", "stories": [], "tags": []})
         if not ser and not c["summary"]:
             d = clean_blurb(r["desc"])
-            if len(d) < 200:            # thin Audible blurb: prefer Open Library (shelf/enrich.py)
+            if len(d) < 200 or not re.search(r'[.!?"”)\]]\s*$', d):   # thin or truncated-by-export Audible blurb: prefer Open Library
                 d = clean_blurb(BLURBS.get(short_title(title)) or BLURBS.get(title) or "") or d
             c["summary"] = trim_to(d, 650)
         c["titles"].append({"title": short_title(title) if ser else title, "n": book_no(r), "finished": r["finished"],
@@ -135,12 +142,12 @@ def main():
         dec = DECISIONS.get("cards", {}).get(key) or DECISIONS.get("cards", {}).get(c["title"])
         c["cited"] = []
         if dec:
-            for f in ("why", "named", "tags", "stories", "cited", "match", "summary"):
+            for f in ("why", "named", "tags", "stories", "cited", "match", "summary", "author", "shelf"):
                 if dec.get(f): c[f] = dec[f]
             c["bands"] = [c["bands"][0]] + [b for b in dec.get("bands", []) if b in ("behind", "namesakes")]
         if c["cited"] and "behind" not in c["bands"]: c["bands"].append("behind")
         c["bands"] = list(dict.fromkeys(c["bands"]))
-        c["shelf"] = shelf_for(c)
+        c["shelf"] = (dec or {}).get("shelf") or shelf_for(c)
         out.append(c)
     # keep hand-added entries that aren't in Audible (podcasts, videos)
     for k, e in old.items():

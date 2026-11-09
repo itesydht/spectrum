@@ -159,21 +159,50 @@ def auto_cite(posts, library):
     shelf/decisions.json survive; this only adds. Title-case titles match
     case-sensitively (so 'never finished' in prose is not Goggins); authors and
     explicit `match` terms match case-insensitively."""
+    from collections import Counter
+    author_n = Counter(a.strip() for x in library for a in (x.get("author") or "").split(",") if a.strip())
     for b in library:
-        pats = []
+        mention, name = [], []
         names = {_main_title(b.get("title"))} | {_main_title(t.get("title")) for t in b.get("titles", [])}
         for n in names:
             if len(n) >= 6 and len(n.split()) >= 2 and n[0].isupper():
-                pats.append(re.compile(r"\b" + re.escape(n) + r"\b"))
-        for a in [b.get("author")] + list(b.get("match", [])):
-            if a and len(a) >= 5:
-                pats.append(re.compile(r"\b" + re.escape(a) + r"\b", re.I))
-        hits = [r["slug"] for r in posts if any(p.search(r["_text"]) for p in pats)]
-        cited = list(b.get("cited", []))
-        for h in hits:
-            if h not in cited:
-                cited.append(h)
+                mention.append(re.compile(r"\b" + re.escape(n) + r"\b"))
+        for a in (b.get("author") or "").split(","):
+            a = a.strip()
+            if len(a) >= 5 and author_n[a] == 1:       # an author with several books here is ambiguous; skip
+                mention.append(re.compile(r"\b" + re.escape(a) + r"\b", re.I))
+        for m in b.get("match", []):
+            if len(m) >= 4:
+                name.append(re.compile(r"\b" + re.escape(m) + r"\b", re.I))
+        cited = list(b.get("cited", []))            # hand-set cites are mentions
+        named_in = []
+        for r in posts:
+            if any(p.search(r["_text"]) for p in mention):
+                if r["slug"] not in cited: cited.append(r["slug"])
+            elif any(p.search(r["_text"]) for p in name):
+                if r["slug"] not in cited: cited.append(r["slug"])
+                named_in.append(r["slug"])
         b["cited"] = cited
+        b["named_in"] = named_in
+
+def prerender(posts, library):
+    """Plain HTML list inside <noscript> so crawlers and non-JS clients see the index."""
+    from html import escape as h
+    idx = ROOT / "index.html"
+    s = idx.read_text()
+    a, z = "<!-- prerender -->", "<!-- /prerender -->"
+    if a not in s or z not in s:
+        return
+    rows = ["<h2>Stories</h2><ol>"]
+    for p in sorted(posts, key=lambda r: -r["n"]):
+        rows.append(f'<li><a href="{h(p["url"])}">{h(p["title"])}</a>' + (f' <em>{h(p["subtitle"])}</em>' if p.get("subtitle") else "") + (f'<br>{h(p.get("synopsis") or p.get("excerpt") or "")}' ) + "</li>")
+    rows.append("</ol><h2>Library</h2><ul>")
+    for bk in library:
+        rows.append(f'<li><a href="{h(bk.get("url") or "")}">{h(bk["title"])}</a> · {h(bk.get("author") or "")} · {h(bk.get("shelf") or "")}</li>')
+    rows.append("</ul>")
+    new = a + "\n" + "\n".join(rows) + "\n" + z
+    s = s[: s.index(a)] + new + s[s.index(z) + len(z):]
+    idx.write_text(s)
 
 def load_json(path, default):
     try:
@@ -226,6 +255,7 @@ def main(check=False):
         print(f"{len(posts)} posts; {'CHANGED' if changed else 'unchanged'}")
         sys.exit(1 if changed else 0)
     target.write_text(json.dumps(out, indent=1, ensure_ascii=False) + "\n")
+    prerender(posts, library)
     print(f"wrote {target.relative_to(ROOT)}: {len(posts)} posts, {len(series)} series, {len(library)} in the library")
     if untagged:
         print(f"untagged ({len(untagged)}), add to data/tags.json: {', '.join(untagged)}")

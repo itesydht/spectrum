@@ -9,7 +9,7 @@ if python3 build.py --check >/dev/null 2>&1; then
   echo "$(date -u +%FT%TZ) unchanged"; exit 0
 fi
 python3 build.py
-git add data/posts.json
+git add data/posts.json index.html
 git -c user.name="Tycho" -c user.email="eddy@pobox.com" commit -q -m "Rebuild index: $(python3 -c "import json;print(len(json.load(open('data/posts.json'))['posts']))") stories
 
 Job: spectrum-rebuild"

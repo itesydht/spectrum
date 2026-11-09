@@ -24,7 +24,8 @@ def ol_description(title, author):
 def main_title(t): return re.split(r"[:(]", t)[0].strip()
 
 lib = json.load(open(HERE.parent / "data" / "library.json"))
-todo = [b for b in lib if b["kind"] == "book" and b["title"] not in cache]
+trunc = lambda s: not re.search(r'[.!?"”)\]]\s*$', s or "")
+todo = [b for b in lib if b["kind"] == "book" and (b["title"] not in cache or (not cache.get(b["title"]) and trunc(b.get("summary"))))]
 for b in todo:
     try:
         cache[b["title"]] = ol_description(main_title(b["title"]), b.get("author", ""))

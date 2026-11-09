@@ -343,7 +343,9 @@
   "finished": 3,
   "in_progress": 2,
   "cited": [
-   "a-house-to-live-in"
+   "a-house-to-live-in",
+   "the-master-control-project",
+   "whos-driving"
   ],
   "match": [
    "Bob Johansson",
@@ -355,7 +357,7 @@
  {
   "title": "Accelerate",
   "kind": "book",
-  "author": "Nicole Forsgren PhD",
+  "author": "Nicole Forsgren, Jez Humble, Gene Kim",
   "narrator": "Nicole Forsgren",
   "titles": [
    {
@@ -367,7 +369,7 @@
    }
   ],
   "url": "https://www.audible.com/pd/Accelerate-Building-and-Scaling-High-Performing-Technology-Organizations-Audiobook/B07BLZDZFQ",
-  "summary": "Accelerate your organization to win in the marketplace. How can we apply technology to drive business value? For years we've been told that the performance of software delivery teams doesn't matter - that it can't provide a competitive advantage to our companies. Throug",
+  "summary": "Nicole Forsgren, Jez Humble, and Gene Kim report four years of State of DevOps survey research and the four metrics that separate high performers from the rest: deployment frequency, lead time for changes, change failure rate, and time to restore. The argument is that software delivery performance predicts organizational performance, and that culture, architecture, and continuous delivery practices are what drive it.",
   "bands": [
    "nonfiction",
    "behind"
@@ -392,7 +394,7 @@
  {
   "title": "Elon Musk",
   "kind": "book",
-  "author": "Walter Isaacson",
+  "author": "Walter Isaacson, Walter Isaacson - introduction",
   "narrator": "Jeremy Bobb",
   "titles": [
    {
@@ -404,7 +406,7 @@
    }
   ],
   "url": "https://www.audible.com/pd/Elon-Musk-Audiobook/B0BX4SCV1V",
-  "summary": "The #1 New York Times and global bestseller from Walter Isaacson, the acclaimed author of Steve Jobs, Einstein: His Life and World, Benjamin Franklin, and Leonardo da Vinci, is the astonishingly intimate story of the most fascinating, controversial innovator of modern tim",
+  "summary": "Walter Isaacson shadowed Musk for two years and interviewed everyone around him for this biography, from a brutal South African childhood through PayPal, Tesla, SpaceX, Neuralink, and the Twitter purchase. It is a portrait of risk tolerance and cruelty in the same person, and of how much of the drive comes from the same place as the damage.",
   "bands": [
    "nonfiction",
    "behind"
@@ -423,7 +425,7 @@
   "finished": 1,
   "in_progress": 0,
   "cited": [],
-  "shelf": "Finance / Strategy"
+  "shelf": "Memoir / Biography"
  },
  {
   "title": "Never Finished",
@@ -469,7 +471,7 @@
  {
   "title": "Team Topologies",
   "kind": "book",
-  "author": "Matthew Skelton",
+  "author": "Matthew Skelton, Manuel Pais",
   "narrator": "Edward Bauer",
   "titles": [
    {
@@ -481,7 +483,7 @@
    }
   ],
   "url": "https://www.audible.com/pd/Team-Topologies-Organizing-Business-and-Technology-Teams-for-Fast-Flow-Audiobook/B07VZ2JKQP",
-  "summary": "Effective software teams are essential for any organization to deliver value continuously and sustainably. But how do you build the best team organization for your specific goals, culture, and needs? Team Topologies is a practical, step-by-step, adaptive model for organ",
+  "summary": "Effective software teams are essential for any organization to deliver value continuously and sustainably. But how do you build the best team organization for your specific goals, culture, and needs? Team Topologies is a practical, step-by-step, adaptive model for organizational design and team interaction based on four fundamental team types and three team interaction patterns. It is a model that treats teams as the fundamental means of delivery, where team structures and communication pathways are able to evolve with technological and organizational maturity.",
   "bands": [
    "nonfiction",
    "behind"
@@ -506,7 +508,7 @@
  {
   "title": "Algorithms to Live By",
   "kind": "book",
-  "author": "Brian Christian",
+  "author": "Brian Christian, Tom Griffiths",
   "narrator": "Brian Christian",
   "titles": [
    {
@@ -518,7 +520,7 @@
    }
   ],
   "url": "https://www.audible.com/pd/Algorithms-to-Live-By-Audiobook/B01D24NLWO",
-  "summary": "A fascinating exploration of how computer algorithms can be applied to our everyday lives, helping to solve common decision-making problems and illuminate the workings of the human mind All our lives are constrained by limited space and time, limits that give rise to a",
+  "summary": "Brian Christian and Tom Griffiths take problems computer science has solved, like when to stop searching, how to schedule, how to cache, and when to explore versus exploit, and show how the same math applies to apartments, closets, and calendars. The payoff is permission: some problems are hard for everyone, and the optimal strategy still gets it wrong a known share of the time.",
   "bands": [
    "nonfiction",
    "behind"
@@ -554,7 +556,7 @@
    }
   ],
   "url": "https://www.audible.com/pd/Ask-Your-Developer-Audiobook/0063018314",
-  "summary": "Jeff Lawson, developer turned CEO of Twilio (one of Bloomberg Businessweek's Top 50 Companies to Watch in 2021), creates a new playbook for unleashing the full potential of software developers in any organization, showing how to help management utilize this coveted and",
+  "summary": "Twilio founder Jeff Lawson argues that every company is now a software company and that the winners treat developers as creative partners rather than order-takers. Small autonomous teams, clear customer problems, and the discipline to build what differentiates you and buy the rest. A CEO's book about why the people closest to the code should be in the room.",
   "bands": [
    "nonfiction",
    "behind"
@@ -589,7 +591,7 @@
    }
   ],
   "url": "https://www.audible.com/pd/Cant-Hurt-Me-Audiobook/B07KKMNZCH",
-  "summary": "For David Goggins, childhood was a nightmare--poverty, prejudice, and physical abuse colored his days and haunted his nights. But through self-discipline, mental toughness, and hard work, Goggins transformed himself from a depressed, overweight young man with no future into a US Armed Forces icon and one of the world's top endurance athletes. The only man in history to complete elite training as a Navy SEAL, Army Ranger, and Air Force tactical air controller, he went on to set records in numerous endurance events, inspiring Outside magazine to name him the Fittest (Real) Man in America.",
+  "summary": "David Goggins's memoir: an abusive childhood, obesity, and a dead-end job, then a self-made transformation into a Navy SEAL and ultra-endurance athlete. The method is callousing the mind by doing the thing you least want to do, with the 40 percent rule and the accountability mirror as the tools. Blunt, profane, and effective for a certain kind of reader.",
   "bands": [
    "nonfiction",
    "behind"
@@ -608,15 +610,12 @@
   "finished": 0,
   "in_progress": 1,
   "cited": [],
-  "match": [
-   "Goggins"
-  ],
   "shelf": "Psychology / Mental Performance"
  },
  {
   "title": "Crucial Conversations",
   "kind": "book",
-  "author": "Joseph Grenny",
+  "author": "Joseph Grenny, Kerry Patterson, Ron McMillan, Al Switzler, Emily Gregory",
   "narrator": "Emily Gregory",
   "titles": [
    {
@@ -635,7 +634,7 @@
    }
   ],
   "url": "https://www.audible.com/pd/Crucial-Conversations-Third-Edition-Audiobook/B09MV39LHQ",
-  "summary": "The book that revolutionized business communications has been updated for today's workplace. Crucial Conversations provides powerful skills to ensure every conversation - especially difficult ones - leads to the results you want. Written in an engaging and witty style,",
+  "summary": "Crucial Conversations gives you the tools you need to step up to life's most difficult and important conversations, say what's on your mind, and achieve the positive resolutions you want. You'll learn how to:Prepare for high-impact situations with a six-minute mastery techniqueMake it safe to talk about almost anythingBe persuasive, not abrasiveKeep listening when others blow up or clam upTurn crucial conversations into the action and results you wantWhether they take place at work or at home, with your neighbors or your spouse, crucial conversations can have a profound impact on your career, your happiness, and your future.",
   "bands": [
    "nonfiction",
    "behind"
@@ -659,7 +658,7 @@
  {
   "title": "Emotional Intelligence 2.0",
   "kind": "book",
-  "author": "Travis Bradberry",
+  "author": "Travis Bradberry, Jean Greaves",
   "narrator": "Tom Parks",
   "titles": [
    {
@@ -695,7 +694,7 @@
  {
   "title": "Empowered",
   "kind": "book",
-  "author": "Marty Cagan",
+  "author": "Marty Cagan, Chris Jones",
   "narrator": "Marty Cagan",
   "titles": [
    {
@@ -707,7 +706,7 @@
    }
   ],
   "url": "https://www.audible.com/pd/Empowered-Audiobook/1663709777",
-  "summary": "What is it about the top tech product companies such as Amazon, Apple, Google, Netflix, and Tesla that enables their record of consistent innovation? Most people think it's because these companies are somehow able to find and attract a level of talent that makes this in",
+  "summary": "Marty Cagan and Chris Jones on what it takes to run product teams that are given problems to solve rather than features to build: coaching, staffing, product vision and strategy, team objectives, and the leadership behaviors that make or break autonomy. The sequel to Inspired, aimed at the managers rather than the product people.",
   "bands": [
    "nonfiction",
    "behind"
@@ -737,7 +736,7 @@
  {
   "title": "Extreme Ownership",
   "kind": "book",
-  "author": "Jocko Willink",
+  "author": "Jocko Willink, Leif Babin",
   "narrator": "Jocko Willink",
   "titles": [
    {
@@ -749,7 +748,7 @@
    }
   ],
   "url": "https://www.audible.com/pd/Extreme-Ownership-Audiobook/B015TVHUA2",
-  "summary": "Leadership books rooted in U.S. Navy SEAL experience, beginning with Extreme Ownership by Jocko Willink and Leif Babin and continuing with The Dichotomy of Leadership (and later related titles under the same branding). Practical leadership principles framed through combat and business case examples.",
+  "summary": "Jocko Willink and Leif Babin take lessons from leading SEAL teams in Ramadi and apply them to business: the leader owns every outcome, including the ones that were someone else's fault; plans stay simple; priorities get executed one at a time; and leading up the chain matters as much as leading down.",
   "bands": [
    "nonfiction",
    "behind"
@@ -789,7 +788,7 @@
    }
   ],
   "url": "https://www.audible.com/pd/Mans-Search-for-Meaning-Audiobook/B0CYNPSBNG",
-  "summary": "As relevant today as it was when it was first published, Man’s Search for Meaning is a book for finding strength and purpose in times of great despair. “This is a book I reread a lot … it gives me hope … it gives me a sense of strength.”, Anderson Cooper, Anderson Cooper",
+  "summary": "Viktor Frankl's account of surviving Auschwitz and Dachau, followed by the outline of logotherapy, the psychology he built from it. The thesis is that people can endure almost anything if they find meaning in it, and that the last human freedom is choosing one's attitude in a given set of circumstances. Short, and one of the most reread books of the twentieth century.",
   "bands": [
    "nonfiction",
    "behind"
@@ -813,7 +812,7 @@
  {
   "title": "Never Split the Difference",
   "kind": "book",
-  "author": "Chris Voss",
+  "author": "Chris Voss, Tahl Raz",
   "narrator": "Michael Kramer",
   "titles": [
    {
@@ -848,7 +847,7 @@
  {
   "title": "No Rules Rules",
   "kind": "book",
-  "author": "Reed Hastings",
+  "author": "Reed Hastings, Erin Meyer",
   "narrator": "Jason Culp",
   "titles": [
    {
@@ -860,7 +859,7 @@
    }
   ],
   "url": "https://www.audible.com/pd/No-Rules-Rules-Audiobook/1984891170",
-  "summary": "Netflix cofounder Reed Hastings reveals for the first time the unorthodox culture behind one of the world's most innovative, imaginative, and successful companies There has never before been a company like Netflix. It has led nothing short of a revolution in the enterta",
+  "summary": "A culture built on trust and clear responsibility, showing that when people are treated respectfully y and given autonomy, both they and their organization can do their best.",
   "bands": [
    "nonfiction",
    "behind"
@@ -883,7 +882,7 @@
  {
   "title": "Nonviolent Communication",
   "kind": "book",
-  "author": "PhD Marshall Rosenberg",
+  "author": "Marshall Rosenberg",
   "narrator": "PhD Marshall Rosenberg",
   "titles": [
    {
@@ -895,7 +894,7 @@
    }
   ],
   "url": "https://www.audible.com/pd/Nonviolent-Communication-Audiobook/B00TJJNSQG",
-  "summary": "What if you could defuse tension and create accord in even the most volatile situations, just by changing the way you spoke? Over the past 35 years, Marshall Rosenberg has done just that, peacefully resolving conflicts in families, schools, businesses, and governments in",
+  "summary": "Marshall Rosenberg's method for saying hard things without attacking: observe without judging, name the feeling, name the need behind it, and make a clear request. The claim is that most conflict is unmet needs expressed as blame, and that the four steps work in marriages, boardrooms, and classrooms alike. Earnest, sometimes awkward, and widely used.",
   "bands": [
    "nonfiction",
    "behind"
@@ -989,7 +988,7 @@
   "finished": 0,
   "in_progress": 1,
   "cited": [],
-  "shelf": "Psychology / Mental Performance"
+  "shelf": "Fiction / Other"
  },
  {
   "title": "The Artist's Way",
@@ -1006,7 +1005,7 @@
    }
   ],
   "url": "https://www.audible.com/pd/The-Artists-Way-25th-Anniversary-Edition-Audiobook/0593452526",
-  "summary": "\"Without The Artist's Way, there would have been no Eat, Pray, Love.”, Elizabeth Gilbert The Artist’s Way is the seminal book on the subject of creativity. An international bestseller, millions of readers have found it to be an invaluable guide to living the artist’s li",
+  "summary": "The Artist's Way is the seminal book on the subject of creativity. An international bestseller, millions of readers have found it to be an invaluable guide to living the artist's life. Still as vital today-or perhaps even more so-than it was when it was first published one decade ago, it is a powerfully provocative and inspiring work. In a new introduction to the book, Julia Cameron reflects upon the impact of The Artist's Way and describes the work she has done during the last decade and the new insights into the creative process that she has gained. Updated and expanded, this anniversary edition reframes The Artist's Way for a new century.",
   "bands": [
    "nonfiction",
    "behind"
@@ -1030,7 +1029,7 @@
  {
   "title": "The Body Keeps the Score",
   "kind": "book",
-  "author": "Bessel van der Kolk M.D.",
+  "author": "Bessel van der Kolk",
   "narrator": "Sean Pratt",
   "titles": [
    {
@@ -1042,7 +1041,7 @@
    }
   ],
   "url": "https://www.audible.com/pd/The-Body-Keeps-the-Score-Audiobook/0593412702",
-  "summary": "#1 New York Times bestseller “Essential reading for anyone interested in understanding and treating traumatic stress and the scope of its impact on society.”, Alexander McFarlane, Director of the Centre for Traumatic Stress Studies A pioneering researcher transforms our",
+  "summary": "Bessel van der Kolk's synthesis of three decades of trauma research: how overwhelming experience rewires the brain and the body, why talk alone often fails, and what helps, from EMDR and yoga to neurofeedback and theater. The book that moved trauma from a psychiatric niche into general conversation, and the source of the idea that feelings are information rather than instructions.",
   "bands": [
    "nonfiction",
    "behind"
@@ -1083,7 +1082,7 @@
    }
   ],
   "url": "https://www.audible.com/pd/Think-Like-a-Rocket-Scientist-Audiobook/1549144936",
-  "summary": "Adam Grant's # 1 pick of his top 20 books of the year This is not just an engrossing read--it's bursting with practical insights. Ozan Varol's dazzling debut might change how you approach problems. Houston, this book has solutions.\"―Adam Grant Rocket science is often",
+  "summary": "Ozan Varol, a former Mars rover engineer turned law professor, distills nine strategies from aerospace into everyday thinking: reason from first principles, run thought experiments, test as you fly, and treat failure and success as equally suspect. Light on rocket science, heavy on how to question defaults.",
   "bands": [
    "nonfiction",
    "behind"
@@ -1102,7 +1101,7 @@
   "finished": 0,
   "in_progress": 1,
   "cited": [],
-  "shelf": "Leadership / Business"
+  "shelf": "Psychology / Mental Performance"
  },
  {
   "title": "Networking for People Who Hate Networking, Second Edition",
@@ -1131,12 +1130,12 @@
   "finished": 1,
   "in_progress": 0,
   "cited": [],
-  "shelf": "Leadership / Business"
+  "shelf": "Negotiation / Communication"
  },
  {
   "title": "Shadow Cell",
   "kind": "book",
-  "author": "Andrew Bustamante",
+  "author": "Andrew Bustamante, Jihi Bustamante",
   "narrator": "Andrew Bustamante",
   "titles": [
    {
@@ -1148,7 +1147,7 @@
    }
   ],
   "url": "https://www.audible.com/pd/Red-Cell-Audiobook/B0CJDJ5PV3",
-  "summary": "INSTANT NEW YORK TIMES BESTSELLER A thrilling firsthand account by husband-and-wife CIA operatives who, against all odds, triumphed in a deadly cat-and-mouse game against a mole within the agency, an unprecedented insider account of 21st-century spycraft in the tradition",
+  "summary": "Andrew Bustamante's memoir of his years as a CIA covert operative, written with his wife and fellow officer Jihi Bustamante. Recruitment, training at the Farm, operations overseas, and the slow toll of living two lives, ending with the decision to leave. A spy memoir that spends as much time on marriage and trust as on tradecraft.",
   "bands": [
    "nonfiction"
   ],
@@ -1160,7 +1159,7 @@
   "finished": 1,
   "in_progress": 0,
   "cited": [],
-  "shelf": "Fiction / Other"
+  "shelf": "Memoir / Biography"
  },
  {
   "title": "Still Just a Geek",
@@ -1177,7 +1176,7 @@
    }
   ],
   "url": "https://www.audible.com/pd/Still-Just-a-Geek-Audiobook/B09HZ38NGB",
-  "summary": "Celebrated actor, personality, and all-around nerd, Wil Wheaton updates his memoir of collected blog posts with all new material and annotations as he reexamines one of the most interesting lives in Hollywood and fandom--and now for the first time in audio, narrated by",
+  "summary": "Celebrated actor, personality, and all-around nerd, Wil Wheaton updates his memoir of collected blog posts with all new material and annotations as he reexamines one of the most interesting lives in Hollywood and fandom. From starring in Stand by Me to playing Wesley Crusher on Star Trek: The Next Generation to playing himself, in his second (third?) iconic role of Evil Wil Wheaton in The Big Bang Theory, to becoming a social media supernova, Wil Wheaton has charted a career course unlike anyone else, and has emerged as one of the most popular and well respected names in science fiction, fantasy and pop culture.",
   "bands": [
    "nonfiction"
   ],
@@ -1189,7 +1188,7 @@
   "finished": 1,
   "in_progress": 0,
   "cited": [],
-  "shelf": "Fiction / Other"
+  "shelf": "Memoir / Biography"
  },
  {
   "title": "The Decision",
@@ -1206,7 +1205,7 @@
    }
   ],
   "url": "https://www.audible.com/pd/The-Decision-Audiobook/B084GYSS73",
-  "summary": "Candid, raw, and authentic to the core, The Decision is filled with vision and the practical steps you'll need to track and reach your goals. Join \"Coach\" Kevin as he puts you through the paces of what he dubs the Kevin Hart Mental Fitness Bootcamp. Learn the ins and outs of \"What-is-ness.\" Find out what \"Cowboying up\" is all about. Get cozy with \"Teddy bearing.\" Discover why your comfort zone is just about the worst place on earth to be. Find out how to keep your b%llsh#t detector running smoothly, and just why your ugly-ass feet are nothing short of a blessing in disguise",
+  "summary": "Kevin Hart's Audible Original, part memoir and part motivational talk, framed around the idea that life is a series of decisions and that the big ones get made in small, repeated choices. Comedy as a career case study: failed sets, a flop sitcom, and the work ethic that turned both into material.",
   "bands": [
    "nonfiction"
   ],
@@ -1218,7 +1217,7 @@
   "finished": 1,
   "in_progress": 0,
   "cited": [],
-  "shelf": "Fiction / Other"
+  "shelf": "Psychology / Mental Performance"
  },
  {
   "title": "The Leadership Moment",
@@ -1235,7 +1234,7 @@
    }
   ],
   "url": "https://www.audible.com/pd/The-Leadership-Moment-Audiobook/1705257704",
-  "summary": "Are you ready for the leadership moment? Learn valuable lessons from the stories of: Merck's Roy Vagelos, who commits millions of dollars to develop a drug needed only by people who can't afford it Eugene Kranz, who struggles to bring the Apollo 13 astronauts home after",
+  "summary": "Are you ready for the leadership moment? Merck's Roy Vagelos commits millions of dollars to develop a drug needed only by people who can't afford it. Eugene Kranz struggles to bring the Apollo 13 astronauts home after an explosion rips through their spacecraft. Arlene Blum organizes the first women's ascent of one of the world's most dangerous mountains. Joshua Lawrence Chamberlain leads his tattered troops into a pivotal Civil War battle at Little Round Top. John Gutfreund loses Salomon Brothers when his inattention to a trading scandal almost topples the Wall Street giant.",
   "bands": [
    "nonfiction"
   ],
@@ -1276,12 +1275,12 @@
   "finished": 1,
   "in_progress": 0,
   "cited": [],
-  "shelf": "Leadership / Business"
+  "shelf": "Psychology / Mental Performance"
  },
  {
   "title": "True North",
   "kind": "book",
-  "author": "Bill George",
+  "author": "Bill George, Zach Clayton",
   "narrator": "Walter Dixon",
   "titles": [
    {
@@ -1293,7 +1292,7 @@
    }
   ],
   "url": "https://www.audible.com/pd/True-North-Audiobook/B0BBP1SN64",
-  "summary": "In True North: Emerging Leaders Edition, renowned leadership expert Bill George and Millennial tech entrepreneur Zach Clayton issue the challenge to emerging leaders, from Gen X to Millennials and Gen Z, to lead their organizations authentically through never-ending crise",
+  "summary": "True North shows how anyone who follows their internal compass can become an authentic leader. This leadership tour de force is based on research and first-person interviews with 125 of today's top leaders -- with some surprising results. In this important book, acclaimed former Medtronic CEO Bill George and coauthor Peter Sims share the wisdom of these outstanding leaders and describe how you can develop as an authentic leader.",
   "bands": [
    "nonfiction"
   ],
@@ -1310,7 +1309,7 @@
  {
   "title": "12 Rules for Life",
   "kind": "book",
-  "author": "Jordan B. Peterson",
+  "author": "Jordan B. Peterson, Ethan Van Sciver, Norman Doidge, Introduction",
   "narrator": "Jordan B. Peterson",
   "titles": [
    {
@@ -1322,7 +1321,7 @@
    }
   ],
   "url": "https://www.audible.com/pd/12-Rules-for-Life-Audiobook/B0797YBP7N",
-  "summary": "Jordan B. Peterson’s two-book “Rules for Life” pairing: 12 Rules for Life addresses living amid chaos; the sequel Beyond Order offers twelve further rules aimed at excess order and rigidity. Audible’s library card labels the first book under this series name even when only that title is owned.",
+  "summary": "Jordan Peterson's twelve rules, from standing up straight to telling the truth, each worked out through psychology, myth, and his clinical practice. The argument underneath is that meaning is found by taking on responsibility, not by chasing comfort. Polarizing, long, and more careful than its reputation in either direction.",
   "bands": [
    "nonfiction"
   ],
@@ -1351,7 +1350,7 @@
    }
   ],
   "url": "https://www.audible.com/pd/48-Laws-of-Power-Audiobook/B00WYDJ2YQ",
-  "summary": "Amoral, cunning, ruthless, and instructive, this piercing work distills 3,000 years of the history of power into 48 well-explicated laws. This bold volume outlines the laws of power in their unvarnished essence, synthesizing the philosophies of Machiavelli, Sun Tzu, Car",
+  "summary": "Amoral, cunning, ruthless, and instructive, this piercing work distills three thousand years of the history of power in to forty-eight well explicated laws. As attention--grabbing in its design as it is in its content, this bold volume outlines the laws of power in their unvarnished essence, synthesizing the philosophies of Machiavelli, Sun-tzu, Carl von Clausewitz, and other great thinkers.",
   "bands": [
    "nonfiction"
   ],
@@ -1368,7 +1367,7 @@
  {
   "title": "A Leader's Legacy",
   "kind": "book",
-  "author": "James M. Kouzes",
+  "author": "James M. Kouzes, Barry Z. Posner",
   "narrator": "James M. Kouzes",
   "titles": [
    {
@@ -1380,7 +1379,7 @@
    }
   ],
   "url": "https://www.audible.com/pd/A-Leaders-Legacy-Audiobook/B002V5B2W2",
-  "summary": "Jim Kouzes and Barry Posner, internationally recognized experts in the field of leadership and authors of the best-selling Leadership Challenge, explore the important notion of legacy and the critical questions any leader must ask him or herself in order to leave a last",
+  "summary": "Kouzes and Posner examine in twenty-two chapters the critical questions all leaders must ask themselves in order to leave a lasting impact. These powerful essays are grouped into four categories: Significance, Relationships, Aspirations, and Courage. In each essay the authors consider a thorny and often ambiguous issue with which today's leaders must grapple issues, such as how leaders serve and sacrifice, why leaders need loving critics, why leaders should want to be liked, why leaders can't take trust for granted, why it's not just the leader's vision, why failure is always an option, why it takes courage to \"make a life,\" how to liberate.",
   "bands": [
    "nonfiction"
   ],
@@ -1409,7 +1408,7 @@
    }
   ],
   "url": "https://www.audible.com/pd/A-Promised-Land-Audiobook/0525633723",
-  "summary": "A riveting, deeply personal account of history in the making, from the president who inspired us to believe in the power of democracy #1 NEW YORK TIMES BESTSELLER NAACP IMAGE AWARD NOMINEE NAMED ONE OF THE TEN BEST BOOKS OF THE YEAR BY THE NEW YORK TIMES BOOK REVIEW AND",
+  "summary": "A riveting, deeply personal account of history in the making-from the president who inspired us to believe in the power of democracy. In the stirring, highly anticipated first volume of his presidential memoirs, Barack Obama tells the story of his improbable odyssey from young man searching for his identity to leader of the free world, describing in strikingly personal detail both his political education and the landmark moments of the first term of his historic presidency-a time of dramatic transformation and turmoil.",
   "bands": [
    "nonfiction"
   ],
@@ -1421,7 +1420,7 @@
   "finished": 0,
   "in_progress": 1,
   "cited": [],
-  "shelf": "Finance / Strategy"
+  "shelf": "Memoir / Biography"
  },
  {
   "title": "Born a Crime",
@@ -1450,12 +1449,12 @@
   "finished": 0,
   "in_progress": 1,
   "cited": [],
-  "shelf": "Fiction / Other"
+  "shelf": "Memoir / Biography"
  },
  {
   "title": "Forever Strong™",
   "kind": "book",
-  "author": "Gabrielle Lyon D.O.",
+  "author": "Gabrielle Lyon",
   "narrator": "Gabrielle Lyon D.O.",
   "titles": [
    {
@@ -1467,7 +1466,7 @@
    }
   ],
   "url": "https://www.audible.com/pd/Forever-Strong-Audiobook/B0C4VT3WT4",
-  "summary": "Learn how to reboot your metabolism, build strength, and extend your life with this accessible new guidebook that demonstrates the importance of muscle for health and longevity fro",
+  "summary": "Dr. Gabrielle Lyon's case for muscle as the organ of longevity: protein targets most people miss, resistance training as medicine, and a reframing of obesity as under-muscled rather than over-fat. Practical plans for food and lifting, with the argument that healthy aging starts with skeletal muscle decades before it looks like a problem.",
   "bands": [
    "nonfiction"
   ],
@@ -1496,7 +1495,7 @@
    }
   ],
   "url": "https://www.audible.com/pd/Glucose-Revolution-Audiobook/B09CWL8NV6",
-  "summary": "Improve all areas of your health, your sleep, cravings, mood, energy, skin, weight, and even slow down aging with easy, science-based hacks to manage your blood sugar while still eating the foods you love. Glucose, or blood sugar, is a tiny molecule in our body that has a huge impact on our health. It enters our bloodstream through the starchy or sweet foods we eat. Ninety percent of us suffer from too much glucose in our system, and most of us don't know it.",
+  "summary": "Jessie Inchauspe's case that blood glucose spikes drive hunger, fatigue, and cravings, and that a handful of ordering and pairing tricks (vegetables first, protein with carbs, a walk after meals) flatten them. Practical and easy to try; the broader health claims are the author's framing rather than settled science, and critics have pushed back on some of them.",
   "bands": [
    "nonfiction"
   ],
@@ -1525,7 +1524,7 @@
    }
   ],
   "url": "https://www.audible.com/pd/Greenlights-Audiobook/0593294181",
-  "summary": "Now with exclusive new content from the paperback edition, the life-changing memoir that has inspired millions of readers through the Academy Award, winning actor’s unflinching honesty, unconventional wisdom,",
+  "summary": "Matthew McConaughey's memoir, built from thirty-five years of diaries, about the moments life said yes, including the ones that looked like no at the time. Rom-com purgatory, the pivot to Dallas Buyers Club, a year in a trailer, his father's death. Read by the author, which is most of the appeal.",
   "bands": [
    "nonfiction"
   ],
@@ -1537,7 +1536,7 @@
   "finished": 0,
   "in_progress": 0,
   "cited": [],
-  "shelf": "Finance / Strategy"
+  "shelf": "Memoir / Biography"
  },
  {
   "title": "Making It So",
@@ -1566,7 +1565,7 @@
   "finished": 0,
   "in_progress": 0,
   "cited": [],
-  "shelf": "Fiction / Other"
+  "shelf": "Memoir / Biography"
  },
  {
   "title": "Notes on Being a Man",
@@ -1595,12 +1594,12 @@
   "finished": 0,
   "in_progress": 1,
   "cited": [],
-  "shelf": "Fiction / Other"
+  "shelf": "Psychology / Mental Performance"
  },
  {
   "title": "Secrets to Winning at Office Politics",
   "kind": "book",
-  "author": "Marie G. McIntyre PhD",
+  "author": "Marie G. McIntyre",
   "narrator": "Margaret Strom",
   "titles": [
    {
@@ -1612,7 +1611,7 @@
    }
   ],
   "url": "https://www.audible.com/pd/Secrets-to-Winning-at-Office-Politics-Audiobook/B07FK1LQKG",
-  "summary": "Get ahead, Gain influence, Get what you want Office politics are an unavoidable fact of life in every workplace. To accomplish your personal and business goals, you must learn to successfully play the political game in your organization. Whether you are a new player or",
+  "summary": "Marie McIntyre's guide to the part of work nobody admits to: how influence actually flows, how to read power without becoming a schemer, and how to stop sabotaging yourself in meetings. Framed as political intelligence for people who find the whole subject distasteful but keep losing to those who don't.",
   "bands": [
    "nonfiction"
   ],
@@ -1641,7 +1640,7 @@
    }
   ],
   "url": "https://www.audible.com/pd/Solve-for-Happy-Audiobook/B01N5R6LVS",
-  "summary": "In this “powerful personal story woven with a rich analysis of what we all seek” (Sergey Brin, cofounder of Google), Mo Gawdat, Chief Business Officer at Google’s [X], applies his superior logic and problem solving skills to understand how the brain processes joy and sa",
+  "summary": "Mo Gawdat, then chief business officer at Google X, lost his son Ali to a routine surgery and wrote this book from the engineering model of happiness he had built years earlier: happiness is greater than or equal to your perception of events minus your expectations of how life should be. Six illusions to drop, seven blind spots to correct, five truths to hold.",
   "bands": [
    "nonfiction"
   ],
@@ -1670,7 +1669,7 @@
    }
   ],
   "url": "https://www.audible.com/pd/Starry-Messenger-Audiobook/B09Q7SMLX8",
-  "summary": "\"This engaging, conversational book begs to be read aloud, and who better than its author?... Tyson’s warmth and erudition make him a superb narrator of this excellent, thought-provoking book.\"- Library Journal \"Like a spaceship traveling the stars, Tyson's voice flows",
+  "summary": "Neil deGrasse Tyson applies a cosmic perspective to earthbound arguments: politics, race, gender, war, law, and what we eat. The thread is that science is a way of knowing that cuts through tribal certainty, and that seeing Earth from far enough away changes what seems worth fighting over. Essays, not astrophysics.",
   "bands": [
    "nonfiction"
   ],
@@ -1699,7 +1698,7 @@
    }
   ],
   "url": "https://www.audible.com/pd/The-Art-of-Raising-a-Puppy-Audiobook/B002V1M3EM",
-  "summary": "Here is everything you need to know about the crucial first months of your puppy's life. From the decision to adopt a pup through the practicalities of every phase of caring for your puppy, the Monks of New Skete offer clear, sympathetic, and intelligent guidelines. Thi",
+  "summary": "The Monks of New Skete, who have bred and trained German shepherds at their monastery for decades, on the first year of a dog's life: choosing a breeder, the critical socialization weeks, crate training, leadership without force, and the relationship the training is really building. The standard text for people who want a dog, not a project.",
   "bands": [
    "nonfiction"
   ],
@@ -1711,7 +1710,7 @@
   "finished": 0,
   "in_progress": 1,
   "cited": [],
-  "shelf": "Health / Performance"
+  "shelf": "Fiction / Other"
  },
  {
   "title": "The Happiness Advantage",
@@ -1728,7 +1727,7 @@
    }
   ],
   "url": "https://www.audible.com/pd/The-Happiness-Advantage-Audiobook/B0041NZRDC",
-  "summary": "An engaging, deeply researched guide to flourishing in a world of increasing stress and negativity, the inspiration for one of the most popular TED Talks of all time “Powerful [and] charming . . . A book for just about anyone . . . The philosophi",
+  "summary": "Recent discoveries in the field of positive psychology have shown that happiness fuels success, not the other way around. Achor isolates seven practical, actionable principles that show how to capitalize on the Happiness Advantage to improve performance and maximize potential.",
   "bands": [
    "nonfiction"
   ],
@@ -1745,7 +1744,7 @@
  {
   "title": "The Immortality Key",
   "kind": "book",
-  "author": "Brian C. Muraresku",
+  "author": "Brian C. Muraresku, Graham Hancock, Graham Hancock - introduction",
   "narrator": "Brian C. Muraresku",
   "titles": [
    {
@@ -1757,7 +1756,7 @@
    }
   ],
   "url": "https://www.audible.com/pd/The-Immortality-Key-Audiobook/1250752981",
-  "summary": "Now updated with a new preface by Michael Pollan and an exclusive bonus chapter. This audiobook also includes a foreword written and read by Graham Hancock, the New York Times bestselling author of America Before: The Key to Earth's Lost Civilization. THE NEW YORK TIMES",
+  "summary": "Brian Muraresku's investigation into whether the religious rites of ancient Greece used psychedelic sacraments, and whether that practice carried into early Christianity. Part archaeology, part travelogue, built on chemistry done on ancient vessels. It is a hypothesis argued with enthusiasm, not a consensus history, and reads best that way.",
   "bands": [
    "nonfiction"
   ],
@@ -1769,7 +1768,7 @@
   "finished": 0,
   "in_progress": 1,
   "cited": [],
-  "shelf": "Psychology / Mental Performance"
+  "shelf": "Fiction / Other"
  },
  {
   "title": "The Power of Now",
@@ -1786,7 +1785,7 @@
    }
   ],
   "url": "https://www.audible.com/pd/The-Power-of-Now-Audiobook/B002V0PN36",
-  "summary": "Eckhart Tolle has emerged as one of today's most inspiring teachers. In The Power of Now, already a worldwide bestseller, the author describes his transition from despair to self-realization soon after his 29th birthday. Tolle took another ten years to understand this transformation, during which time he evolved a philosophy that has parallels in Buddhism, relaxation techniques, and meditation theory but is also eminently practical. In The Power of Now he shows readers how to recognize themselves as the creators of their own pain, and how to have a pain-free existence by living fully in the present.",
+  "summary": "Eckhart Tolle's spiritual teaching that suffering comes from identifying with the thinking mind and its past and future, and that presence, attention to this moment, is the way out. Written as questions and answers. Religious in spirit without a religion; take the promises as a practice to try, not a clinical claim.",
   "bands": [
    "nonfiction"
   ],
@@ -1815,7 +1814,7 @@
    }
   ],
   "url": "https://www.audible.com/pd/The-Prince-Audiobook/B0DM6RLRHS",
-  "summary": "Delve into the timeless wisdom and political acumen of Niccolò Machiavelli’s \"The Prince,\" masterfully narrated by Daniel Pagone. Written in the early 16th century, \"The Prince\" remains one of the most influential political treatises ever penned, offering keen insights",
+  "summary": "The Prince (Italian: Il Principe [il ˈprintʃipe]; Latin: De Principatibus) is a 16th-century political treatise written by Italian diplomat and political theorist Niccolò Machiavelli as an instruction guide for new princes and royals. The general theme of The Prince is of accepting that the aims of princes, such as glory and survival, can justify the use of immoral means to achieve those ends. From Machiavelli's correspondence, a version appears to have been distributed in 1513, using a Latin title, De Principatibus (Of Principalities). However, the printed version was not published until 1532, five years after Machiavelli's death.",
   "bands": [
    "nonfiction"
   ],
@@ -1832,7 +1831,7 @@
  {
   "title": "The Zen of Listening",
   "kind": "book",
-  "author": "Rebecca Z. Shafir MA CCC",
+  "author": "Rebecca Z. Shafir",
   "narrator": "Rebecca Z. Shafir",
   "titles": [
    {
@@ -1861,7 +1860,7 @@
  {
   "title": "This Is Your Brain on Food",
   "kind": "book",
-  "author": "Uma Naidoo MD",
+  "author": "Uma Naidoo",
   "narrator": "Uma Naidoo MD",
   "titles": [
    {
@@ -1873,7 +1872,7 @@
    }
   ],
   "url": "https://www.audible.com/pd/This-Is-Your-Brain-on-Food-Audiobook/1549153811",
-  "summary": "Eat for your mental health and learn the fascinating science behind nutrition with this \"must-read\" guide from an expert psychiatrist (Amy Myers, MD). Did you know that blueberries can help you cope with the aftereffects of trauma? That salami can cause depression, or t",
+  "summary": "Dr. Uma Naidoo, a Harvard psychiatrist and trained chef, on the gut-brain connection and how food affects anxiety, depression, ADHD, sleep, and memory. Condition by condition, what the evidence says to eat and avoid, with recipes. Nutritional psychiatry for a general reader.",
   "bands": [
    "nonfiction"
   ],
@@ -1902,7 +1901,7 @@
    }
   ],
   "url": "https://www.audible.com/pd/Unthink-Audiobook/B07KX57WQQ",
-  "summary": "In the tradition of A Whole New Mind and The War of Art, graffiti artist and corporate thought leader Erik Wahl explores the power of creativity to achieve superior performance. Somehow we've come to believe that creativity is reserved for the chosen few: the poets, the",
+  "summary": "\"Somehow we've come to believe that creativity is reserved for the chosen few: the poets, the painters, the writers. The truth is creativity is in all of us and re-discovering it is the key to unlocking your fullest potential. Unthink is a book that pushes us beyond our traditional thought patterns. Unthink is a book that will inspire everyone to realize that we are capable of so much more than we have pre-conditioned for. Creativity is not in one special place--and it is not in one special person. Creativity is everywhere and in everyone who has the courage to unleash their creative genius\" -- from Random House web page.",
   "bands": [
    "nonfiction"
   ],
@@ -1919,7 +1918,7 @@
  {
   "title": "Jack Reacher",
   "kind": "series",
-  "author": "Lee Child",
+  "author": "Lee Child, Andrew Child",
   "narrator": "Scott Brick",
   "titles": [
    {
@@ -2311,7 +2310,7 @@
    }
   ],
   "url": "https://www.audible.com/pd/All-Systems-Red-Audiobook/B076XSGP65",
-  "summary": "Martha Wells’s Hugo/Nebula-winning SF series narrated by Murderbot, a security cyborg that hacked its governor module and would rather watch media than deal with humans, yet keeps getting pulled into protecting them across corporate space.",
+  "summary": "The first Murderbot novella. A security unit that has quietly hacked its own governor module would rather watch serials than talk to the humans it is contracted to protect, until a survey mission goes wrong and it has to decide how much of itself to reveal. Dry, fast, and the entry point to Martha Wells's series.",
   "bands": [
    "fiction"
   ],
@@ -2369,7 +2368,7 @@
    }
   ],
   "url": "https://www.audible.com/pd/Children-of-Time-Audiobook/B071Y9TTHC",
-  "summary": "Adrian Tchaikovsky’s Arthur C. Clarke Award, winning sequence about fallen humanity’s ark ships and the unexpected sapient life that arose from ancient terraforming experiments, beginning with uplifted spiders (Portiids) and expanding across later books to other species and lost colonies.",
+  "summary": "Adrian Tchaikovsky's novel of a terraforming project gone sideways: a nanovirus meant to uplift monkeys lands on spiders instead, and over thousands of years they build a civilization while the last humans arrive in a failing ark ship. Two species, one planet, and a question about what intelligence owes to intelligence.",
   "bands": [
    "fiction"
   ],
@@ -2434,7 +2433,7 @@
    }
   ],
   "url": "https://www.audible.com/pd/Roadkill-Audiobook/B0B6QBNK4J",
-  "summary": "Jack Kernigan is having a bad day...a bad year...a bad life. After being booted out of MIT, he’s back in his Ohio hometown, working for the family business, facing a life of mediocrity. Then one day, out on a delivery, his truck hits...something....",
+  "summary": "Dennis E. Taylor's standalone: a young man hits something invisible on a back road and finds an alien, its ship, and its technology, then has to decide what to do with them while the rest of the world closes in. Light, quick, and in the same conversational register as the Bobiverse.",
   "bands": [
    "fiction"
   ],
@@ -2463,7 +2462,7 @@
    }
   ],
   "url": "https://www.audible.com/pd/The-Singularity-Trap-Audiobook/B07BHVWFSM",
-  "summary": "When Ivan Pritchard signs on as a newbie aboard the Mad Astra, it's his final, desperate stab at giving his wife and children the life they deserve....",
+  "summary": "Dennis E. Taylor's standalone about an asteroid miner who touches something he should not have and begins turning into a machine, while Earth argues over whether he is a threat. A first-contact and transhumanism story told at thriller pace, with Taylor's usual engineer's view of how things would actually break.",
   "bands": [
    "fiction"
   ],
@@ -2492,7 +2491,7 @@
    }
   ],
   "url": "https://www.audible.com/pd/The-Wandering-Earth-Audiobook/1250819024",
-  "summary": "\"Narrators Feodor Chin and Greg Chun deftly narrate this collection of short stories from one of the most evocative science fiction writers in the business.\" - AudioFile Magazine From New York Times bestselling author Cixin Liu, The Wandering Earth is a science fiction",
+  "summary": "Cixin Liu's story collection, led by the title novella in which humanity bolts engines to the planet and drives it out of the solar system ahead of the sun's death. The rest range from a child's-eye view of a dying village to a mountain-climbing alien. Big ideas told plainly, and the quickest way to see what Liu does before committing to Three-Body.",
   "bands": [
    "fiction"
   ],
@@ -2550,7 +2549,7 @@
    }
   ],
   "url": "https://www.audible.com/pd/Dungeon-Crawler-Carl-Audiobook/B08V8B2CGV",
-  "summary": "Matt Dinniman’s LitRPG series in which Coast Guard veteran Carl and his ex-girlfriend’s cat, Princess Donut, survive an alien “Dungeon Crawler World” game show built from a mined Earth, leveling through deadly floors while fighting the Syndicate that profits from the crawl.",
+  "summary": "Matt Dinniman's first Dungeon Crawler book. Coast Guard veteran Carl and his ex's cat, Princess Donut, survive the night Earth is turned into a televised alien dungeon game, and start descending through its floors as the galaxy watches and bets. LitRPG with real jokes and real stakes; the audiobook performance is a big part of the appeal.",
   "bands": [
    "fiction"
   ],
@@ -2635,7 +2634,7 @@
  {
   "title": "Remembrance of Earth's Past (Three-Body)",
   "kind": "series",
-  "author": "Baoshu",
+  "author": "Cixin Liu",
   "narrator": "P. J. Ochlan",
   "titles": [
    {
@@ -2668,7 +2667,7 @@
    }
   ],
   "url": "https://www.audible.com/pd/The-Redemption-of-Time-Audiobook/1250227887",
-  "summary": "Liu Cixin’s hard-SF trilogy (The Three-Body Problem, The Dark Forest, Death’s End) about first contact with the Trisolarans and humanity’s struggle under the “dark forest” logic of the cosmos. Audible also groups Baoshu’s authorized spin-off The Redemption of Time with this label.",
+  "summary": "Cixin Liu's trilogy (The Three-Body Problem, The Dark Forest, Death's End) about first contact set in motion during China's Cultural Revolution, and the centuries of consequence that follow. Hard science fiction with a cosmology of its own; the dark forest idea alone has outlived the books. Baoshu's authorized sequel, The Redemption of Time, is shelved alongside.",
   "bands": [
    "fiction"
   ],
@@ -2697,7 +2696,7 @@
    }
   ],
   "url": "https://www.audible.com/pd/The-Hitchhikers-Guide-to-the-Galaxy-Audiobook/B002VA9SWS",
-  "summary": "Douglas Adams’s comic science-fiction “trilogy in five parts,” beginning when Earth is destroyed for a hyperspace bypass and Arthur Dent hitchhikes the galaxy with Ford Prefect, Zaphod, Trillian, and Marvin.",
+  "summary": "Douglas Adams's first Hitchhiker novel. Arthur Dent is rescued from the demolition of Earth by his friend Ford Prefect, a researcher for the Guide, and bounces across the galaxy with a depressed robot, a two-headed president, and the answer to everything. The comedy that taught a generation of engineers how to be funny about systems.",
   "bands": [
    "fiction"
   ],

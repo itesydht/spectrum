@@ -107,8 +107,11 @@
   footer{border-top:1px solid var(--bg2);padding:26px 0 40px;color:var(--fg3);font-size:12.5px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
   footer a{color:var(--fg2)} footer a:hover{color:var(--pop)}
   .tag{font-family:var(--heading);font-style:italic;color:var(--fg2)}
+  .freqs .chip.extra{display:none} .freqs.all .chip.extra{display:inline-block}
+  .freqs .chip.more{border-style:dashed;color:var(--fg3)}
   @media (max-width:640px){
-    .hero{padding:30px 0 8px} .tuner input{font-size:17px;padding:15px 48px 15px 16px}
+    .brand .pub{font-size:14px} .brand .pub small{font-size:11px}
+    .hero{padding:26px 0 8px} .hero h1{font-size:32px} .tuner input{font-size:17px;padding:15px 48px 15px 16px}
     .grid{grid-template-columns:1fr}
     .meta{flex-direction:column;gap:6px;align-items:flex-start}
   }
@@ -199,7 +202,7 @@
   const fmtS=d=>new Date(d+'T12:00:00').toLocaleDateString('en-US',{month:'short',year:'2-digit'});
 
   // state
-  let q='', band=null, freqs=new Set(), sort='new', view='stories', lband=null, lkind=null, openSlug=null;
+  let q='', band=null, freqs=new Set(), sort='new', view='stories', lband=null, lkind=null, openSlug=null, shown=null;
   function readHash(){
     const h=decodeURIComponent(location.hash.replace(/^#/,''));
     if(h==='library'){ view='library'; openSlug=null; }
@@ -218,7 +221,9 @@
       const n=b==='All'?posts.length:bandCounts[b];
       return `<button class="chip ${on?'on':''}" data-band="${esc(b)}">${esc(b)}<span class="n">${n}</span></button>`;
     }).join('');
-    $('#freqs').innerHTML=topKw.map(([k,n])=>`<button class="chip ${freqs.has(k)?'on':''}" data-kw="${esc(k)}">${esc(k)}<span class="n">${n}</span></button>`).join('');
+    const SHOW=window.matchMedia('(max-width:640px)').matches?8:14;
+    $('#freqs').innerHTML=topKw.map(([k,n],i)=>`<button class="chip ${freqs.has(k)?'on':''} ${i>=SHOW&&!freqs.has(k)?'extra':''}" data-kw="${esc(k)}">${esc(k)}<span class="n">${n}</span></button>`).join('')
+      +(topKw.length>SHOW?`<button class="chip more" data-more="1">${$('#freqs').classList.contains('all')?'fewer':`+${topKw.length-SHOW} more`}</button>`:'');
   }
 
   // scoring
@@ -351,7 +356,7 @@
   }
 
   function setView(v){
-    view=v;
+    const switched=v!==shown; shown=v; view=v;
     $('#view-stories').hidden=v!=='stories'; $('#stories-filters').hidden=v!=='stories';
     $('#view-library').hidden=v!=='library';
     $('#nav-stories').classList.toggle('on',v==='stories'); $('#nav-library').classList.toggle('on',v==='library');
@@ -359,7 +364,8 @@
     $('#lede').textContent=v==='library'?'Books, podcasts, and talks I keep going back to, and the stories each one shaped. Type to tune.':'Pulse is the Tuesday transmission. Spectrum is the whole band: every story, every series, every thread, on one dial. Start typing.';
     $('#q').placeholder=v==='library'?'Expanse, Dune, leadership, habits…':'memory, agents, Skippy, leadership, Claude…';
     if(v==='library') renderLibrary(); else { $('#dial').style.display=''; $('.dial-cap').style.display=''; render(); }
-    if(v==='stories'&&openSlug){ const el=document.querySelector(`.card[data-slug="${openSlug}"]`); if(el){ el.scrollIntoView({behavior:'smooth',block:'start'}); } }
+    if(v==='stories'&&openSlug){ const el=document.querySelector(`.card[data-slug="${openSlug}"]`); if(el){ setTimeout(()=>el.scrollIntoView({behavior:'smooth',block:'start'}),50); } }
+    else if(switched) window.scrollTo({top:0,behavior:'smooth'});
   }
 
   // events
@@ -368,7 +374,7 @@
   $('#clear').addEventListener('click',()=>{q='';$('#q').value='';sort='new';$('#tuner').classList.remove('has');rerender();$('#q').focus();});
   document.addEventListener('keydown',e=>{ if(e.key==='/'&&document.activeElement!==$('#q')){e.preventDefault();$('#q').focus();} if(e.key==='Escape'){$('#q').blur();} });
   $('#bands').addEventListener('click',e=>{const b=e.target.closest('[data-band]'); if(!b) return; band=b.dataset.band==='All'?null:b.dataset.band; render();});
-  $('#freqs').addEventListener('click',e=>{const b=e.target.closest('[data-kw]'); if(!b) return; const k=b.dataset.kw; freqs.has(k)?freqs.delete(k):freqs.add(k); render();});
+  $('#freqs').addEventListener('click',e=>{ if(e.target.closest('[data-more]')){ $('#freqs').classList.toggle('all'); renderChips(); return; } const b=e.target.closest('[data-kw]'); if(!b) return; const k=b.dataset.kw; freqs.has(k)?freqs.delete(k):freqs.add(k); render();});
   $('#grid').addEventListener('click',e=>{const t=e.target.closest('[data-toggle]'); if(!t) return; t.closest('.card').classList.toggle('open');});
   $('#dial').addEventListener('click',e=>{const i=e.target.closest('i[data-n]'); if(!i) return; const el=document.querySelector(`.card[data-slug="${posts[+i.dataset.n-1].slug}"]`); el&&el.scrollIntoView({behavior:'smooth',block:'center'}); el&&el.classList.add('open');});
   ['new','old','rel'].forEach(s=>$('#s-'+s).addEventListener('click',()=>{sort=s;render();}));

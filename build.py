@@ -216,7 +216,9 @@ def main(check=False):
     for i, r in enumerate(posts, 1):
         r["n"] = i
     known = {r["slug"] for r in posts}
-    series_slugs = []
+    # Series pages are listed in data/series_pages.json so the bands survive
+    # even when no post carries a "Part of the ... series" line any more.
+    series_slugs = list(load_json(DATA / "series_pages.json", []))
     for r in posts:
         if r["series"] and r["series"]["slug"] not in series_slugs:
             series_slugs.append(r["series"]["slug"])

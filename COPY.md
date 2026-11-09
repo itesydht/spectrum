@@ -35,6 +35,15 @@ Chosen:
 
 Considered: "The source material behind the stories."; "The books behind the stories." (too narrow once podcasts land); "Where the names came from." (true for namesakes only); lede with "books and series for now, podcasts next" (reads like a roadmap; the cards can show format instead).
 
+## Post blocks (revised 2026-11-09, after the first retrofit)
+
+The end button used to deep link to the story's own card, which showed a reader the story they had just finished. Split into two jobs:
+
+- Top line: "Every story, one dial. Find the signal on Spectrum." → `https://spectrum.itesydht.com` (fixed).
+- End block: bold "Find the next story.", the "Spectrum is the dial for the rest…" paragraph, button "Find the next story →" → `https://spectrum.itesydht.com` (fixed, never edited per story).
+- Under the button, one centered text line: "Behind this story: what it builds on and the source material." with "Behind this story" linked to `https://spectrum.itesydht.com/#<slug>` (the only per-story edit).
+- On Spectrum, the story card carries "Browse all stories" beside "Read the story" so a deep link is never a dead end.
+
 ## Open
 
 - Why-lines for the 23 source cards (Eddy to dictate).

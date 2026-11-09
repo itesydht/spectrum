@@ -504,7 +504,7 @@
         ${(p.books||[]).length?`<div class="lbl">From the library</div><div class="lst">${p.books.map(b=>`<a href="#library" data-lib="${b.i}"><span>${esc(b.title)}</span><small>${esc(b.author||'')}</small></a>`).join('')}</div>`:''}
         ${(p.cites||[]).length?`<div class="lbl">Cited</div><div class="lst">${p.cites.map(c=>`<a href="${esc(c.url)}" target="_blank" rel="noopener"><span>${esc(c.label)}</span><small>${esc(c.host)}</small></a>`).join('')}</div>`:''}
         <div class="tags">${(p.keywords||[]).map(k=>`<span>${esc(k)}</span>`).join('')}</div>
-        <div class="cta"><a class="btn primary" href="${esc(p.url)}">Read the story →</a><button class="btn" data-copy="${esc(p.slug)}">Copy link</button></div>
+        <div class="cta"><a class="btn primary" href="${esc(p.url)}">Read the story →</a><button class="btn" data-close>Browse all stories</button><button class="btn" data-copy="${esc(p.slug)}">Copy link</button></div>
       </div>`;
   }
   function libModal(b){

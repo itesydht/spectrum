@@ -64,15 +64,18 @@
     "namesakes"
    ],
    "stories": [
+    "whos-driving"
+   ],
+   "cited": [
+    "a-house-to-live-in",
     "the-effort-of-being-a-team",
     "i-am-the-root",
-    "the-man-behind-the-curtain",
-    "whos-driving"
+    "the-man-behind-the-curtain"
    ]
   },
   "The Expanse": {
    "why": "",
-   "named": "Holden (chat), Naomi (builder), Alex (reviewer), Amos, Miller, Tycho (the Mac Mini), the Rocinante, Tightbeam",
+   "named": "Holden (chat), Naomi (builder), Alex (reviewer), Amos, Miller, Fred Johnson (ran Tycho Station; so did his namesake, until I killed him), Tycho (the Mac Mini), the Rocinante, Tightbeam",
    "tags": [
     "the expanse",
     "sci-fi",
@@ -83,8 +86,12 @@
     "namesakes"
    ],
    "stories": [
+    "the-master-control-project"
+   ],
+   "cited": [
     "claude-chat-claude-code-and-me",
-    "the-master-control-project",
+    "a-house-to-live-in",
+    "model-context-protocol",
     "the-day-i-killed-fred"
    ]
   },
@@ -101,7 +108,9 @@
     "namesakes"
    ],
    "stories": [
-    "whos-driving",
+    "whos-driving"
+   ],
+   "cited": [
     "a-house-to-live-in"
    ]
   },
@@ -118,7 +127,8 @@
    "stories": [
     "disagree-and-commit",
     "taking-a-walk"
-   ]
+   ],
+   "cited": []
   },
   "Crucial Conversations": {
    "why": "",
@@ -133,7 +143,8 @@
    "stories": [
     "disagree-and-commit",
     "feelings-are-data"
-   ]
+   ],
+   "cited": []
   },
   "Accelerate": {
    "why": "",
@@ -149,7 +160,8 @@
    "stories": [
     "the-loss-of-leadership",
     "even-ai-needs-the-why"
-   ]
+   ],
+   "cited": []
   },
   "ADD-Friendly Ways to Organize Your Life Second Edition": {
    "why": "",
@@ -164,7 +176,8 @@
    "stories": [
     "the-emulation-layer",
     "the-thinking-partner"
-   ]
+   ],
+   "cited": []
   },
   "Algorithms to Live By": {
    "why": "",
@@ -179,7 +192,8 @@
    "stories": [
     "the-simplest-system",
     "the-whole-haystack"
-   ]
+   ],
+   "cited": []
   },
   "Ask Your Developer": {
    "why": "",
@@ -193,7 +207,8 @@
    ],
    "stories": [
     "the-loss-of-leadership"
-   ]
+   ],
+   "cited": []
   },
   "Atomic Habits": {
    "why": "",
@@ -209,7 +224,8 @@
     "the-simplest-system",
     "the-scale",
     "the-garage-gym"
-   ]
+   ],
+   "cited": []
   },
   "Can't Hurt Me": {
    "why": "",
@@ -224,7 +240,8 @@
    "stories": [
     "the-scale",
     "the-shamrock"
-   ]
+   ],
+   "cited": []
   },
   "Elon Musk": {
    "why": "",
@@ -239,7 +256,8 @@
    "stories": [
     "the-simplest-system",
     "the-master-control-project"
-   ]
+   ],
+   "cited": []
   },
   "Emotional Intelligence 2.0": {
    "why": "",
@@ -254,7 +272,8 @@
    "stories": [
     "feelings-are-data",
     "taking-a-walk"
-   ]
+   ],
+   "cited": []
   },
   "Empowered": {
    "why": "",
@@ -266,9 +285,9 @@
    "bands": [
     "behind"
    ],
-   "stories": [
-    "even-ai-needs-the-why",
-    "the-man-behind-the-curtain"
+   "stories": [],
+   "cited": [
+    "even-ai-needs-the-why"
    ]
   },
   "Irreplaceable": {
@@ -284,7 +303,8 @@
    "stories": [
     "rage-against-the-machine",
     "even-ai-needs-the-why"
-   ]
+   ],
+   "cited": []
   },
   "Man's Search for Meaning": {
    "why": "",
@@ -299,7 +319,8 @@
    "stories": [
     "taking-a-walk",
     "montana"
-   ]
+   ],
+   "cited": []
   },
   "Never Finished": {
    "why": "",
@@ -311,9 +332,9 @@
    "bands": [
     "behind"
    ],
-   "stories": [
-    "the-shamrock",
-    "wisdom-removed"
+   "stories": [],
+   "cited": [
+    "the-garage-gym"
    ]
   },
   "Never Split the Difference": {
@@ -328,7 +349,8 @@
    ],
    "stories": [
     "disagree-and-commit"
-   ]
+   ],
+   "cited": []
   },
   "No Rules Rules": {
    "why": "",
@@ -342,7 +364,8 @@
    ],
    "stories": [
     "even-ai-needs-the-why"
-   ]
+   ],
+   "cited": []
   },
   "Nonviolent Communication": {
    "why": "",
@@ -357,7 +380,8 @@
    "stories": [
     "feelings-are-data",
     "the-emulation-layer"
-   ]
+   ],
+   "cited": []
   },
   "Rewired: The McKinsey Guide to Outcompeting in the Age of Digital and AI": {
    "why": "",
@@ -371,7 +395,8 @@
    ],
    "stories": [
     "even-ai-needs-the-why"
-   ]
+   ],
+   "cited": []
   },
   "Staff Engineer": {
    "why": "",
@@ -387,7 +412,8 @@
    "stories": [
     "the-loss-of-leadership",
     "big-ideas"
-   ]
+   ],
+   "cited": []
   },
   "Strengths Based Leadership": {
    "why": "",
@@ -402,7 +428,8 @@
    "stories": [
     "taking-a-walk",
     "big-ideas"
-   ]
+   ],
+   "cited": []
   },
   "Superintelligence": {
    "why": "",
@@ -417,7 +444,8 @@
    "stories": [
     "rage-against-the-machine",
     "confidence-man"
-   ]
+   ],
+   "cited": []
   },
   "Team Topologies": {
    "why": "",
@@ -433,7 +461,8 @@
    "stories": [
     "the-effort-of-being-a-team",
     "the-loss-of-leadership"
-   ]
+   ],
+   "cited": []
   },
   "The Artist's Way": {
    "why": "",
@@ -448,7 +477,8 @@
    "stories": [
     "hand-crafted-with-ai",
     "big-ideas"
-   ]
+   ],
+   "cited": []
   },
   "The Body Keeps the Score": {
    "why": "",
@@ -463,6 +493,9 @@
    "stories": [
     "taking-a-walk",
     "wisdom-removed"
+   ],
+   "cited": [
+    "feelings-are-data"
    ]
   },
   "Think Like a Rocket Scientist": {
@@ -478,7 +511,8 @@
    "stories": [
     "big-ideas",
     "the-chaos-test"
-   ]
+   ],
+   "cited": []
   }
  }
 }

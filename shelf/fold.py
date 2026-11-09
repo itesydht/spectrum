@@ -16,6 +16,25 @@ OUT = ROOT / "data" / "library.json"
 # Eddy's decisions from the curation page (exact Audible titles to leave out, plus card edits).
 DECISIONS = json.load(open(ROOT / "shelf" / "decisions.json")) if (ROOT / "shelf" / "decisions.json").exists() else {}
 EXCLUDE = set(DECISIONS.get("exclude_titles", []))
+# Eddy's own shelves, lifted from story-workshop/reference/cultural-profile.md by shelf/shelves.py
+SHELVES = json.load(open(ROOT / "shelf" / "shelves.json")) if (ROOT / "shelf" / "shelves.json").exists() else {}
+SHELF_OVERRIDES = {  # titles newer than the cultural profile, or ones its matcher misses
+    "Never Finished": "Psychology / Mental Performance", "Can't Hurt Me": "Psychology / Mental Performance",
+    "The Artist's Way": "Psychology / Mental Performance", "This Is Your Brain on Food": "Health / Performance",
+    "Children of Time": "Science Fiction", "All Systems Red": "Science Fiction", "Quantum Earth": "Science Fiction",
+    "Dungeon Crawler Carl": "Science Fiction", "The Silo Saga": "Science Fiction", "Cryptonomicon": "Science Fiction",
+}
+def shelf_for(card):
+    if card["title"] in SHELF_OVERRIDES: return SHELF_OVERRIDES[card["title"]]
+    names = [card["title"]] + [t["title"] for t in card["titles"]]
+    for shelf, entries in SHELVES.items():
+        for e in entries:
+            el = e.lower()
+            for n in names:
+                nl = n.lower()
+                if nl.startswith(el[:18]) or el.startswith(nl[:18]) or (len(el) > 8 and el in nl):
+                    return shelf
+    return "Fiction / Other"   # Eddy's own catch-all shelf
 FICTION_STANDALONE = {"Cryptonomicon","Starship Troopers","Roadkill","The Singularity Trap","Temporal","Artemis",
     "Project Hail Mary","The Wandering Earth","Oona Out of Order","A Good Marriage","Feedback"}
 NONFICTION_SERIES = {"12 Rules for Life","Extreme Ownership","Toltec Wisdom"}
@@ -97,11 +116,14 @@ def main():
             if prev.get("band") == "behind" or c["stories"]: c["bands"].append("behind")
             if prev.get("band") == "namesakes" or c.get("named"): c["bands"].append("namesakes")
         dec = DECISIONS.get("cards", {}).get(key) or DECISIONS.get("cards", {}).get(c["title"])
+        c["cited"] = []
         if dec:
-            for f in ("why", "named", "tags", "stories"):
+            for f in ("why", "named", "tags", "stories", "cited"):
                 if dec.get(f): c[f] = dec[f]
             c["bands"] = [c["bands"][0]] + [b for b in dec.get("bands", []) if b in ("behind", "namesakes")]
+        if c["cited"] and "behind" not in c["bands"]: c["bands"].append("behind")
         c["bands"] = list(dict.fromkeys(c["bands"]))
+        c["shelf"] = shelf_for(c)
         out.append(c)
     # keep hand-added entries that aren't in Audible (podcasts, videos)
     for k, e in old.items():

@@ -190,15 +190,16 @@
   try{ data=await (await fetch('data/posts.json')).json(); }
   catch(e){ data=window.__SPECTRUM__||{posts:[],books:[],series:[]}; }
   const posts=(data.posts||[]).slice().sort((a,b)=>a.n-b.n);
-  const books=(data.library||data.books||[]).map((b,i)=>Object.assign({i,kind:'book',stories:[],tags:[],titles:[]},b,{bands:b.bands||[b.band||'nonfiction']}));
-  const BANDS={namesakes:'Namesakes',behind:'Behind the stories',nonfiction:'Nonfiction',fiction:'Fiction'};
+  const books=(data.library||data.books||[]).map((b,i)=>Object.assign({i,kind:'book',stories:[],cited:[],tags:[],titles:[],shelf:'Other'},b,{bands:b.bands||[b.band||'nonfiction']}));
+  const BANDS={namesakes:'Namesakes',behind:'Behind the stories'};
+  const SHELVES=[...new Set(books.map(b=>b.shelf))];
   const KINDS={series:'Series',book:'Book',podcast:'Podcast',video:'Video',talk:'Talk',paper:'Paper',site:'Site',tool:'Tool'};
   const seriesList=data.series||[];
   const bySlug=Object.fromEntries(posts.map(p=>[p.slug,p]));
   // reverse links: who links to me
   posts.forEach(p=>p.linked_from=[]);
   posts.forEach(p=>(p.links_to||[]).forEach(s=>bySlug[s]&&bySlug[s].linked_from.push(p.slug)));
-  books.forEach(b=>(b.stories||[]).forEach(s=>{ if(bySlug[s]){ (bySlug[s].books=bySlug[s].books||[]).push(b); }}));
+  books.forEach(b=>[...new Set([...(b.cited||[]),...(b.stories||[])])].forEach(s=>{ if(bySlug[s]){ (bySlug[s].books=bySlug[s].books||[]).push(b); }}));
   // bands come from the series index pages (authoritative), falling back to the in-post "Part of" line
   seriesList.forEach(S=>(S.sections||[]).forEach(sec=>sec.posts.forEach(s=>{ if(bySlug[s]) bySlug[s].series={name:sec.name,parent:S.title,slug:S.slug,anchor:sec.anchor}; })));
   posts.forEach(p=>{ if(!p.series) p.series={name:'Standalone'}; });
@@ -330,34 +331,36 @@
   function libFiltered(){
     const terms=norm(q).split(/\s+/).filter(Boolean).map(stem);
     return books.filter(b=>{
-      if(lband&&!b.bands.includes(lband)) return false;
+      if(lband&&!(b.bands.includes(lband)||b.shelf===lband)) return false;
       if(lkind&&b.kind!==lkind) return false;
       if(!terms.length) return true;
-      const ws=words([b.title,b.author,b.narrator,b.why,b.named,b.summary,(b.tags||[]).join(' '),(b.titles||[]).map(t=>t.title).join(' '),(b.stories||[]).map(s=>bySlug[s]?.title||'').join(' ')].join(' '));
+      const ws=words([b.title,b.author,b.narrator,b.why,b.named,b.summary,b.shelf,(b.tags||[]).join(' '),(b.titles||[]).map(t=>t.title).join(' '),[...(b.cited||[]),...(b.stories||[])].map(s=>bySlug[s]?.title||'').join(' ')].join(' '));
       return terms.every(t=>hitsIn(ws,t));
     });
   }
   function renderLibrary(){
-    const bc={}; books.forEach(b=>b.bands.forEach(k=>bc[k]=(bc[k]||0)+1));
+    const bc={}; books.forEach(b=>{b.bands.forEach(k=>bc[k]=(bc[k]||0)+1); bc[b.shelf]=(bc[b.shelf]||0)+1;});
     const kc={}; books.forEach(b=>kc[b.kind]=(kc[b.kind]||0)+1);
-    $('#lbands').innerHTML=[['',`All<span class="n">${books.length}</span>`],...Object.keys(BANDS).filter(k=>bc[k]).map(k=>[k,`${BANDS[k]}<span class="n">${bc[k]}</span>`])]
-      .map(([k,l])=>`<button class="chip ${(lband||'')===k?'on':''}" data-lband="${k}">${l}</button>`).join('');
+    const order=['Science Fiction','Leadership / Business','Psychology / Mental Performance','Negotiation / Communication','Health / Performance','Finance / Strategy','Fiction / Other','Other'];
+    const shelves=SHELVES.slice().sort((a,b)=>(order.indexOf(a)+1||99)-(order.indexOf(b)+1||99));
+    $('#lbands').innerHTML=[['',`All<span class="n">${books.length}</span>`],...Object.keys(BANDS).filter(k=>bc[k]).map(k=>[k,`${BANDS[k]}<span class="n">${bc[k]}</span>`]),...shelves.map(k=>[k,`${esc(k)}<span class="n">${bc[k]}</span>`])]
+      .map(([k,l])=>`<button class="chip ${(lband||'')===k?'on':''}" data-lband="${esc(k)}">${l}</button>`).join('');
     $('#lkinds').innerHTML=Object.keys(kc).map(k=>`<button class="chip ${lkind===k?'on':''}" data-lkind="${k}">${KINDS[k]||k}<span class="n">${kc[k]}</span></button>`).join('');
     const now=books.filter(b=>b.status==='reading');
     $('#reading-now').innerHTML=now.length?`<div class="now"><b>Reading now</b>${now.map(b=>`${b.url?`<a href="${esc(b.url)}">${esc(b.title)}</a>`:esc(b.title)}${b.author?` <span style="color:var(--fg2)">· ${esc(b.author)}</span>`:''}`).join(' &nbsp;·&nbsp; ')}</div>`:'';
     const list=libFiltered();
     $('#bcount').textContent=list.length; $('#bcount-word').textContent=list.length===1?'item':'items';
-    $('#lactive').textContent=[lband?`in ${BANDS[lband]}`:'',lkind?`· ${KINDS[lkind]||lkind}`:'',q?`· "${q}"`:''].filter(Boolean).join(' ');
+    $('#lactive').textContent=[lband?`in ${BANDS[lband]||lband}`:'',lkind?`· ${KINDS[lkind]||lkind}`:'',q?`· "${q}"`:''].filter(Boolean).join(' ');
     const prog=b=>{ if(!b.count||b.count<2) return b.titles?.[0]?.finished?'finished':(b.titles?.[0]?.in_progress?'in progress':''); return `${b.finished} of ${b.count} finished`; };
     $('#library').innerHTML=list.length?list.map(b=>`<article class="card book ${b.kind==='series'?'series':''}" data-i="${b.i}">
-      <div class="top"><span class="no">${esc(KINDS[b.kind]||b.kind)}${b.bands.filter(x=>x==='namesakes'||x==='behind').map(x=>` · ${esc(BANDS[x])}`).join('')}</span><span>${esc(prog(b))}${b.status==='reading'?' · reading now':''}</span></div>
+      <div class="top"><span class="no">${esc(KINDS[b.kind]||b.kind)} · ${esc(b.shelf)}${b.bands.includes('namesakes')?' · Namesake':''}</span><span>${esc(prog(b))}${b.status==='reading'?' · reading now':''}</span></div>
       <h3>${b.url?`<a href="${esc(b.url)}">${esc(b.title)}</a>`:esc(b.title)}</h3>
       ${b.author?`<div class="by">${esc(b.author)}${b.narrator&&b.kind!=='series'?` <span style="color:var(--fg3)">· read by ${esc(b.narrator)}</span>`:''}</div>`:''}
       ${b.why?`<div class="key" style="font-family:var(--heading);font-style:italic;color:var(--fg);font-size:14px;line-height:1.4">${esc(b.why)}</div>`:''}
       ${b.summary?`<div class="ex">${esc(b.summary)}</div>`:'<div class="ex"></div>'}
       ${b.named?`<div class="named"><span>Named</span> ${esc(b.named)}</div>`:''}
       <div class="tags">${(b.tags||[]).map(k=>`<span>${esc(k)}</span>`).join('')}</div>
-      ${(b.stories||[]).length?`<div class="more" style="display:block"><div class="mlbl">Behind</div>${b.stories.map(s=>bySlug[s]?`<a href="#${esc(s)}">№${bySlug[s].n} · ${esc(bySlug[s].title)}</a>`:'').join('')}</div>`:''}
+      ${(b.cited||[]).length||(b.stories||[]).length?`<div class="more" style="display:block">${(b.cited||[]).length?`<div class="mlbl">Cited in</div>${b.cited.map(s=>bySlug[s]?`<a href="#${esc(s)}">№${bySlug[s].n} · ${esc(bySlug[s].title)}</a>`:'').join('')}`:''}${(b.stories||[]).filter(s=>!(b.cited||[]).includes(s)).length?`<div class="mlbl">Related</div>${b.stories.filter(s=>!(b.cited||[]).includes(s)).map(s=>bySlug[s]?`<a href="#${esc(s)}">№${bySlug[s].n} · ${esc(bySlug[s].title)}</a>`:'').join('')}`:''}</div>`:''}
       ${b.count>1?`<div class="foot"><span class="links" data-titles="${b.i}">${b.count} titles</span>${b.url?`<a class="read" href="${esc(b.url)}">Audible</a>`:''}</div>
       <div class="more titles">${b.titles.map(t=>`<a href="${esc(t.url)}"><span class="tick ${t.finished?'done':(t.in_progress?'part':'')}"></span>${t.n<999?`<small>${t.n}</small> `:''}${esc(t.title)}</a>`).join('')}</div>`:''}
     </article>`).join(''):`<div class="empty"><b>Nothing on that frequency.</b>Try another word or clear a chip.</div>`;
@@ -370,7 +373,7 @@
     $('#view-library').hidden=v!=='library';
     $('#nav-stories').classList.toggle('on',v==='stories'); $('#nav-library').classList.toggle('on',v==='library');
     $('#h1').innerHTML=v==='library'?'The <span>library</span> behind the stories.':'Find the <span>story</span> you\'re looking for.';
-    $('#lede').textContent=v==='library'?'What I\'ve listened to and read, by series, with the stories each one shaped and the names it gave this place. Gold dot: finished. Type to tune.':'Pulse is the Tuesday transmission. Spectrum is the whole band: every story, every series, every thread, on one dial. Start typing.';
+    $('#lede').textContent=v==='library'?'What I\'ve listened to and read, on my own shelves, with the stories each one shaped and the names it gave this place. Gold dot: finished. Type to tune.':'Pulse is the Tuesday transmission. Spectrum is the whole band: every story, every series, every thread, on one dial. Start typing.';
     $('#q').placeholder=v==='library'?'Expanse, Dune, leadership, habits…':'memory, agents, Skippy, leadership, Claude…';
     if(v==='library') renderLibrary(); else { $('#dial').style.display=''; $('.dial-cap').style.display=''; render(); }
     if(v==='stories'&&openSlug){ const el=document.querySelector(`.card[data-slug="${openSlug}"]`); if(el){ setTimeout(()=>el.scrollIntoView({behavior:'smooth',block:'start'}),50); } }

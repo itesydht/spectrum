@@ -149,9 +149,6 @@
   "why": "",
   "named": "Skippy",
   "stories": [
-   "the-effort-of-being-a-team",
-   "i-am-the-root",
-   "the-man-behind-the-curtain",
    "whos-driving"
   ],
   "tags": [
@@ -161,7 +158,14 @@
   ],
   "count": 19,
   "finished": 7,
-  "in_progress": 12
+  "in_progress": 12,
+  "cited": [
+   "a-house-to-live-in",
+   "the-effort-of-being-a-team",
+   "i-am-the-root",
+   "the-man-behind-the-curtain"
+  ],
+  "shelf": "Science Fiction"
  },
  {
   "title": "The Expanse",
@@ -241,11 +245,9 @@
    "namesakes"
   ],
   "why": "",
-  "named": "Holden (chat), Naomi (builder), Alex (reviewer), Amos, Miller, Tycho (the Mac Mini), the Rocinante, Tightbeam",
+  "named": "Holden (chat), Naomi (builder), Alex (reviewer), Amos, Miller, Fred Johnson (ran Tycho Station; so did his namesake, until I killed him), Tycho (the Mac Mini), the Rocinante, Tightbeam",
   "stories": [
-   "claude-chat-claude-code-and-me",
-   "the-master-control-project",
-   "the-day-i-killed-fred"
+   "the-master-control-project"
   ],
   "tags": [
    "the expanse",
@@ -254,7 +256,14 @@
   ],
   "count": 9,
   "finished": 6,
-  "in_progress": 1
+  "in_progress": 1,
+  "cited": [
+   "claude-chat-claude-code-and-me",
+   "a-house-to-live-in",
+   "model-context-protocol",
+   "the-day-i-killed-fred"
+  ],
+  "shelf": "Science Fiction"
  },
  {
   "title": "Bobiverse",
@@ -308,8 +317,7 @@
   "why": "",
   "named": "Bob (chief of staff bot) and the We Are Bob project",
   "stories": [
-   "whos-driving",
-   "a-house-to-live-in"
+   "whos-driving"
   ],
   "tags": [
    "bobiverse",
@@ -318,7 +326,11 @@
   ],
   "count": 5,
   "finished": 3,
-  "in_progress": 2
+  "in_progress": 2,
+  "cited": [
+   "a-house-to-live-in"
+  ],
+  "shelf": "Science Fiction"
  },
  {
   "title": "Accelerate",
@@ -353,7 +365,9 @@
   ],
   "count": 1,
   "finished": 1,
-  "in_progress": 0
+  "in_progress": 0,
+  "cited": [],
+  "shelf": "Leadership / Business"
  },
  {
   "title": "Elon Musk",
@@ -387,7 +401,9 @@
   ],
   "count": 1,
   "finished": 1,
-  "in_progress": 0
+  "in_progress": 0,
+  "cited": [],
+  "shelf": "Finance / Strategy"
  },
  {
   "title": "Never Finished",
@@ -421,7 +437,11 @@
   ],
   "count": 1,
   "finished": 1,
-  "in_progress": 0
+  "in_progress": 0,
+  "cited": [
+   "the-garage-gym"
+  ],
+  "shelf": "Psychology / Mental Performance"
  },
  {
   "title": "Team Topologies",
@@ -456,7 +476,9 @@
   ],
   "count": 1,
   "finished": 1,
-  "in_progress": 0
+  "in_progress": 0,
+  "cited": [],
+  "shelf": "Leadership / Business"
  },
  {
   "title": "Algorithms to Live By",
@@ -490,7 +512,9 @@
   ],
   "count": 1,
   "finished": 0,
-  "in_progress": 0
+  "in_progress": 0,
+  "cited": [],
+  "shelf": "Psychology / Mental Performance"
  },
  {
   "title": "Ask Your Developer",
@@ -523,7 +547,9 @@
   ],
   "count": 1,
   "finished": 0,
-  "in_progress": 0
+  "in_progress": 0,
+  "cited": [],
+  "shelf": "Leadership / Business"
  },
  {
   "title": "Can't Hurt Me",
@@ -557,7 +583,9 @@
   ],
   "count": 1,
   "finished": 0,
-  "in_progress": 1
+  "in_progress": 1,
+  "cited": [],
+  "shelf": "Psychology / Mental Performance"
  },
  {
   "title": "Crucial Conversations",
@@ -598,7 +626,9 @@
   ],
   "count": 2,
   "finished": 0,
-  "in_progress": 2
+  "in_progress": 2,
+  "cited": [],
+  "shelf": "Negotiation / Communication"
  },
  {
   "title": "Emotional Intelligence 2.0",
@@ -632,7 +662,9 @@
   ],
   "count": 1,
   "finished": 0,
-  "in_progress": 1
+  "in_progress": 1,
+  "cited": [],
+  "shelf": "Psychology / Mental Performance"
  },
  {
   "title": "Empowered",
@@ -666,7 +698,11 @@
   ],
   "count": 1,
   "finished": 0,
-  "in_progress": 1
+  "in_progress": 1,
+  "cited": [
+   "even-ai-needs-the-why"
+  ],
+  "shelf": "Leadership / Business"
  },
  {
   "title": "Extreme Ownership",
@@ -700,7 +736,9 @@
   ],
   "count": 1,
   "finished": 0,
-  "in_progress": 1
+  "in_progress": 1,
+  "cited": [],
+  "shelf": "Leadership / Business"
  },
  {
   "title": "Man's Search for Meaning",
@@ -734,7 +772,9 @@
   ],
   "count": 1,
   "finished": 0,
-  "in_progress": 1
+  "in_progress": 1,
+  "cited": [],
+  "shelf": "Psychology / Mental Performance"
  },
  {
   "title": "Never Split the Difference",
@@ -767,7 +807,9 @@
   ],
   "count": 1,
   "finished": 0,
-  "in_progress": 0
+  "in_progress": 0,
+  "cited": [],
+  "shelf": "Negotiation / Communication"
  },
  {
   "title": "No Rules Rules",
@@ -800,7 +842,9 @@
   ],
   "count": 1,
   "finished": 0,
-  "in_progress": 1
+  "in_progress": 1,
+  "cited": [],
+  "shelf": "Leadership / Business"
  },
  {
   "title": "Nonviolent Communication",
@@ -834,7 +878,9 @@
   ],
   "count": 1,
   "finished": 0,
-  "in_progress": 1
+  "in_progress": 1,
+  "cited": [],
+  "shelf": "Negotiation / Communication"
  },
  {
   "title": "Strengths Based Leadership",
@@ -868,7 +914,9 @@
   ],
   "count": 1,
   "finished": 0,
-  "in_progress": 0
+  "in_progress": 0,
+  "cited": [],
+  "shelf": "Leadership / Business"
  },
  {
   "title": "Superintelligence",
@@ -902,7 +950,9 @@
   ],
   "count": 1,
   "finished": 0,
-  "in_progress": 1
+  "in_progress": 1,
+  "cited": [],
+  "shelf": "Psychology / Mental Performance"
  },
  {
   "title": "The Artist's Way",
@@ -936,7 +986,9 @@
   ],
   "count": 1,
   "finished": 0,
-  "in_progress": 0
+  "in_progress": 0,
+  "cited": [],
+  "shelf": "Psychology / Mental Performance"
  },
  {
   "title": "The Body Keeps the Score",
@@ -970,7 +1022,11 @@
   ],
   "count": 1,
   "finished": 0,
-  "in_progress": 0
+  "in_progress": 0,
+  "cited": [
+   "feelings-are-data"
+  ],
+  "shelf": "Psychology / Mental Performance"
  },
  {
   "title": "Think Like a Rocket Scientist",
@@ -1004,7 +1060,9 @@
   ],
   "count": 1,
   "finished": 0,
-  "in_progress": 1
+  "in_progress": 1,
+  "cited": [],
+  "shelf": "Leadership / Business"
  },
  {
   "title": "Networking for People Who Hate Networking, Second Edition",
@@ -1031,7 +1089,9 @@
   "tags": [],
   "count": 1,
   "finished": 1,
-  "in_progress": 0
+  "in_progress": 0,
+  "cited": [],
+  "shelf": "Leadership / Business"
  },
  {
   "title": "Shadow Cell",
@@ -1058,7 +1118,9 @@
   "tags": [],
   "count": 1,
   "finished": 1,
-  "in_progress": 0
+  "in_progress": 0,
+  "cited": [],
+  "shelf": "Fiction / Other"
  },
  {
   "title": "Still Just a Geek",
@@ -1085,7 +1147,9 @@
   "tags": [],
   "count": 1,
   "finished": 1,
-  "in_progress": 0
+  "in_progress": 0,
+  "cited": [],
+  "shelf": "Fiction / Other"
  },
  {
   "title": "The Decision",
@@ -1112,7 +1176,9 @@
   "tags": [],
   "count": 1,
   "finished": 1,
-  "in_progress": 0
+  "in_progress": 0,
+  "cited": [],
+  "shelf": "Fiction / Other"
  },
  {
   "title": "The Leadership Moment",
@@ -1139,7 +1205,9 @@
   "tags": [],
   "count": 1,
   "finished": 1,
-  "in_progress": 0
+  "in_progress": 0,
+  "cited": [],
+  "shelf": "Leadership / Business"
  },
  {
   "title": "The Value of Others",
@@ -1166,7 +1234,9 @@
   "tags": [],
   "count": 1,
   "finished": 1,
-  "in_progress": 0
+  "in_progress": 0,
+  "cited": [],
+  "shelf": "Leadership / Business"
  },
  {
   "title": "True North",
@@ -1193,7 +1263,9 @@
   "tags": [],
   "count": 1,
   "finished": 1,
-  "in_progress": 0
+  "in_progress": 0,
+  "cited": [],
+  "shelf": "Leadership / Business"
  },
  {
   "title": "12 Rules for Life",
@@ -1220,7 +1292,9 @@
   "tags": [],
   "count": 1,
   "finished": 0,
-  "in_progress": 1
+  "in_progress": 1,
+  "cited": [],
+  "shelf": "Psychology / Mental Performance"
  },
  {
   "title": "48 Laws of Power",
@@ -1247,7 +1321,9 @@
   "tags": [],
   "count": 1,
   "finished": 0,
-  "in_progress": 1
+  "in_progress": 1,
+  "cited": [],
+  "shelf": "Finance / Strategy"
  },
  {
   "title": "A Leader's Legacy",
@@ -1274,7 +1350,9 @@
   "tags": [],
   "count": 1,
   "finished": 0,
-  "in_progress": 0
+  "in_progress": 0,
+  "cited": [],
+  "shelf": "Leadership / Business"
  },
  {
   "title": "A Promised Land",
@@ -1301,7 +1379,9 @@
   "tags": [],
   "count": 1,
   "finished": 0,
-  "in_progress": 1
+  "in_progress": 1,
+  "cited": [],
+  "shelf": "Finance / Strategy"
  },
  {
   "title": "Born a Crime",
@@ -1328,7 +1408,9 @@
   "tags": [],
   "count": 1,
   "finished": 0,
-  "in_progress": 1
+  "in_progress": 1,
+  "cited": [],
+  "shelf": "Fiction / Other"
  },
  {
   "title": "Forever Strong™",
@@ -1355,7 +1437,9 @@
   "tags": [],
   "count": 1,
   "finished": 0,
-  "in_progress": 1
+  "in_progress": 1,
+  "cited": [],
+  "shelf": "Health / Performance"
  },
  {
   "title": "Glucose Revolution",
@@ -1382,7 +1466,9 @@
   "tags": [],
   "count": 1,
   "finished": 0,
-  "in_progress": 0
+  "in_progress": 0,
+  "cited": [],
+  "shelf": "Health / Performance"
  },
  {
   "title": "Greenlights",
@@ -1409,7 +1495,9 @@
   "tags": [],
   "count": 1,
   "finished": 0,
-  "in_progress": 0
+  "in_progress": 0,
+  "cited": [],
+  "shelf": "Finance / Strategy"
  },
  {
   "title": "Making It So",
@@ -1436,7 +1524,9 @@
   "tags": [],
   "count": 1,
   "finished": 0,
-  "in_progress": 0
+  "in_progress": 0,
+  "cited": [],
+  "shelf": "Fiction / Other"
  },
  {
   "title": "Notes on Being a Man",
@@ -1463,7 +1553,9 @@
   "tags": [],
   "count": 1,
   "finished": 0,
-  "in_progress": 1
+  "in_progress": 1,
+  "cited": [],
+  "shelf": "Fiction / Other"
  },
  {
   "title": "Secrets to Winning at Office Politics",
@@ -1490,7 +1582,9 @@
   "tags": [],
   "count": 1,
   "finished": 0,
-  "in_progress": 1
+  "in_progress": 1,
+  "cited": [],
+  "shelf": "Leadership / Business"
  },
  {
   "title": "Solve for Happy",
@@ -1517,7 +1611,9 @@
   "tags": [],
   "count": 1,
   "finished": 0,
-  "in_progress": 1
+  "in_progress": 1,
+  "cited": [],
+  "shelf": "Psychology / Mental Performance"
  },
  {
   "title": "Starry Messenger",
@@ -1544,7 +1640,9 @@
   "tags": [],
   "count": 1,
   "finished": 0,
-  "in_progress": 0
+  "in_progress": 0,
+  "cited": [],
+  "shelf": "Fiction / Other"
  },
  {
   "title": "The Art of Raising a Puppy",
@@ -1571,7 +1669,9 @@
   "tags": [],
   "count": 1,
   "finished": 0,
-  "in_progress": 1
+  "in_progress": 1,
+  "cited": [],
+  "shelf": "Health / Performance"
  },
  {
   "title": "The Happiness Advantage",
@@ -1598,7 +1698,9 @@
   "tags": [],
   "count": 1,
   "finished": 0,
-  "in_progress": 0
+  "in_progress": 0,
+  "cited": [],
+  "shelf": "Psychology / Mental Performance"
  },
  {
   "title": "The Immortality Key",
@@ -1625,7 +1727,9 @@
   "tags": [],
   "count": 1,
   "finished": 0,
-  "in_progress": 1
+  "in_progress": 1,
+  "cited": [],
+  "shelf": "Psychology / Mental Performance"
  },
  {
   "title": "The Power of Now",
@@ -1652,7 +1756,9 @@
   "tags": [],
   "count": 1,
   "finished": 0,
-  "in_progress": 1
+  "in_progress": 1,
+  "cited": [],
+  "shelf": "Psychology / Mental Performance"
  },
  {
   "title": "The Prince",
@@ -1679,7 +1785,9 @@
   "tags": [],
   "count": 1,
   "finished": 0,
-  "in_progress": 0
+  "in_progress": 0,
+  "cited": [],
+  "shelf": "Finance / Strategy"
  },
  {
   "title": "The Zen of Listening",
@@ -1706,7 +1814,9 @@
   "tags": [],
   "count": 1,
   "finished": 0,
-  "in_progress": 0
+  "in_progress": 0,
+  "cited": [],
+  "shelf": "Negotiation / Communication"
  },
  {
   "title": "This Is Your Brain on Food",
@@ -1733,7 +1843,9 @@
   "tags": [],
   "count": 1,
   "finished": 0,
-  "in_progress": 1
+  "in_progress": 1,
+  "cited": [],
+  "shelf": "Health / Performance"
  },
  {
   "title": "Unthink: Rediscover Your Creative Genius",
@@ -1760,7 +1872,9 @@
   "tags": [],
   "count": 1,
   "finished": 0,
-  "in_progress": 0
+  "in_progress": 0,
+  "cited": [],
+  "shelf": "Psychology / Mental Performance"
  },
  {
   "title": "Jack Reacher",
@@ -1976,7 +2090,9 @@
   "tags": [],
   "count": 28,
   "finished": 15,
-  "in_progress": 10
+  "in_progress": 10,
+  "cited": [],
+  "shelf": "Fiction / Other"
  },
  {
   "title": "Dune",
@@ -2136,7 +2252,9 @@
   "tags": [],
   "count": 20,
   "finished": 14,
-  "in_progress": 3
+  "in_progress": 3,
+  "cited": [],
+  "shelf": "Science Fiction"
  },
  {
   "title": "All Systems Red",
@@ -2163,7 +2281,9 @@
   "tags": [],
   "count": 1,
   "finished": 1,
-  "in_progress": 0
+  "in_progress": 0,
+  "cited": [],
+  "shelf": "Science Fiction"
  },
  {
   "title": "Artemis",
@@ -2190,7 +2310,9 @@
   "tags": [],
   "count": 1,
   "finished": 1,
-  "in_progress": 0
+  "in_progress": 0,
+  "cited": [],
+  "shelf": "Science Fiction"
  },
  {
   "title": "Children of Time",
@@ -2217,7 +2339,9 @@
   "tags": [],
   "count": 1,
   "finished": 1,
-  "in_progress": 0
+  "in_progress": 0,
+  "cited": [],
+  "shelf": "Science Fiction"
  },
  {
   "title": "Quantum Earth",
@@ -2251,7 +2375,9 @@
   "tags": [],
   "count": 2,
   "finished": 1,
-  "in_progress": 0
+  "in_progress": 0,
+  "cited": [],
+  "shelf": "Science Fiction"
  },
  {
   "title": "Roadkill",
@@ -2278,7 +2404,9 @@
   "tags": [],
   "count": 1,
   "finished": 1,
-  "in_progress": 0
+  "in_progress": 0,
+  "cited": [],
+  "shelf": "Science Fiction"
  },
  {
   "title": "The Singularity Trap",
@@ -2305,7 +2433,9 @@
   "tags": [],
   "count": 1,
   "finished": 1,
-  "in_progress": 0
+  "in_progress": 0,
+  "cited": [],
+  "shelf": "Science Fiction"
  },
  {
   "title": "The Wandering Earth",
@@ -2332,7 +2462,9 @@
   "tags": [],
   "count": 1,
   "finished": 1,
-  "in_progress": 0
+  "in_progress": 0,
+  "cited": [],
+  "shelf": "Science Fiction"
  },
  {
   "title": "Cryptonomicon",
@@ -2359,7 +2491,9 @@
   "tags": [],
   "count": 1,
   "finished": 0,
-  "in_progress": 1
+  "in_progress": 1,
+  "cited": [],
+  "shelf": "Science Fiction"
  },
  {
   "title": "Dungeon Crawler Carl",
@@ -2386,7 +2520,9 @@
   "tags": [],
   "count": 1,
   "finished": 0,
-  "in_progress": 1
+  "in_progress": 1,
+  "cited": [],
+  "shelf": "Science Fiction"
  },
  {
   "title": "Foundation",
@@ -2420,7 +2556,9 @@
   "tags": [],
   "count": 2,
   "finished": 0,
-  "in_progress": 2
+  "in_progress": 2,
+  "cited": [],
+  "shelf": "Science Fiction"
  },
  {
   "title": "Project Hail Mary",
@@ -2447,7 +2585,9 @@
   "tags": [],
   "count": 1,
   "finished": 0,
-  "in_progress": 0
+  "in_progress": 0,
+  "cited": [],
+  "shelf": "Science Fiction"
  },
  {
   "title": "Remembrance of Earth's Past (Three-Body)",
@@ -2495,7 +2635,9 @@
   "tags": [],
   "count": 4,
   "finished": 0,
-  "in_progress": 1
+  "in_progress": 1,
+  "cited": [],
+  "shelf": "Science Fiction"
  },
  {
   "title": "The Hitchhiker's Guide to the Galaxy",
@@ -2522,7 +2664,9 @@
   "tags": [],
   "count": 1,
   "finished": 0,
-  "in_progress": 0
+  "in_progress": 0,
+  "cited": [],
+  "shelf": "Science Fiction"
  },
  {
   "title": "The Silo Saga",
@@ -2563,6 +2707,8 @@
   "tags": [],
   "count": 3,
   "finished": 0,
-  "in_progress": 1
+  "in_progress": 1,
+  "cited": [],
+  "shelf": "Science Fiction"
  }
 ]

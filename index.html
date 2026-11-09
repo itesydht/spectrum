@@ -374,6 +374,16 @@
   const books=(data.library||data.books||[]).map((b,i)=>Object.assign({i,kind:'book',stories:[],cited:[],tags:[],titles:[],shelf:'Other'},b,{bands:b.bands||[b.band||'nonfiction']}));
   const BANDS={source:'Source material',namesakes:'Namesakes',behind:'Behind the stories'};
   const isSource=b=>b.bands.includes('behind')||b.bands.includes('namesakes');
+  const ONES=['zero','one','two','three','four','five','six','seven','eight','nine','ten','eleven','twelve','thirteen','fourteen','fifteen','sixteen','seventeen','eighteen','nineteen'], TENS=['','','twenty','thirty','forty','fifty','sixty','seventy','eighty','ninety'];
+  const numWord=n=>n<20?ONES[n]:TENS[Math.floor(n/10)]+(n%10?'-'+ONES[n%10]:'');
+  const cap=w=>w.charAt(0).toUpperCase()+w.slice(1);
+  // Page copy. Alternatives and the reasoning live in COPY.md; edit there first, then here.
+  const COPY={
+    stories:{h1:'Every <span>story</span>. One dial.',
+      lede:()=>`Find the signal. ${cap(numWord(posts.length))} Tuesdays so far: health, family, leadership, and an AI crew on a Mac Mini. A word, a name, or a feeling, and the dial narrows to the stories that match.`},
+    library:{h1:'The <span>sources</span> behind the stories.',
+      lede:()=>`${cap(numWord(books.filter(isSource).length))} that shaped how I think, and the names they gave this place: Holden, Skippy, Tycho, Bob. Each card says which stories it stands behind. Everything else I've listened to is one chip away.`}
+  };
   const SHELVES=[...new Set(books.map(b=>b.shelf))];
   const KINDS={series:'Series',book:'Book',podcast:'Podcast',video:'Video',talk:'Talk',paper:'Paper',site:'Site',tool:'Tool'};
   const seriesList=data.series||[];
@@ -599,8 +609,8 @@
     $('#view-library').hidden=v!=='library';
     $('#nav-stories').classList.toggle('on',v==='stories'); $('#nav-library').classList.toggle('on',v==='library');
     $('#dnav-stories').classList.toggle('on',v==='stories'); $('#dnav-library').classList.toggle('on',v==='library');
-    $('#h1').innerHTML=v==='library'?'The <span>source material</span> behind the stories.':'Find the <span>story</span> you\'re looking for.';
-    $('#lede').textContent=v==='library'?'What I\'ve listened to and read, on my own shelves, with the stories each one shaped and the names it gave this place. Type to tune.':'Pulse is the Tuesday transmission. Spectrum is the whole band: every story, every series, every thread, on one dial. Start typing.';
+    $('#h1').innerHTML=COPY[v==='library'?'library':'stories'].h1;
+    $('#lede').textContent=COPY[v==='library'?'library':'stories'].lede();
     $('#q').placeholder=v==='library'?'Expanse, Dune, leadership, habits…':'memory, agents, Skippy, leadership, Claude…';
     if(v==='library') renderLibrary(); else { $('#dial').style.display=''; $('.dial-cap').style.display=''; render(); }
     if(switched&&!openSlug) window.scrollTo({top:0,behavior:'smooth'});

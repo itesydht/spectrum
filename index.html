@@ -35,16 +35,30 @@
   a{color:inherit;text-decoration:none}
   .wrap{max-width:1040px;margin:0 auto;padding:0 20px}
 
-  /* header */
-  header{border-bottom:1px solid var(--bg2);padding:18px 0 14px}
-  .brand{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
-  .brand a.home{display:flex;align-items:center;gap:12px}
-  .brand .logo{width:40px;height:40px;border-radius:8px;object-fit:cover;flex:none}
-  .brand .pub{font-family:var(--heading);font-weight:600;font-size:17px;letter-spacing:.1px}
-  .brand .pub small{display:block;font-family:var(--body);font-weight:400;font-size:12px;color:var(--fg2);letter-spacing:.3px}
-  nav{display:flex;align-items:center;gap:18px;font-size:13.5px;color:var(--fg2)}
-  nav a:hover{color:var(--fg)} nav a.on{color:var(--pop)}
-  nav a.sub{background:var(--pop);color:#1C1C1E;font-weight:600;padding:8px 14px;border-radius:8px;font-family:var(--body)} nav a.sub:hover{background:#a0740a;color:#1C1C1E}
+  /* header: mirrors pulse.itesydht.com */
+  header{padding:0}
+  .bar{display:flex;align-items:center;gap:10px;padding:10px 16px;max-width:1280px;margin:0 auto}
+  .bar .logo{width:40px;height:40px;border-radius:8px;object-fit:cover;flex:none;display:block}
+  .bar nav{display:flex;align-items:center;gap:6px;flex:1;min-width:0}
+  .bar nav a{display:inline-block;padding:6px 12px;border-radius:999px;background:#2a2a2c;color:#d6d6d7;font:500 13px/1 var(--body);white-space:nowrap}
+  .bar nav a:hover{background:#3b3b3c;color:#fff} .bar nav a.on{color:var(--pop);background:#2a2a2c}
+  .bar .right{display:flex;align-items:center;gap:10px;margin-left:auto}
+  .bar a.sub{background:var(--pop);color:#1C1C1E;font:600 14px/1 var(--body);padding:10px 16px;border-radius:8px;white-space:nowrap} .bar a.sub:hover{background:#a0740a}
+  .bar .burger{display:none;width:40px;height:40px;border:0;background:transparent;color:#fff;cursor:pointer;padding:8px}
+  .bar .burger span{display:block;height:2px;background:#fff;margin:5px 0;border-radius:2px}
+  .bar .mtitle{display:none;font-family:var(--heading);font-weight:600;font-size:17px;color:#fff;flex:1;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .pubname{display:block;text-align:center;font-family:var(--heading);font-weight:600;font-size:24px;color:#fff;padding:14px 20px 6px}
+  .pubname small{display:block;font-family:var(--body);font-weight:400;font-size:12.5px;color:var(--fg2);margin-top:4px;letter-spacing:.3px}
+  .drawer{display:none;position:fixed;inset:0;z-index:60;background:rgba(0,0,0,.6)}
+  .drawer.on{display:block}
+  .drawer .panel{position:absolute;top:0;left:0;bottom:0;width:min(320px,85vw);background:var(--bg);border-right:1px solid var(--bg2);padding:18px 16px;display:flex;flex-direction:column;gap:4px}
+  .drawer .panel a{display:block;padding:14px 12px;border-radius:10px;color:#fff;font:500 16px/1 var(--body)} .drawer .panel a:hover,.drawer .panel a.on{background:#2a2a2c;color:var(--pop)}
+  .drawer .panel .x{align-self:flex-end;width:36px;height:36px;border:0;background:transparent;color:#fff;font-size:22px;cursor:pointer}
+  @media (max-width:860px){
+    .bar nav{display:none} .bar .burger{display:block} .bar .mtitle{display:block} .bar .logo{display:none}
+    .bar a.sub{padding:9px 14px;font-size:13px}
+    .pubname{display:none}
+  }
 
   /* hero / tuner */
   .hero{padding:44px 0 10px}
@@ -173,19 +187,28 @@
 </head>
 <body>
 <header>
-  <div class="wrap brand">
-    <a class="home" href="https://pulse.itesydht.com" title="Back to the newsletter">
-      <img class="logo" src="/assets/logo-160.png" alt="" width="40" height="40">
-      <span class="pub">I Tried Everything So You Don't Have To<small>Spectrum · every story, tuned</small></span>
-    </a>
-    <nav>
-      <a href="https://pulse.itesydht.com">Pulse</a>
+  <div class="bar">
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    <a href="https://pulse.itesydht.com" title="I Tried Everything So You Don't Have To"><img class="logo" src="/assets/logo-160.png" alt="" width="40" height="40"></a>
+    <nav id="topnav">
+      <a href="https://pulse.itesydht.com">Home</a>
+      <a href="https://pulse.itesydht.com/notes">Notes</a>
       <a href="#stories" id="nav-stories" class="on">Story Locator</a>
       <a href="#library" id="nav-library">Source Material</a>
       <a href="https://pulse.itesydht.com/about">About</a>
-      <a class="sub" href="https://pulse.itesydht.com/subscribe">Subscribe</a>
     </nav>
+    <a class="mtitle" href="https://pulse.itesydht.com">I Tried Everything So You Don't Have To</a>
+    <div class="right"><a class="sub" href="https://pulse.itesydht.com/subscribe">Subscribe</a></div>
   </div>
+  <a class="pubname" href="https://pulse.itesydht.com">I Tried Everything So You Don't Have To<small>Spectrum · every story, tuned</small></a>
+  <div class="drawer" id="drawer"><div class="panel">
+    <button class="x" data-close-drawer aria-label="Close">×</button>
+    <a href="https://pulse.itesydht.com">Home</a>
+    <a href="https://pulse.itesydht.com/notes">Notes</a>
+    <a href="#stories" id="dnav-stories">Story Locator</a>
+    <a href="#library" id="dnav-library">Source Material</a>
+    <a href="https://pulse.itesydht.com/about">About</a>
+  </div></div>
 </header>
 
 <main class="wrap">
@@ -574,6 +597,7 @@
     $('#view-stories').hidden=v!=='stories'; $('#stories-filters').hidden=v!=='stories';
     $('#view-library').hidden=v!=='library';
     $('#nav-stories').classList.toggle('on',v==='stories'); $('#nav-library').classList.toggle('on',v==='library');
+    $('#dnav-stories').classList.toggle('on',v==='stories'); $('#dnav-library').classList.toggle('on',v==='library');
     $('#h1').innerHTML=v==='library'?'The <span>source material</span> behind the stories.':'Find the <span>story</span> you\'re looking for.';
     $('#lede').textContent=v==='library'?'What I\'ve listened to and read, on my own shelves, with the stories each one shaped and the names it gave this place. Type to tune.':'Pulse is the Tuesday transmission. Spectrum is the whole band: every story, every series, every thread, on one dial. Start typing.';
     $('#q').placeholder=v==='library'?'Expanse, Dune, leadership, habits…':'memory, agents, Skippy, leadership, Claude…';
@@ -604,6 +628,8 @@
   $('#lbands').addEventListener('click',e=>{const b=e.target.closest('[data-lband]'); if(!b) return; lband=b.dataset.lband||null; renderLibrary();});
   $('#q').addEventListener('input',()=>{ if(view==='library'&&lband==='source'&&$('#q').value.trim()){ lband=null; renderLibrary(); } });
   $('#lkinds').addEventListener('click',e=>{const b=e.target.closest('[data-lkind]'); if(!b) return; lkind=lkind===b.dataset.lkind?null:b.dataset.lkind; renderLibrary();});
+  $('#burger').addEventListener('click',()=>$('#drawer').classList.add('on'));
+  $('#drawer').addEventListener('click',e=>{ if(e.target===$('#drawer')||e.target.closest('[data-close-drawer]')||e.target.closest('a')) $('#drawer').classList.remove('on'); });
   readHash(); setView(view); if(openSlug) openStory(openSlug);
   if(window.matchMedia('(min-width:700px)').matches) $('#q').focus();
 })();

@@ -13,7 +13,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon-180x180.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="I Tried Everything So You Don't Have To">
-<meta property="og:title" content="Spectrum · every story, tuned">
+<meta property="og:title" content="Spectrum · story finder and source material">
 <meta property="og:description" content="Every story from I Tried Everything So You Don't Have To, by Eddy Simmons, on one dial. Plus the library behind them.">
 <meta property="og:image" content="https://spectrum.itesydht.com/assets/logo-700.png">
 <meta property="og:url" content="https://spectrum.itesydht.com/">
@@ -180,8 +180,8 @@
     </a>
     <nav>
       <a href="https://pulse.itesydht.com">Pulse</a>
-      <a href="#stories" id="nav-stories" class="on">Stories</a>
-      <a href="#library" id="nav-library">Library</a>
+      <a href="#stories" id="nav-stories" class="on">Story Finder</a>
+      <a href="#library" id="nav-library">Source Material</a>
       <a href="https://pulse.itesydht.com/about">About</a>
       <a class="sub" href="https://pulse.itesydht.com/subscribe">Subscribe</a>
     </nav>
@@ -572,7 +572,7 @@
     $('#view-stories').hidden=v!=='stories'; $('#stories-filters').hidden=v!=='stories';
     $('#view-library').hidden=v!=='library';
     $('#nav-stories').classList.toggle('on',v==='stories'); $('#nav-library').classList.toggle('on',v==='library');
-    $('#h1').innerHTML=v==='library'?'The <span>library</span> behind the stories.':'Find the <span>story</span> you\'re looking for.';
+    $('#h1').innerHTML=v==='library'?'The <span>source material</span> behind the stories.':'Find the <span>story</span> you\'re looking for.';
     $('#lede').textContent=v==='library'?'What I\'ve listened to and read, on my own shelves, with the stories each one shaped and the names it gave this place. Type to tune.':'Pulse is the Tuesday transmission. Spectrum is the whole band: every story, every series, every thread, on one dial. Start typing.';
     $('#q').placeholder=v==='library'?'Expanse, Dune, leadership, habits…':'memory, agents, Skippy, leadership, Claude…';
     if(v==='library') renderLibrary(); else { $('#dial').style.display=''; $('.dial-cap').style.display=''; render(); }

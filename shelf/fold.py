@@ -13,14 +13,9 @@ SRC = ROOT / "shelf" / "audible.json"
 SUMS = ROOT / "shelf" / "series-summaries.json"   # series notes lifted from the Audible export
 OUT = ROOT / "data" / "library.json"
 
-# Not Eddy's (household, school) — confirmed or best guess; flip freely.
-EXCLUDE = {
-    "Open Book", "To Kill a Mockingbird", "Two Old Women", "The Stranger", "Infinite Jest",
-    "One of Us Is Lying", "Five Survive", "We Were Liars", "The One and Only Ivan", "One and Only Ivan", "Harry Potter",
-    "Go the F--k to Sleep", "Maasverse , A Court of Thorns and Roses", "Girl, Wash Your Face",
-    "The 7 Habits of Highly Effective Teens", "Words + Music", "The Targaryen Dynasty: The House of the Dragon",
-    "Sun Symbol Series", "Skink Series", "The Crypt", "Audible Original Stories",
-}
+# Eddy's decisions from the curation page (exact Audible titles to leave out, plus card edits).
+DECISIONS = json.load(open(ROOT / "shelf" / "decisions.json")) if (ROOT / "shelf" / "decisions.json").exists() else {}
+EXCLUDE = set(DECISIONS.get("exclude_titles", []))
 FICTION_STANDALONE = {"Cryptonomicon","Starship Troopers","Roadkill","The Singularity Trap","Temporal","Artemis",
     "Project Hail Mary","The Wandering Earth","Oona Out of Order","A Good Marriage","Feedback"}
 NONFICTION_SERIES = {"12 Rules for Life","Extreme Ownership","Toltec Wisdom"}
@@ -71,7 +66,7 @@ def main():
     for r in rows:
         title = r["title"]; ser = series_of(r)
         key = ser or short_title(title)
-        if key in EXCLUDE or title in EXCLUDE or short_title(title) in EXCLUDE: continue
+        if title in EXCLUDE: continue
         c = cards.setdefault(key, {"title": key if ser else short_title(title), "kind": "series" if ser else "book", "author": clean_author(r["author"]),
             "narrator": r["narrator"].split(",")[0].strip(), "titles": [], "url": r["url"], "summary": sums.get(key, ""),
             "bands": [], "why": "", "named": "", "stories": [], "tags": []})
@@ -101,6 +96,11 @@ def main():
                 if prev.get(f): c[f] = prev[f]
             if prev.get("band") == "behind" or c["stories"]: c["bands"].append("behind")
             if prev.get("band") == "namesakes" or c.get("named"): c["bands"].append("namesakes")
+        dec = DECISIONS.get("cards", {}).get(key) or DECISIONS.get("cards", {}).get(c["title"])
+        if dec:
+            for f in ("why", "named", "tags", "stories"):
+                if dec.get(f): c[f] = dec[f]
+            c["bands"] = [c["bands"][0]] + [b for b in dec.get("bands", []) if b in ("behind", "namesakes")]
         c["bands"] = list(dict.fromkeys(c["bands"]))
         out.append(c)
     # keep hand-added entries that aren't in Audible (podcasts, videos)
@@ -111,6 +111,6 @@ def main():
     out.sort(key=lambda c: (min(order.get(b,9) for b in c["bands"]), -c.get("finished",0), c["title"].lower()))
     json.dump(out, open(OUT, "w"), indent=1, ensure_ascii=False)
     print(f"{len(out)} cards; {sum(c.get('count',1) for c in out)} titles; "
-          f"{sum(1 for c in out if c['kind']=='series')} series; excluded {len(EXCLUDE)} labels")
+          f"{sum(1 for c in out if c['kind']=='series')} series; excluded {len(EXCLUDE)} titles")
     print("no summary:", [c["title"] for c in out if not c.get("summary")][:12])
 main()

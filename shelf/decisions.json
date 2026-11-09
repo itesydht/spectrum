@@ -1,0 +1,484 @@
+{
+ "exclude_titles": [
+  "One of Us Is Next: The Sequel to One of Us Is Lying",
+  "One of Us Is Back",
+  "The Fellowship of the Ring: Lord of the Rings, Book 1",
+  "The Two Towers: Lord of the Rings, Book 2",
+  "Feedback",
+  "Go the F--k to Sleep",
+  "Harry Potter and the Sorcerer's Stone, Book 1",
+  "A Court of Wings and Ruin (1 of 3) [Dramatized Adaptation]: A Court of Thorns and Roses, Book 3",
+  "The One and Only Ruby",
+  "Double Whammy",
+  "Mount Fitz Roy",
+  "The Crypt: Shakedown: The Crypt, Book 1",
+  "Fire & Blood (HBO Tie-in Edition): 300 Years Before A Game of Thrones",
+  "The Four Agreements: A Practical Guide to Personal Freedom",
+  "We Were Liars",
+  "...And Your Ass Will Follow: Words + Music, Vol. 39",
+  "A Good Marriage: A Novel",
+  "ADD-Friendly Ways to Organize Your Life Second Edition: Strategies That Work from an Acclaimed Professional Organizer and a Renowned ADD Clinician",
+  "Atomic Habits: An Easy & Proven Way to Build Good Habits & Break Bad Ones",
+  "Attached: The New Science of Adult Attachment and How It Can Help You Find—and Keep—Love",
+  "Be Our Guest: Perfecting the Art of Customer Service",
+  "Five Survive",
+  "Girl, Wash Your Face: Stop Believing the Lies About Who You Are So You Can Become Who You Were Meant to Be",
+  "Hold Me Tight: Seven Conversations for a Lifetime of Love",
+  "I Hate You - Don't Leave Me: Third Edition: Understanding the Borderline Personality",
+  "Infinite Jest (30th Anniversary Edition)",
+  "Irreplaceable: The Art of Standing Out in the Age of Artificial Intelligence",
+  "It's Okay to Be the Boss: The Step-by-Step Guide to Becoming the Manager Your Employees Need",
+  "Leading with Soul: An Uncommon Journey of Spirit",
+  "Loving Your Spouse When You Feel Like Walking Away: Real Help for Desperate Hearts in Difficult Marriages",
+  "Name Drop: The Really Good Celebrity Stories I Usually Only Tell at Happy Hour",
+  "Oona Out of Order: A Novel",
+  "Open Book: A Memoir",
+  "Overcoming Dyslexia: Second Edition, Completely Revised and Updated",
+  "Raising a Secure Child: How Circle of Security Parenting Can Help You Nurture Your Child's Attachment, Emotional Resilience, and Freedom to Explore",
+  "Rewired: The McKinsey Guide to Outcompeting in the Age of Digital and AI",
+  "Shameless: Republicans’ Deliberate Dysfunction and the Battle to Preserve Democracy",
+  "Spiral Dynamics Integral: Learn to Master the Memetic Codes of Human Behavior",
+  "Staff Engineer: Leadership Beyond the Management Track",
+  "Starship Troopers",
+  "Temporal",
+  "The 7 Habits of Highly Effective Teens: The Ultimate Teenage Success Guide",
+  "The Mueller Report: The Findings of the Special Counsel Investigation",
+  "The Seven Principles for Making Marriage Work: A Practical Guide from the Country’s Foremost Relationship Expert, Revised and Updated",
+  "The Stranger",
+  "To Kill a Mockingbird",
+  "Two Old Women: An Alaska Legend of Betrayal, Courage and Survival",
+  "Who's in the Room?: How Great Leaders Structure and Manage the Teams Around Them",
+  "You, Me, We: Why We All Need a Friend at Work (and How to Show Up as One!)"
+ ],
+ "cards": {
+  "Expeditionary Force": {
+   "why": "",
+   "named": "Skippy",
+   "tags": [
+    "expeditionary force",
+    "sci-fi",
+    "namesakes"
+   ],
+   "bands": [
+    "behind",
+    "namesakes"
+   ],
+   "stories": [
+    "the-effort-of-being-a-team",
+    "i-am-the-root",
+    "the-man-behind-the-curtain",
+    "whos-driving"
+   ]
+  },
+  "The Expanse": {
+   "why": "",
+   "named": "Holden (chat), Naomi (builder), Alex (reviewer), Amos, Miller, Tycho (the Mac Mini), the Rocinante, Tightbeam",
+   "tags": [
+    "the expanse",
+    "sci-fi",
+    "namesakes"
+   ],
+   "bands": [
+    "behind",
+    "namesakes"
+   ],
+   "stories": [
+    "claude-chat-claude-code-and-me",
+    "the-master-control-project",
+    "the-day-i-killed-fred"
+   ]
+  },
+  "Bobiverse": {
+   "why": "",
+   "named": "Bob (chief of staff bot) and the We Are Bob project",
+   "tags": [
+    "bobiverse",
+    "sci-fi",
+    "namesakes"
+   ],
+   "bands": [
+    "behind",
+    "namesakes"
+   ],
+   "stories": [
+    "whos-driving",
+    "a-house-to-live-in"
+   ]
+  },
+  "Extreme Ownership": {
+   "why": "",
+   "named": "",
+   "tags": [
+    "leadership",
+    "ownership"
+   ],
+   "bands": [
+    "behind"
+   ],
+   "stories": [
+    "disagree-and-commit",
+    "taking-a-walk"
+   ]
+  },
+  "Crucial Conversations": {
+   "why": "",
+   "named": "",
+   "tags": [
+    "communication",
+    "conflict"
+   ],
+   "bands": [
+    "behind"
+   ],
+   "stories": [
+    "disagree-and-commit",
+    "feelings-are-data"
+   ]
+  },
+  "Accelerate": {
+   "why": "",
+   "named": "",
+   "tags": [
+    "engineering",
+    "devops",
+    "leadership"
+   ],
+   "bands": [
+    "behind"
+   ],
+   "stories": [
+    "the-loss-of-leadership",
+    "even-ai-needs-the-why"
+   ]
+  },
+  "ADD-Friendly Ways to Organize Your Life Second Edition": {
+   "why": "",
+   "named": "",
+   "tags": [
+    "neurodivergence",
+    "systems thinking"
+   ],
+   "bands": [
+    "behind"
+   ],
+   "stories": [
+    "the-emulation-layer",
+    "the-thinking-partner"
+   ]
+  },
+  "Algorithms to Live By": {
+   "why": "",
+   "named": "",
+   "tags": [
+    "systems thinking",
+    "decisions"
+   ],
+   "bands": [
+    "behind"
+   ],
+   "stories": [
+    "the-simplest-system",
+    "the-whole-haystack"
+   ]
+  },
+  "Ask Your Developer": {
+   "why": "",
+   "named": "",
+   "tags": [
+    "engineering",
+    "leadership"
+   ],
+   "bands": [
+    "behind"
+   ],
+   "stories": [
+    "the-loss-of-leadership"
+   ]
+  },
+  "Atomic Habits": {
+   "why": "",
+   "named": "",
+   "tags": [
+    "habits",
+    "systems thinking"
+   ],
+   "bands": [
+    "behind"
+   ],
+   "stories": [
+    "the-simplest-system",
+    "the-scale",
+    "the-garage-gym"
+   ]
+  },
+  "Can't Hurt Me": {
+   "why": "",
+   "named": "",
+   "tags": [
+    "discipline",
+    "resilience"
+   ],
+   "bands": [
+    "behind"
+   ],
+   "stories": [
+    "the-scale",
+    "the-shamrock"
+   ]
+  },
+  "Elon Musk": {
+   "why": "",
+   "named": "",
+   "tags": [
+    "tesla algorithm",
+    "first principles"
+   ],
+   "bands": [
+    "behind"
+   ],
+   "stories": [
+    "the-simplest-system",
+    "the-master-control-project"
+   ]
+  },
+  "Emotional Intelligence 2.0": {
+   "why": "",
+   "named": "",
+   "tags": [
+    "feelings",
+    "self-knowledge"
+   ],
+   "bands": [
+    "behind"
+   ],
+   "stories": [
+    "feelings-are-data",
+    "taking-a-walk"
+   ]
+  },
+  "Empowered": {
+   "why": "",
+   "named": "",
+   "tags": [
+    "product",
+    "leadership"
+   ],
+   "bands": [
+    "behind"
+   ],
+   "stories": [
+    "even-ai-needs-the-why",
+    "the-man-behind-the-curtain"
+   ]
+  },
+  "Irreplaceable": {
+   "why": "",
+   "named": "",
+   "tags": [
+    "ai",
+    "work"
+   ],
+   "bands": [
+    "behind"
+   ],
+   "stories": [
+    "rage-against-the-machine",
+    "even-ai-needs-the-why"
+   ]
+  },
+  "Man's Search for Meaning": {
+   "why": "",
+   "named": "",
+   "tags": [
+    "meaning",
+    "resilience"
+   ],
+   "bands": [
+    "behind"
+   ],
+   "stories": [
+    "taking-a-walk",
+    "montana"
+   ]
+  },
+  "Never Finished": {
+   "why": "",
+   "named": "",
+   "tags": [
+    "discipline",
+    "resilience"
+   ],
+   "bands": [
+    "behind"
+   ],
+   "stories": [
+    "the-shamrock",
+    "wisdom-removed"
+   ]
+  },
+  "Never Split the Difference": {
+   "why": "",
+   "named": "",
+   "tags": [
+    "negotiation",
+    "communication"
+   ],
+   "bands": [
+    "behind"
+   ],
+   "stories": [
+    "disagree-and-commit"
+   ]
+  },
+  "No Rules Rules": {
+   "why": "",
+   "named": "",
+   "tags": [
+    "culture",
+    "leadership"
+   ],
+   "bands": [
+    "behind"
+   ],
+   "stories": [
+    "even-ai-needs-the-why"
+   ]
+  },
+  "Nonviolent Communication": {
+   "why": "",
+   "named": "",
+   "tags": [
+    "communication",
+    "feelings"
+   ],
+   "bands": [
+    "behind"
+   ],
+   "stories": [
+    "feelings-are-data",
+    "the-emulation-layer"
+   ]
+  },
+  "Rewired: The McKinsey Guide to Outcompeting in the Age of Digital and AI": {
+   "why": "",
+   "named": "",
+   "tags": [
+    "ai transformation",
+    "leadership"
+   ],
+   "bands": [
+    "behind"
+   ],
+   "stories": [
+    "even-ai-needs-the-why"
+   ]
+  },
+  "Staff Engineer": {
+   "why": "",
+   "named": "",
+   "tags": [
+    "engineering",
+    "leadership",
+    "career"
+   ],
+   "bands": [
+    "behind"
+   ],
+   "stories": [
+    "the-loss-of-leadership",
+    "big-ideas"
+   ]
+  },
+  "Strengths Based Leadership": {
+   "why": "",
+   "named": "",
+   "tags": [
+    "leadership",
+    "strengths"
+   ],
+   "bands": [
+    "behind"
+   ],
+   "stories": [
+    "taking-a-walk",
+    "big-ideas"
+   ]
+  },
+  "Superintelligence": {
+   "why": "",
+   "named": "",
+   "tags": [
+    "ai",
+    "risk"
+   ],
+   "bands": [
+    "behind"
+   ],
+   "stories": [
+    "rage-against-the-machine",
+    "confidence-man"
+   ]
+  },
+  "Team Topologies": {
+   "why": "",
+   "named": "",
+   "tags": [
+    "teams",
+    "engineering",
+    "org design"
+   ],
+   "bands": [
+    "behind"
+   ],
+   "stories": [
+    "the-effort-of-being-a-team",
+    "the-loss-of-leadership"
+   ]
+  },
+  "The Artist's Way": {
+   "why": "",
+   "named": "",
+   "tags": [
+    "writing",
+    "creativity"
+   ],
+   "bands": [
+    "behind"
+   ],
+   "stories": [
+    "hand-crafted-with-ai",
+    "big-ideas"
+   ]
+  },
+  "The Body Keeps the Score": {
+   "why": "",
+   "named": "",
+   "tags": [
+    "feelings",
+    "resilience"
+   ],
+   "bands": [
+    "behind"
+   ],
+   "stories": [
+    "taking-a-walk",
+    "wisdom-removed"
+   ]
+  },
+  "Think Like a Rocket Scientist": {
+   "why": "",
+   "named": "",
+   "tags": [
+    "thinking",
+    "first principles"
+   ],
+   "bands": [
+    "behind"
+   ],
+   "stories": [
+    "big-ideas",
+    "the-chaos-test"
+   ]
+  }
+ }
+}

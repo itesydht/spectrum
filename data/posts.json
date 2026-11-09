@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-09T02:35:24+00:00",
+ "generated": "2026-11-09T03:20:38+00:00",
  "publication": {
   "name": "I Tried Everything So You Don't Have To",
   "url": "https://pulse.itesydht.com"
@@ -15069,40 +15069,6 @@
    "in_progress": 0
   },
   {
-   "title": "ADD-Friendly Ways to Organize Your Life Second Edition",
-   "kind": "book",
-   "author": "Judith Kolberg",
-   "narrator": "Marguerite Gavin",
-   "titles": [
-    {
-     "title": "ADD-Friendly Ways to Organize Your Life Second Edition: Strategies That Work from an Acclaimed Professional Organizer and a Renowned ADD Clinician",
-     "n": 999,
-     "finished": false,
-     "in_progress": false,
-     "url": "https://www.audible.com/pd/ADD-Friendly-Ways-to-Organize-Your-Life-Second-Edition-Audiobook/B076HY9PB7"
-    }
-   ],
-   "url": "https://www.audible.com/pd/ADD-Friendly-Ways-to-Organize-Your-Life-Second-Edition-Audiobook/B076HY9PB7",
-   "summary": "Acclaimed professional organizer Judith Kolberg and Dr. Kathleen Nadeau, renowned ADHD clinical psychologist, are back with an updated edition of their classic text for adults with ADD. Their collaboration offers the best understanding and solutions for…",
-   "bands": [
-    "nonfiction",
-    "behind"
-   ],
-   "why": "",
-   "named": "",
-   "stories": [
-    "the-emulation-layer",
-    "the-thinking-partner"
-   ],
-   "tags": [
-    "neurodivergence",
-    "systems thinking"
-   ],
-   "count": 1,
-   "finished": 0,
-   "in_progress": 0
-  },
-  {
    "title": "Algorithms to Live By",
    "kind": "book",
    "author": "Brian Christian",
@@ -15168,41 +15134,6 @@
    "count": 1,
    "finished": 0,
    "in_progress": 0
-  },
-  {
-   "title": "Atomic Habits",
-   "kind": "book",
-   "author": "James Clear",
-   "narrator": "James Clear",
-   "titles": [
-    {
-     "title": "Atomic Habits: An Easy & Proven Way to Build Good Habits & Break Bad Ones",
-     "n": 999,
-     "finished": false,
-     "in_progress": true,
-     "url": "https://www.audible.com/pd/Atomic-Habits-Audiobook/1524779261"
-    }
-   ],
-   "url": "https://www.audible.com/pd/Atomic-Habits-Audiobook/1524779261",
-   "summary": "Tiny Changes, Remarkable Results No matter your goals, Atomic Habits offers a proven framework for improving--every day. James Clear, one of the world's leading experts on habi",
-   "bands": [
-    "nonfiction",
-    "behind"
-   ],
-   "why": "",
-   "named": "",
-   "stories": [
-    "the-simplest-system",
-    "the-scale",
-    "the-garage-gym"
-   ],
-   "tags": [
-    "habits",
-    "systems thinking"
-   ],
-   "count": 1,
-   "finished": 0,
-   "in_progress": 1
   },
   {
    "title": "Can't Hurt Me",
@@ -15382,40 +15313,6 @@
    "in_progress": 1
   },
   {
-   "title": "Irreplaceable",
-   "kind": "book",
-   "author": "Pascal Bornet",
-   "narrator": "Christopher P. Brown",
-   "titles": [
-    {
-     "title": "Irreplaceable: The Art of Standing Out in the Age of Artificial Intelligence",
-     "n": 999,
-     "finished": false,
-     "in_progress": false,
-     "url": "https://www.audible.com/pd/Irreplaceable-Audiobook/B0DGVRNBJF"
-    }
-   ],
-   "url": "https://www.audible.com/pd/Irreplaceable-Audiobook/B0DGVRNBJF",
-   "summary": "With over twenty y",
-   "bands": [
-    "nonfiction",
-    "behind"
-   ],
-   "why": "",
-   "named": "",
-   "stories": [
-    "rage-against-the-machine",
-    "even-ai-needs-the-why"
-   ],
-   "tags": [
-    "ai",
-    "work"
-   ],
-   "count": 1,
-   "finished": 0,
-   "in_progress": 0
-  },
-  {
    "title": "Man's Search for Meaning",
    "kind": "book",
    "author": "Viktor E. Frankl",
@@ -15548,74 +15445,6 @@
    "count": 1,
    "finished": 0,
    "in_progress": 1
-  },
-  {
-   "title": "Rewired: The McKinsey Guide to Outcompeting in the Age of Digital and AI",
-   "kind": "book",
-   "author": "Eric Lamarre",
-   "narrator": "George Newbern",
-   "titles": [
-    {
-     "title": "Rewired: The McKinsey Guide to Outcompeting in the Age of Digital and AI",
-     "n": 999,
-     "finished": false,
-     "in_progress": false,
-     "url": "https://www.audible.com/pd/Rewired-Audiobook/B0CGMNF9PN"
-    }
-   ],
-   "url": "https://www.audible.com/pd/Rewired-Audiobook/B0CGMNF9PN",
-   "summary": "Many companies are stuck with digital transformations that are not moving the needle. There are no quick fixes but there is a playbook. The answer is in rewiring your business so hundreds, thousands, of teams can harness technology to continuously create…",
-   "bands": [
-    "nonfiction",
-    "behind"
-   ],
-   "why": "",
-   "named": "",
-   "stories": [
-    "even-ai-needs-the-why"
-   ],
-   "tags": [
-    "ai transformation",
-    "leadership"
-   ],
-   "count": 1,
-   "finished": 0,
-   "in_progress": 0
-  },
-  {
-   "title": "Staff Engineer",
-   "kind": "book",
-   "author": "Will Larson",
-   "narrator": "Shaula Evans",
-   "titles": [
-    {
-     "title": "Staff Engineer: Leadership Beyond the Management Track",
-     "n": 999,
-     "finished": false,
-     "in_progress": false,
-     "url": "https://www.audible.com/pd/Staff-Engineer-Audiobook/B097CNMWWD"
-    }
-   ],
-   "url": "https://www.audible.com/pd/Staff-Engineer-Audiobook/B097CNMWWD",
-   "summary": "At most technology companies, you'll reach Senior software engineer, the career level for software engineers, in five to eight years. At the career level, your company's career ladder won't require that you work towards the next promotion; being promoted…",
-   "bands": [
-    "nonfiction",
-    "behind"
-   ],
-   "why": "",
-   "named": "",
-   "stories": [
-    "the-loss-of-leadership",
-    "big-ideas"
-   ],
-   "tags": [
-    "engineering",
-    "leadership",
-    "career"
-   ],
-   "count": 1,
-   "finished": 0,
-   "in_progress": 0
   },
   {
    "title": "Strengths Based Leadership",
@@ -15788,87 +15617,6 @@
    "in_progress": 1
   },
   {
-   "title": "It's Okay to Be the Boss",
-   "kind": "book",
-   "author": "Bruce Tulgan",
-   "narrator": "Mike Chamberlain",
-   "titles": [
-    {
-     "title": "It's Okay to Be the Boss: The Step-by-Step Guide to Becoming the Manager Your Employees Need",
-     "n": 999,
-     "finished": true,
-     "in_progress": false,
-     "url": "https://www.audible.com/pd/Its-Okay-to-Be-the-Boss-Audiobook/0063143402"
-    }
-   ],
-   "url": "https://www.audible.com/pd/Its-Okay-to-Be-the-Boss-Audiobook/0063143402",
-   "summary": "Bruce Tulgan shows bosses how to get things done by solving corporate America’s huge problem with simple, effective management. In this call-to-arms, consultant and speaker Bruce Tulgan puts his finger on biggest problem in corporate America: no one wants to…",
-   "bands": [
-    "nonfiction"
-   ],
-   "why": "",
-   "named": "",
-   "stories": [],
-   "tags": [],
-   "count": 1,
-   "finished": 1,
-   "in_progress": 0
-  },
-  {
-   "title": "Leading with Soul",
-   "kind": "book",
-   "author": "Lee G. Bolman",
-   "narrator": "Barbara Rosenblat",
-   "titles": [
-    {
-     "title": "Leading with Soul: An Uncommon Journey of Spirit",
-     "n": 999,
-     "finished": true,
-     "in_progress": false,
-     "url": "https://www.audible.com/pd/Leading-with-Soul-Audiobook/B002V5BPOM"
-    }
-   ],
-   "url": "https://www.audible.com/pd/Leading-with-Soul-Audiobook/B002V5BPOM",
-   "summary": "The best selling Leading with Soul is a contemporary parable chronicling the journey of a beleaguered executive's quest...",
-   "bands": [
-    "nonfiction"
-   ],
-   "why": "",
-   "named": "",
-   "stories": [],
-   "tags": [],
-   "count": 1,
-   "finished": 1,
-   "in_progress": 0
-  },
-  {
-   "title": "Name Drop",
-   "kind": "book",
-   "author": "Ross Mathews",
-   "narrator": "Ross Mathews",
-   "titles": [
-    {
-     "title": "Name Drop: The Really Good Celebrity Stories I Usually Only Tell at Happy Hour",
-     "n": 999,
-     "finished": true,
-     "in_progress": false,
-     "url": "https://www.audible.com/pd/Name-Drop-Audiobook/1797101463"
-    }
-   ],
-   "url": "https://www.audible.com/pd/Name-Drop-Audiobook/1797101463",
-   "summary": "Pretend it",
-   "bands": [
-    "nonfiction"
-   ],
-   "why": "",
-   "named": "",
-   "stories": [],
-   "tags": [],
-   "count": 1,
-   "finished": 1,
-   "in_progress": 0
-  },
-  {
    "title": "Networking for People Who Hate Networking, Second Edition",
    "kind": "book",
    "author": "Devora Zack",
@@ -15911,33 +15659,6 @@
    ],
    "url": "https://www.audible.com/pd/Red-Cell-Audiobook/B0CJDJ5PV3",
    "summary": "INSTANT NEW YORK TIMES BESTSELLER A thrilling firsthand account by husband-and-wife CIA operatives who, against all odds, triumphed in a deadly cat-and-mouse game against a mole within the agency—an unprecedented insider account of 21st-century spycraft in…",
-   "bands": [
-    "nonfiction"
-   ],
-   "why": "",
-   "named": "",
-   "stories": [],
-   "tags": [],
-   "count": 1,
-   "finished": 1,
-   "in_progress": 0
-  },
-  {
-   "title": "Shameless",
-   "kind": "book",
-   "author": "Brian Tyler Cohen",
-   "narrator": "Brian Tyler Cohen",
-   "titles": [
-    {
-     "title": "Shameless: Republicans’ Deliberate Dysfunction and the Battle to Preserve Democracy",
-     "n": 999,
-     "finished": true,
-     "in_progress": false,
-     "url": "https://www.audible.com/pd/Shameless-Audiobook/B0CRSGTF86"
-    }
-   ],
-   "url": "https://www.audible.com/pd/Shameless-Audiobook/B0CRSGTF86",
-   "summary": "From the first content creator to interview President Biden, leading progressive voice Brian Tyler Cohen takes a step back from the day-to-day news cycle to explain how American politics has turned into such a dumpster fire—and what Democrat",
    "bands": [
     "nonfiction"
    ],
@@ -16085,33 +15806,6 @@
    "in_progress": 0
   },
   {
-   "title": "You, Me, We",
-   "kind": "book",
-   "author": "Morag Barrett",
-   "narrator": "Morag Barrett",
-   "titles": [
-    {
-     "title": "You, Me, We: Why We All Need a Friend at Work (and How to Show Up as One!)",
-     "n": 999,
-     "finished": true,
-     "in_progress": false,
-     "url": "https://www.audible.com/pd/You-Me-We-Audiobook/B0C1TCRPXM"
-    }
-   ],
-   "url": "https://www.audible.com/pd/You-Me-We-Audiobook/B0C1TCRPXM",
-   "summary": "In today’s age of Zoom calls and hybrid workplaces, how can leaders foster relationships that allow everyone to succeed? A trio of best friends and leadership consultants at SkyeTeam have the surprising answer: workplace success starts by being a friend....",
-   "bands": [
-    "nonfiction"
-   ],
-   "why": "",
-   "named": "",
-   "stories": [],
-   "tags": [],
-   "count": 1,
-   "finished": 1,
-   "in_progress": 0
-  },
-  {
    "title": "12 Rules for Life",
    "kind": "book",
    "author": "Jordan B. Peterson",
@@ -16208,60 +15902,6 @@
    ],
    "url": "https://www.audible.com/pd/A-Promised-Land-Audiobook/0525633723",
    "summary": "A riveting, deeply personal account of history in the making—from the president who inspired us to believe in the power of democracy #1 NEW YORK TIMES BESTSELLER NAACP IMAGE AWARD NOMINEE NAMED ONE OF THE TEN BEST BOOKS OF THE YEAR BY THE NEW YORK TIMES BOOK…",
-   "bands": [
-    "nonfiction"
-   ],
-   "why": "",
-   "named": "",
-   "stories": [],
-   "tags": [],
-   "count": 1,
-   "finished": 0,
-   "in_progress": 1
-  },
-  {
-   "title": "Attached",
-   "kind": "book",
-   "author": "Amir Levine",
-   "narrator": "Robert Petkoff",
-   "titles": [
-    {
-     "title": "Attached: The New Science of Adult Attachment and How It Can Help You Find—and Keep—Love",
-     "n": 999,
-     "finished": false,
-     "in_progress": true,
-     "url": "https://www.audible.com/pd/Attached-Audiobook/0593171667"
-    }
-   ],
-   "url": "https://www.audible.com/pd/Attached-Audiobook/0593171667",
-   "summary": "Why not use science",
-   "bands": [
-    "nonfiction"
-   ],
-   "why": "",
-   "named": "",
-   "stories": [],
-   "tags": [],
-   "count": 1,
-   "finished": 0,
-   "in_progress": 1
-  },
-  {
-   "title": "Be Our Guest",
-   "kind": "book",
-   "author": "The Disney Institute",
-   "narrator": "Barry Abrams",
-   "titles": [
-    {
-     "title": "Be Our Guest: Perfecting the Art of Customer Service",
-     "n": 999,
-     "finished": false,
-     "in_progress": true,
-     "url": "https://www.audible.com/pd/Be-Our-Guest-Audiobook/B00WRCF0RC"
-    }
-   ],
-   "url": "https://www.audible.com/pd/Be-Our-Guest-Audiobook/B00WRCF0RC",
-   "summary": "Exceeding expectations rather than simply satisfying them is the cornerstone of the Disney approach to customer service. Now, in honor of the 10th anniversary of the original Be Our Guest, the Disney Institute, which specializes in helping professionals see…",
    "bands": [
     "nonfiction"
    ],
@@ -16382,87 +16022,6 @@
    "in_progress": 0
   },
   {
-   "title": "Hold Me Tight",
-   "kind": "book",
-   "author": "Dr. Sue Johnson",
-   "narrator": "Helen Keeley",
-   "titles": [
-    {
-     "title": "Hold Me Tight: Seven Conversations for a Lifetime of Love",
-     "n": 999,
-     "finished": false,
-     "in_progress": true,
-     "url": "https://www.audible.com/pd/Hold-Me-Tight-Audiobook/154915768X"
-    }
-   ],
-   "url": "https://www.audible.com/pd/Hold-Me-Tight-Audiobook/154915768X",
-   "summary": "Strengthen and deepen your relationships with revelatory practical exercises, seven profound conversations, and sage advice from “the best couple’s therapist in the world” (John Gottman, PhD, bestselling author) Are you looking to enrich",
-   "bands": [
-    "nonfiction"
-   ],
-   "why": "",
-   "named": "",
-   "stories": [],
-   "tags": [],
-   "count": 1,
-   "finished": 0,
-   "in_progress": 1
-  },
-  {
-   "title": "I Hate You - Don't Leave Me",
-   "kind": "book",
-   "author": "Jerold J. Kreisman",
-   "narrator": "Kevin R. Free",
-   "titles": [
-    {
-     "title": "I Hate You - Don't Leave Me: Third Edition: Understanding the Borderline Personality",
-     "n": 999,
-     "finished": false,
-     "in_progress": false,
-     "url": "https://www.audible.com/pd/I-Hate-You-Dont-Leave-Me-Third-Edition-Audiobook/0593510542"
-    }
-   ],
-   "url": "https://www.audible.com/pd/I-Hate-You-Dont-Leave-Me-Third-Edition-Audiobook/0593510542",
-   "summary": "After more than three decades as the essential guide to borderline pe",
-   "bands": [
-    "nonfiction"
-   ],
-   "why": "",
-   "named": "",
-   "stories": [],
-   "tags": [],
-   "count": 1,
-   "finished": 0,
-   "in_progress": 0
-  },
-  {
-   "title": "Loving Your Spouse When You Feel Like Walking Away",
-   "kind": "book",
-   "author": "Gary Chapman",
-   "narrator": "Chris Fabry",
-   "titles": [
-    {
-     "title": "Loving Your Spouse When You Feel Like Walking Away: Real Help for Desperate Hearts in Difficult Marriages",
-     "n": 999,
-     "finished": false,
-     "in_progress": true,
-     "url": "https://www.audible.com/pd/Loving-Your-Spouse-When-You-Feel-Like-Walking-Away-Audiobook/B07CYXFHP2"
-    }
-   ],
-   "url": "https://www.audible.com/pd/Loving-Your-Spouse-When-You-Feel-Like-Walking-Away-Audiobook/B07CYXFHP2",
-   "summary": "What to do when you feel like giving up When you said, “I do,” you entered marriage with high hopes, dreaming it would be supremely happy. You never intended it to be miserable. Millions of couples are struggling in desperate marriages. But the story doesn’t…",
-   "bands": [
-    "nonfiction"
-   ],
-   "why": "",
-   "named": "",
-   "stories": [],
-   "tags": [],
-   "count": 1,
-   "finished": 0,
-   "in_progress": 1
-  },
-  {
    "title": "Making It So",
    "kind": "book",
    "author": "Patrick Stewart",
@@ -16505,60 +16064,6 @@
    ],
    "url": "https://www.audible.com/pd/Notes-on-Being-a-Man-Audiobook/B0F49BJPFR",
    "summary": "Boys and men are in crisis. Rarely has a cohort fallen further and faster than young men living in Western democracies. Boys are less li",
-   "bands": [
-    "nonfiction"
-   ],
-   "why": "",
-   "named": "",
-   "stories": [],
-   "tags": [],
-   "count": 1,
-   "finished": 0,
-   "in_progress": 1
-  },
-  {
-   "title": "Overcoming Dyslexia",
-   "kind": "book",
-   "author": "Sally Shaywitz M.D.",
-   "narrator": "Sally Shaywitz M.D.",
-   "titles": [
-    {
-     "title": "Overcoming Dyslexia: Second Edition, Completely Revised and Updated",
-     "n": 999,
-     "finished": false,
-     "in_progress": true,
-     "url": "https://www.audible.com/pd/Overcoming-Dyslexia-Audiobook/0593149238"
-    }
-   ],
-   "url": "https://www.audible.com/pd/Overcoming-Dyslexia-Audiobook/0593149238",
-   "summary": "From one of the world's preeminent experts on reading and dyslexia, the most comprehensive, up-to-date, and practical book available on identifying, understanding, and overcoming reading problems--now revised to reflect the latest research and evidence-based…",
-   "bands": [
-    "nonfiction"
-   ],
-   "why": "",
-   "named": "",
-   "stories": [],
-   "tags": [],
-   "count": 1,
-   "finished": 0,
-   "in_progress": 1
-  },
-  {
-   "title": "Raising a Secure Child",
-   "kind": "book",
-   "author": "Kent Hoffman",
-   "narrator": "Coleen Marlo",
-   "titles": [
-    {
-     "title": "Raising a Secure Child: How Circle of Security Parenting Can Help You Nurture Your Child's Attachment, Emotional Resilience, and Freedom to Explore",
-     "n": 999,
-     "finished": false,
-     "in_progress": true,
-     "url": "https://www.audible.com/pd/Raising-a-Secure-Child-Audiobook/B075VFLVD1"
-    }
-   ],
-   "url": "https://www.audible.com/pd/Raising-a-Secure-Child-Audiobook/B075VFLVD1",
-   "summary": "Today's parents are constantly pressured to be perfect. But in striving to do everything right, we risk missing what children really need for lifelong emotional security. Now the simple, powerful \"Circle of Security\" parenting strategies that Kent Hoffman,…",
    "bands": [
     "nonfiction"
    ],
@@ -16625,33 +16130,6 @@
    "in_progress": 1
   },
   {
-   "title": "Spiral Dynamics Integral",
-   "kind": "book",
-   "author": "Don Beck",
-   "narrator": "Don Beck",
-   "titles": [
-    {
-     "title": "Spiral Dynamics Integral: Learn to Master the Memetic Codes of Human Behavior",
-     "n": 999,
-     "finished": false,
-     "in_progress": true,
-     "url": "https://www.audible.com/pd/Spiral-Dynamics-Integral-Audiobook/B002V0PVK6"
-    }
-   ],
-   "url": "https://www.audible.com/pd/Spiral-Dynamics-Integral-Audiobook/B002V0PVK6",
-   "summary": "From the boardrooms of big business to the streets of the inner city, from the south side of Chicago to apartheid South Africa, Dr. Don Beck has taught people at all levels how to stop clashing and start communicating. His method is called Spiral Dynamics…",
-   "bands": [
-    "nonfiction"
-   ],
-   "why": "",
-   "named": "",
-   "stories": [],
-   "tags": [],
-   "count": 1,
-   "finished": 0,
-   "in_progress": 1
-  },
-  {
    "title": "Starry Messenger",
    "kind": "book",
    "author": "Neil deGrasse Tyson",
@@ -16704,33 +16182,6 @@
    "count": 1,
    "finished": 0,
    "in_progress": 1
-  },
-  {
-   "title": "The Four Agreements",
-   "kind": "book",
-   "author": "Don Miguel Ruiz",
-   "narrator": "Peter Coyote",
-   "titles": [
-    {
-     "title": "The Four Agreements",
-     "n": 1,
-     "finished": false,
-     "in_progress": false,
-     "url": "https://www.audible.com/pd/The-Four-Agreements-Audiobook/B0GDPWQSR3"
-    }
-   ],
-   "url": "https://www.audible.com/pd/The-Four-Agreements-Audiobook/B0GDPWQSR3",
-   "summary": "don Miguel Ruiz’s Toltec Wisdom / “A Toltec Wisdom Book” spiritual self-help sequence, led by The Four Agreements—four practical codes for personal freedom—and related titles on love, knowledge, and mastery.",
-   "bands": [
-    "nonfiction"
-   ],
-   "why": "",
-   "named": "",
-   "stories": [],
-   "tags": [],
-   "count": 1,
-   "finished": 0,
-   "in_progress": 0
   },
   {
    "title": "The Happiness Advantage",
@@ -16787,33 +16238,6 @@
    "in_progress": 1
   },
   {
-   "title": "The Mueller Report",
-   "kind": "book",
-   "author": "Robert S. Mueller III",
-   "narrator": "Marc Vietor",
-   "titles": [
-    {
-     "title": "The Mueller Report: The Findings of the Special Counsel Investigation",
-     "n": 999,
-     "finished": false,
-     "in_progress": false,
-     "url": "https://www.audible.com/pd/The-Mueller-Report-Audiobook/B07PXN468K"
-    }
-   ],
-   "url": "https://www.audible.com/pd/The-Mueller-Report-Audiobook/B07PXN468K",
-   "summary": "The wait is over. After a two-year investigation, the results of The Mueller Report have been released to the public. Now listen to an audio version of one of the most talked about government documents in history ....",
-   "bands": [
-    "nonfiction"
-   ],
-   "why": "",
-   "named": "",
-   "stories": [],
-   "tags": [],
-   "count": 1,
-   "finished": 0,
-   "in_progress": 0
-  },
-  {
    "title": "The Power of Now",
    "kind": "book",
    "author": "Eckhart Tolle",
@@ -16866,33 +16290,6 @@
    "count": 1,
    "finished": 0,
    "in_progress": 0
-  },
-  {
-   "title": "The Seven Principles for Making Marriage Work",
-   "kind": "book",
-   "author": "John M. Gottman PhD",
-   "narrator": "Eric Michael Summerer",
-   "titles": [
-    {
-     "title": "The Seven Principles for Making Marriage Work: A Practical Guide from the Country’s Foremost Relationship Expert, Revised and Updated",
-     "n": 999,
-     "finished": false,
-     "in_progress": true,
-     "url": "https://www.audible.com/pd/The-Seven-Principles-for-Making-Marriage-Work-Audiobook/1515948269"
-    }
-   ],
-   "url": "https://www.audible.com/pd/The-Seven-Principles-for-Making-Marriage-Work-Audiobook/1515948269",
-   "summary": "Just as Masters and Johnson were pioneers in the study of human sexuality, so Dr. John Gottman has revolutionized the study of marriage. As a professor of psychology at the University of Washington and the founder and director of the Seattle Marital and…",
-   "bands": [
-    "nonfiction"
-   ],
-   "why": "",
-   "named": "",
-   "stories": [],
-   "tags": [],
-   "count": 1,
-   "finished": 0,
-   "in_progress": 1
   },
   {
    "title": "The Zen of Listening",
@@ -16974,33 +16371,6 @@
    "count": 1,
    "finished": 0,
    "in_progress": 0
-  },
-  {
-   "title": "Who's in the Room?",
-   "kind": "book",
-   "author": "Bob Frisch",
-   "narrator": "Melissa Reizian Frank",
-   "titles": [
-    {
-     "title": "Who's in the Room?: How Great Leaders Structure and Manage the Teams Around Them",
-     "n": 999,
-     "finished": false,
-     "in_progress": true,
-     "url": "https://www.audible.com/pd/Whos-in-the-Room-Audiobook/1663707995"
-    }
-   ],
-   "url": "https://www.audible.com/pd/Whos-in-the-Room-Audiobook/1663707995",
-   "summary": "Is your company run by a team with no name? At the top of every organization chart lies a myth - that a Senior Management Team makes a company's critical decisions. The reality is that critical decisions are typically made by the boss and a small group of…",
-   "bands": [
-    "nonfiction"
-   ],
-   "why": "",
-   "named": "",
-   "stories": [],
-   "tags": [],
-   "count": 1,
-   "finished": 0,
-   "in_progress": 1
   },
   {
    "title": "Jack Reacher",
@@ -17460,33 +16830,6 @@
    "in_progress": 0
   },
   {
-   "title": "Oona Out of Order",
-   "kind": "book",
-   "author": "Margarita Montimore",
-   "narrator": "Brittany Pressley",
-   "titles": [
-    {
-     "title": "Oona Out of Order: A Novel",
-     "n": 999,
-     "finished": true,
-     "in_progress": false,
-     "url": "https://www.audible.com/pd/Oona-Out-of-Order-Audiobook/1250260949"
-    }
-   ],
-   "url": "https://www.audible.com/pd/Oona-Out-of-Order-Audiobook/1250260949",
-   "summary": "NATIONAL BESTSELLER A GOOD MORNING AMERICA BOOK CLUB PICK AMAZON EDITORS' 20 BEST BOOKS OF THE YEAR PICK \"Reminiscent of Liane Moriarty’s What Alice Forgot and Kate Atkinson’s Life After Life, Oona Out of Order is a delightfully freewheeling romp.” —Booklist…",
-   "bands": [
-    "fiction"
-   ],
-   "why": "",
-   "named": "",
-   "stories": [],
-   "tags": [],
-   "count": 1,
-   "finished": 1,
-   "in_progress": 0
-  },
-  {
    "title": "Quantum Earth",
    "kind": "series",
    "author": "Dennis E. Taylor",
@@ -17548,40 +16891,6 @@
    "in_progress": 0
   },
   {
-   "title": "The Lord of the Rings",
-   "kind": "series",
-   "author": "J. R. R. Tolkien",
-   "narrator": "Andy Serkis",
-   "titles": [
-    {
-     "title": "The Fellowship of the Ring",
-     "n": 1,
-     "finished": true,
-     "in_progress": false,
-     "url": "https://www.audible.com/pd/The-Fellowship-of-the-Ring-Audiobook/1705047572"
-    },
-    {
-     "title": "The Two Towers",
-     "n": 2,
-     "finished": false,
-     "in_progress": true,
-     "url": "https://www.audible.com/pd/The-Two-Towers-Audiobook/1705047580"
-    }
-   ],
-   "url": "https://www.audible.com/pd/The-Two-Towers-Audiobook/1705047580",
-   "summary": "J. R. R. Tolkien’s epic fantasy (one work published in three volumes) in which Frodo and companions seek to destroy Sauron’s One Ring in Mount Doom.",
-   "bands": [
-    "fiction"
-   ],
-   "why": "",
-   "named": "",
-   "stories": [],
-   "tags": [],
-   "count": 2,
-   "finished": 1,
-   "in_progress": 1
-  },
-  {
    "title": "The Singularity Trap",
    "kind": "book",
    "author": "Dennis E. Taylor",
@@ -17633,33 +16942,6 @@
    "tags": [],
    "count": 1,
    "finished": 1,
-   "in_progress": 0
-  },
-  {
-   "title": "A Good Marriage",
-   "kind": "book",
-   "author": "Kimberly McCreight",
-   "narrator": "Sarah Zimmerman",
-   "titles": [
-    {
-     "title": "A Good Marriage: A Novel",
-     "n": 999,
-     "finished": false,
-     "in_progress": false,
-     "url": "https://www.audible.com/pd/A-Good-Marriage-Audiobook/0063007169"
-    }
-   ],
-   "url": "https://www.audible.com/pd/A-Good-Marriage-Audiobook/0063007169",
-   "summary": "New York Times Summer Reads Selection | A People Best Book of the Summer | A Library Reads Pick | A Book Riot Addictive New Thriller to Add to Your TBR Pile | A Book of the Month Selection | A Publishers Weekly",
-   "bands": [
-    "fiction"
-   ],
-   "why": "",
-   "named": "",
-   "stories": [],
-   "tags": [],
-   "count": 1,
-   "finished": 0,
    "in_progress": 0
   },
   {
@@ -17822,60 +17104,6 @@
    "stories": [],
    "tags": [],
    "count": 4,
-   "finished": 0,
-   "in_progress": 1
-  },
-  {
-   "title": "Starship Troopers",
-   "kind": "book",
-   "author": "Robert A. Heinlein",
-   "narrator": "R. C. Bray",
-   "titles": [
-    {
-     "title": "Starship Troopers",
-     "n": 999,
-     "finished": false,
-     "in_progress": true,
-     "url": "https://www.audible.com/pd/Starship-Troopers-Audiobook/B0B322ZNRJ"
-    }
-   ],
-   "url": "https://www.audible.com/pd/Starship-Troopers-Audiobook/B0B322ZNRJ",
-   "summary": "In Robert A. Heinlein’s controversial Hugo Award–winning bestseller, a recruit of the future goes through the toughest boot camp in the Universe—and into battle against mankind’s most alarming enemy. Johnnie Rico never really intended to join up—and…",
-   "bands": [
-    "fiction"
-   ],
-   "why": "",
-   "named": "",
-   "stories": [],
-   "tags": [],
-   "count": 1,
-   "finished": 0,
-   "in_progress": 1
-  },
-  {
-   "title": "Temporal",
-   "kind": "book",
-   "author": "Julian Simpson",
-   "narrator": "Nicola Walker",
-   "titles": [
-    {
-     "title": "Temporal",
-     "n": 999,
-     "finished": false,
-     "in_progress": true,
-     "url": "https://www.audible.com/pd/Temporal-Audiobook/B0D5MV1CR5"
-    }
-   ],
-   "url": "https://www.audible.com/pd/Temporal-Audiobook/B0D5MV1CR5",
-   "summary": "A gripping, full-cast science-fiction drama for fans of time travel, conspiracy theories, and unexplained phenomena.",
-   "bands": [
-    "fiction"
-   ],
-   "why": "",
-   "named": "",
-   "stories": [],
-   "tags": [],
-   "count": 1,
    "finished": 0,
    "in_progress": 1
   },

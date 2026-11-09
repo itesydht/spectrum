@@ -64,7 +64,12 @@ def clean_author(a):
     return a.split(",")[0].split(" — ")[0].replace(" - translator","").strip()
 
 HYPE = re.compile(r"(best.?sell|copies sold|#1|million|award|now a major|new york times|instant|phenomen|international|languages|translated|wall street journal|usa today)", re.I)
+def nodash(t):
+    # house style: no em dashes; " — " or "—" becomes a comma
+    return re.sub(r"\s*[—–]\s*", ", ", t or "").replace(", and", ", and").replace(",,", ",")
+
 def clean_blurb(d):
+    d = nodash(d)
     d = re.sub(r"^[A-Z0-9 #'’,.!-]{12,}(?=[A-Z][a-z])", "", d).strip()   # leading ALL-CAPS marketing
     parts = re.split(r"(?<=[.!?])\s+", d)
     while parts and HYPE.search(parts[0]) and len(parts) > 1: parts.pop(0)
@@ -131,6 +136,9 @@ def main():
             e.setdefault("bands", [e.get("band", "nonfiction")]); out.append(e)
     order = {"namesakes":0,"behind":1,"nonfiction":2,"fiction":3}
     out.sort(key=lambda c: (min(order.get(b,9) for b in c["bands"]), -c.get("finished",0), c["title"].lower()))
+    for c in out:
+        for f in ("summary", "why", "named"):
+            if c.get(f): c[f] = nodash(c[f])
     json.dump(out, open(OUT, "w"), indent=1, ensure_ascii=False)
     print(f"{len(out)} cards; {sum(c.get('count',1) for c in out)} titles; "
           f"{sum(1 for c in out if c['kind']=='series')} series; excluded {len(EXCLUDE)} titles")

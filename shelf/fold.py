@@ -71,6 +71,11 @@ def clean_author(a):
     return ", ".join(names)
 
 HYPE = re.compile(r"(best.?sell|copies sold|#1|million|award|now a major|new york times|instant|phenomen|international|languages|translated|wall street journal|usa today)", re.I)
+def good_url(r):
+    u = (r.get("url") or "").strip()
+    if u.startswith("http"): return u
+    return f"https://www.audible.com/pd/{r['asin']}" if r.get("asin") else ""
+
 def nodash(t):
     # house style: no em dashes; " — " or "—" becomes a comma
     return re.sub(r"\s*[—–]\s*", ", ", t or "").replace(", and", ", and").replace(",,", ",")
@@ -109,7 +114,7 @@ def main():
         key = ser or short_title(title)
         if title in EXCLUDE: continue
         c = cards.setdefault(key, {"title": key if ser else short_title(title), "kind": "series" if ser else "book", "author": clean_author(r["author"]),
-            "narrator": r["narrator"].split(",")[0].strip(), "titles": [], "url": r["url"], "summary": sums.get(key, ""),
+            "narrator": r["narrator"].split(",")[0].strip(), "titles": [], "url": good_url(r), "summary": sums.get(key, ""),
             "bands": [], "why": "", "named": "", "stories": [], "tags": []})
         if not ser and not c["summary"]:
             d = clean_blurb(r["desc"])
@@ -117,7 +122,7 @@ def main():
                 d = clean_blurb(BLURBS.get(short_title(title)) or BLURBS.get(title) or "") or d
             c["summary"] = trim_to(d, 650)
         c["titles"].append({"title": short_title(title) if ser else title, "n": book_no(r), "finished": r["finished"],
-            "in_progress": bool(r["remaining"] and "left" in r["remaining"] and not r["finished"]), "url": r["url"]})
+            "in_progress": bool(r["remaining"] and "left" in r["remaining"] and not r["finished"]), "url": good_url(r)})
     out = []
     for key, c in cards.items():
         c["titles"].sort(key=lambda t: (t["n"], t["title"]))

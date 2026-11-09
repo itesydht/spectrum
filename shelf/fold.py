@@ -123,7 +123,7 @@ def main():
         dec = DECISIONS.get("cards", {}).get(key) or DECISIONS.get("cards", {}).get(c["title"])
         c["cited"] = []
         if dec:
-            for f in ("why", "named", "tags", "stories", "cited"):
+            for f in ("why", "named", "tags", "stories", "cited", "match"):
                 if dec.get(f): c[f] = dec[f]
             c["bands"] = [c["bands"][0]] + [b for b in dec.get("bands", []) if b in ("behind", "namesakes")]
         if c["cited"] and "behind" not in c["bands"]: c["bands"].append("behind")

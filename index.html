@@ -350,12 +350,11 @@
       </div>`;
   }
   function libModal(b){
-    const prog=b.count>1?`${b.finished} of ${b.count} finished`:(b.titles?.[0]?.finished?'finished':(b.titles?.[0]?.in_progress?'in progress':''));
     const row=(s)=>bySlug[s]?`<a href="#${esc(s)}" data-open="${esc(s)}"><span>№${bySlug[s].n} · ${esc(bySlug[s].title)}</span><small>${fmt(bySlug[s].date)}</small></a>`:'';
     const rel=(b.stories||[]).filter(s=>!(b.cited||[]).includes(s));
     return `<button class="x" data-close aria-label="Close">×</button>
       <div class="body">
-        <div class="top"><span class="no">${esc(KINDS[b.kind]||b.kind)} · ${esc(b.shelf)}${b.bands.includes('namesakes')?' · Namesake':''}</span><span>${esc(prog)}</span></div>
+        <div class="top"><span class="no">${esc(KINDS[b.kind]||b.kind)} · ${esc(b.shelf)}${b.bands.includes('namesakes')?' · Namesake':''}</span><span>${b.status==='reading'?'reading now':''}</span></div>
         <h2>${esc(b.title)}</h2>
         ${b.author?`<div class="sub">${esc(b.author)}${b.narrator&&b.kind!=='series'?` · read by ${esc(b.narrator)}`:''}</div>`:''}
         ${b.why?`<div class="key">${esc(b.why)}</div>`:''}
@@ -363,7 +362,7 @@
         ${b.named?`<div class="lbl">Named</div><div class="ex">${esc(b.named)}</div>`:''}
         ${(b.cited||[]).length?`<div class="lbl">Cited in</div><div class="lst">${b.cited.map(row).join('')}</div>`:''}
         ${rel.length?`<div class="lbl">Related</div><div class="lst">${rel.map(row).join('')}</div>`:''}
-        ${b.count>1?`<div class="lbl">${b.count} titles</div><div class="lst">${b.titles.map(t=>`<a href="${esc(t.url)}" target="_blank" rel="noopener"><span><span class="tick ${t.finished?'done':(t.in_progress?'part':'')}" style="display:inline-block"></span>${t.n<999?`<small>${t.n}</small> `:''}${esc(t.title)}</span></a>`).join('')}</div>`:''}
+        ${b.count>1?`<div class="lbl">${b.count} titles</div><div class="lst">${b.titles.map(t=>`<a href="${esc(t.url)}" target="_blank" rel="noopener"><span>${t.n<999?`<small>${t.n}</small> `:''}${esc(t.title)}</span></a>`).join('')}</div>`:''}
         <div class="tags">${(b.tags||[]).map(k=>`<span>${esc(k)}</span>`).join('')}</div>
         <div class="cta">${b.url?`<a class="btn primary" href="${esc(b.url)}" target="_blank" rel="noopener">${b.kind==='series'?'Series on Audible →':'On Audible →'}</a>`:''}</div>
       </div>`;
@@ -429,9 +428,8 @@
     const list=libFiltered();
     $('#bcount').textContent=list.length; $('#bcount-word').textContent=list.length===1?'item':'items';
     $('#lactive').textContent=[lband?`in ${BANDS[lband]||lband}`:'',lkind?`· ${KINDS[lkind]||lkind}`:'',q?`· "${q}"`:''].filter(Boolean).join(' ');
-    const prog=b=>{ if(!b.count||b.count<2) return b.titles?.[0]?.finished?'finished':(b.titles?.[0]?.in_progress?'in progress':''); return `${b.finished} of ${b.count} finished`; };
     $('#library').innerHTML=list.length?list.map(b=>`<article class="card book ${b.kind==='series'?'series':''}" data-i="${b.i}">
-      <div class="top"><span class="no">${esc(KINDS[b.kind]||b.kind)} · ${esc(b.shelf)}${b.bands.includes('namesakes')?' · Namesake':''}</span><span>${esc(prog(b))}${b.status==='reading'?' · reading now':''}</span></div>
+      <div class="top"><span class="no">${esc(KINDS[b.kind]||b.kind)} · ${esc(b.shelf)}${b.bands.includes('namesakes')?' · Namesake':''}</span><span>${b.status==='reading'?'reading now':''}</span></div>
       <h3>${b.url?`<a href="${esc(b.url)}">${esc(b.title)}</a>`:esc(b.title)}</h3>
       ${b.author?`<div class="by">${esc(b.author)}${b.narrator&&b.kind!=='series'?` <span style="color:var(--fg3)">· read by ${esc(b.narrator)}</span>`:''}</div>`:''}
       ${b.why?`<div class="key" style="font-family:var(--heading);font-style:italic;color:var(--fg);font-size:14px;line-height:1.4">${esc(b.why)}</div>`:''}
@@ -450,7 +448,7 @@
     $('#view-library').hidden=v!=='library';
     $('#nav-stories').classList.toggle('on',v==='stories'); $('#nav-library').classList.toggle('on',v==='library');
     $('#h1').innerHTML=v==='library'?'The <span>library</span> behind the stories.':'Find the <span>story</span> you\'re looking for.';
-    $('#lede').textContent=v==='library'?'What I\'ve listened to and read, on my own shelves, with the stories each one shaped and the names it gave this place. Gold dot: finished. Type to tune.':'Pulse is the Tuesday transmission. Spectrum is the whole band: every story, every series, every thread, on one dial. Start typing.';
+    $('#lede').textContent=v==='library'?'What I\'ve listened to and read, on my own shelves, with the stories each one shaped and the names it gave this place. Type to tune.':'Pulse is the Tuesday transmission. Spectrum is the whole band: every story, every series, every thread, on one dial. Start typing.';
     $('#q').placeholder=v==='library'?'Expanse, Dune, leadership, habits…':'memory, agents, Skippy, leadership, Claude…';
     if(v==='library') renderLibrary(); else { $('#dial').style.display=''; $('.dial-cap').style.display=''; render(); }
     if(switched&&!openSlug) window.scrollTo({top:0,behavior:'smooth'});

@@ -71,6 +71,11 @@
     "the-effort-of-being-a-team",
     "i-am-the-root",
     "the-man-behind-the-curtain"
+   ],
+   "match": [
+    "ExForce",
+    "Joe Bishop",
+    "Skippy"
    ]
   },
   "The Expanse": {
@@ -93,6 +98,16 @@
     "a-house-to-live-in",
     "model-context-protocol",
     "the-day-i-killed-fred"
+   ],
+   "match": [
+    "Amos",
+    "Expanse",
+    "Fred Johnson",
+    "Holden",
+    "Naomi",
+    "Rocinante",
+    "Tightbeam",
+    "Tycho"
    ]
   },
   "Bobiverse": {
@@ -112,6 +127,11 @@
    ],
    "cited": [
     "a-house-to-live-in"
+   ],
+   "match": [
+    "Bob Johansson",
+    "Bobiverse",
+    "We Are Bob"
    ]
   },
   "Extreme Ownership": {
@@ -128,7 +148,11 @@
     "disagree-and-commit",
     "taking-a-walk"
    ],
-   "cited": []
+   "cited": [],
+   "match": [
+    "Jocko",
+    "Willink"
+   ]
   },
   "Crucial Conversations": {
    "why": "",
@@ -225,7 +249,10 @@
     "the-scale",
     "the-garage-gym"
    ],
-   "cited": []
+   "cited": [],
+   "match": [
+    "James Clear"
+   ]
   },
   "Can't Hurt Me": {
    "why": "",
@@ -241,7 +268,10 @@
     "the-scale",
     "the-shamrock"
    ],
-   "cited": []
+   "cited": [],
+   "match": [
+    "Goggins"
+   ]
   },
   "Elon Musk": {
    "why": "",
@@ -288,6 +318,10 @@
    "stories": [],
    "cited": [
     "even-ai-needs-the-why"
+   ],
+   "match": [
+    "Cagan",
+    "Marty Cagan"
    ]
   },
   "Irreplaceable": {
@@ -335,6 +369,9 @@
    "stories": [],
    "cited": [
     "the-garage-gym"
+   ],
+   "match": [
+    "Goggins"
    ]
   },
   "Never Split the Difference": {
@@ -381,7 +418,10 @@
     "feelings-are-data",
     "the-emulation-layer"
    ],
-   "cited": []
+   "cited": [],
+   "match": [
+    "Rosenberg"
+   ]
   },
   "Rewired: The McKinsey Guide to Outcompeting in the Age of Digital and AI": {
    "why": "",
@@ -496,6 +536,9 @@
    ],
    "cited": [
     "feelings-are-data"
+   ],
+   "match": [
+    "van der Kolk"
    ]
   },
   "Think Like a Rocket Scientist": {
@@ -513,6 +556,21 @@
     "the-chaos-test"
    ],
    "cited": []
+  },
+  "Dungeon Crawler Carl": {
+   "match": [
+    "Dungeon Crawler"
+   ]
+  },
+  "Essentialism": {
+   "match": [
+    "McKeown"
+   ]
+  },
+  "Thinking, Fast and Slow": {
+   "match": [
+    "Kahneman"
+   ]
   }
  }
 }

@@ -109,6 +109,7 @@ def extract(post):
         "bold_lines": bold[:6],
         "keywords": [],
         "terms": terms_of(full_text),
+        "_text": full_text,
         "_type": post.get("type"),
     }
 
@@ -150,6 +151,30 @@ def series_index(slugs, known):
         })
     return result
 
+def _main_title(t):
+    return re.split(r"[:(]", t or "")[0].strip()
+
+def auto_cite(posts, library):
+    """Populate each library card's `cited` from story text. Hand-set cites in
+    shelf/decisions.json survive; this only adds. Title-case titles match
+    case-sensitively (so 'never finished' in prose is not Goggins); authors and
+    explicit `match` terms match case-insensitively."""
+    for b in library:
+        pats = []
+        names = {_main_title(b.get("title"))} | {_main_title(t.get("title")) for t in b.get("titles", [])}
+        for n in names:
+            if len(n) >= 6 and len(n.split()) >= 2 and n[0].isupper():
+                pats.append(re.compile(r"\b" + re.escape(n) + r"\b"))
+        for a in [b.get("author")] + list(b.get("match", [])):
+            if a and len(a) >= 5:
+                pats.append(re.compile(r"\b" + re.escape(a) + r"\b", re.I))
+        hits = [r["slug"] for r in posts if any(p.search(r["_text"]) for p in pats)]
+        cited = list(b.get("cited", []))
+        for h in hits:
+            if h not in cited:
+                cited.append(h)
+        b["cited"] = cited
+
 def load_json(path, default):
     try:
         return json.loads(path.read_text())
@@ -179,6 +204,9 @@ def main(check=False):
             untagged.append(r["slug"])
         r.pop("_type", None)
     library = load_json(DATA / "library.json", [])
+    auto_cite(posts, library)
+    for r in posts:
+        r.pop("_text", None)
 
     out = {
         "generated": datetime.now(timezone.utc).isoformat(timespec="seconds"),

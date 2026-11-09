@@ -165,6 +165,11 @@
    "i-am-the-root",
    "the-man-behind-the-curtain"
   ],
+  "match": [
+   "ExForce",
+   "Joe Bishop",
+   "Skippy"
+  ],
   "shelf": "Science Fiction"
  },
  {
@@ -263,6 +268,16 @@
    "model-context-protocol",
    "the-day-i-killed-fred"
   ],
+  "match": [
+   "Amos",
+   "Expanse",
+   "Fred Johnson",
+   "Holden",
+   "Naomi",
+   "Rocinante",
+   "Tightbeam",
+   "Tycho"
+  ],
   "shelf": "Science Fiction"
  },
  {
@@ -329,6 +344,11 @@
   "in_progress": 2,
   "cited": [
    "a-house-to-live-in"
+  ],
+  "match": [
+   "Bob Johansson",
+   "Bobiverse",
+   "We Are Bob"
   ],
   "shelf": "Science Fiction"
  },
@@ -440,6 +460,9 @@
   "in_progress": 0,
   "cited": [
    "the-garage-gym"
+  ],
+  "match": [
+   "Goggins"
   ],
   "shelf": "Psychology / Mental Performance"
  },
@@ -585,6 +608,9 @@
   "finished": 0,
   "in_progress": 1,
   "cited": [],
+  "match": [
+   "Goggins"
+  ],
   "shelf": "Psychology / Mental Performance"
  },
  {
@@ -702,6 +728,10 @@
   "cited": [
    "even-ai-needs-the-why"
   ],
+  "match": [
+   "Cagan",
+   "Marty Cagan"
+  ],
   "shelf": "Leadership / Business"
  },
  {
@@ -738,6 +768,10 @@
   "finished": 0,
   "in_progress": 1,
   "cited": [],
+  "match": [
+   "Jocko",
+   "Willink"
+  ],
   "shelf": "Leadership / Business"
  },
  {
@@ -880,6 +914,9 @@
   "finished": 0,
   "in_progress": 1,
   "cited": [],
+  "match": [
+   "Rosenberg"
+  ],
   "shelf": "Negotiation / Communication"
  },
  {
@@ -1025,6 +1062,9 @@
   "in_progress": 0,
   "cited": [
    "feelings-are-data"
+  ],
+  "match": [
+   "van der Kolk"
   ],
   "shelf": "Psychology / Mental Performance"
  },
@@ -2522,6 +2562,9 @@
   "finished": 0,
   "in_progress": 1,
   "cited": [],
+  "match": [
+   "Dungeon Crawler"
+  ],
   "shelf": "Science Fiction"
  },
  {

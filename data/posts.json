@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-09T05:45:55+00:00",
+ "generated": "2026-11-09T06:16:58+00:00",
  "publication": {
   "name": "I Tried Everything So You Don't Have To",
   "url": "https://pulse.itesydht.com"
@@ -14773,7 +14773,14 @@
     "a-house-to-live-in",
     "the-effort-of-being-a-team",
     "i-am-the-root",
-    "the-man-behind-the-curtain"
+    "the-man-behind-the-curtain",
+    "confidence-man",
+    "whos-driving"
+   ],
+   "match": [
+    "ExForce",
+    "Joe Bishop",
+    "Skippy"
    ],
    "shelf": "Science Fiction"
   },
@@ -14871,7 +14878,22 @@
     "claude-chat-claude-code-and-me",
     "a-house-to-live-in",
     "model-context-protocol",
-    "the-day-i-killed-fred"
+    "the-day-i-killed-fred",
+    "the-master-control-project",
+    "the-memory-problem",
+    "confidence-man",
+    "claude-was-wrong",
+    "rage-against-the-machine"
+   ],
+   "match": [
+    "Amos",
+    "Expanse",
+    "Fred Johnson",
+    "Holden",
+    "Naomi",
+    "Rocinante",
+    "Tightbeam",
+    "Tycho"
    ],
    "shelf": "Science Fiction"
   },
@@ -14939,6 +14961,11 @@
    "in_progress": 2,
    "cited": [
     "a-house-to-live-in"
+   ],
+   "match": [
+    "Bob Johansson",
+    "Bobiverse",
+    "We Are Bob"
    ],
    "shelf": "Science Fiction"
   },
@@ -15050,6 +15077,9 @@
    "in_progress": 0,
    "cited": [
     "the-garage-gym"
+   ],
+   "match": [
+    "Goggins"
    ],
    "shelf": "Psychology / Mental Performance"
   },
@@ -15194,7 +15224,12 @@
    "count": 1,
    "finished": 0,
    "in_progress": 1,
-   "cited": [],
+   "cited": [
+    "the-garage-gym"
+   ],
+   "match": [
+    "Goggins"
+   ],
    "shelf": "Psychology / Mental Performance"
   },
   {
@@ -15312,6 +15347,10 @@
    "cited": [
     "even-ai-needs-the-why"
    ],
+   "match": [
+    "Cagan",
+    "Marty Cagan"
+   ],
    "shelf": "Leadership / Business"
   },
   {
@@ -15347,7 +15386,13 @@
    "count": 1,
    "finished": 0,
    "in_progress": 1,
-   "cited": [],
+   "cited": [
+    "the-chaos-test"
+   ],
+   "match": [
+    "Jocko",
+    "Willink"
+   ],
    "shelf": "Leadership / Business"
   },
   {
@@ -15490,6 +15535,9 @@
    "finished": 0,
    "in_progress": 1,
    "cited": [],
+   "match": [
+    "Rosenberg"
+   ],
    "shelf": "Negotiation / Communication"
   },
   {
@@ -15635,6 +15683,9 @@
    "in_progress": 0,
    "cited": [
     "feelings-are-data"
+   ],
+   "match": [
+    "van der Kolk"
    ],
    "shelf": "Psychology / Mental Performance"
   },
@@ -17132,6 +17183,9 @@
    "finished": 0,
    "in_progress": 1,
    "cited": [],
+   "match": [
+    "Dungeon Crawler"
+   ],
    "shelf": "Science Fiction"
   },
   {

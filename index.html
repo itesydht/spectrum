@@ -4,16 +4,30 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Spectrum</title>
-<meta name="description" content="Every story from I Tried Everything So You Don't Have To, tuned by band and frequency.">
+<meta name="description" content="Every story from I Tried Everything So You Don't Have To, tuned by band and frequency. Uncomplicated systems. Uncommon results.">
+<meta name="theme-color" content="#1C1C1E">
+<link rel="icon" href="/assets/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48x48.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon-180x180.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="I Tried Everything So You Don't Have To">
+<meta property="og:title" content="Spectrum · every story, tuned">
+<meta property="og:description" content="Every story from I Tried Everything So You Don't Have To, by Eddy Simmons, on one dial. Plus the library behind them.">
+<meta property="og:image" content="https://spectrum.itesydht.com/assets/logo-700.png">
+<meta property="og:url" content="https://spectrum.itesydht.com/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://spectrum.itesydht.com/assets/logo-700.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Spectral:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
     --bg:#1C1C1E; --bg1:#2a2a2c; --bg2:#3b3b3c; --bg3:#5c5c5d;
     --fg:#ffffff; --fg2:#a4a4a5; --fg3:#7d7d7e;
     --pop:#B8860B; --pop-20:rgba(184,134,11,.2); --pop-40:rgba(184,134,11,.4);
-    --heading:Lora,Georgia,serif; --body:Inter,system-ui,-apple-system,sans-serif;
+    --heading:Lora,Georgia,serif; --body:Inter,system-ui,-apple-system,sans-serif; --prose:Spectral,Georgia,serif;
     --r:10px;
   }
   *{box-sizing:border-box}
@@ -35,7 +49,7 @@
   .hero{padding:44px 0 10px}
   .hero h1{font-family:var(--heading);font-weight:600;font-size:clamp(34px,5.5vw,52px);line-height:1.02;margin:0 0 10px}
   .hero h1 span{color:var(--pop)}
-  .hero p{color:var(--fg2);margin:0 0 22px;max-width:60ch;font-size:15.5px;line-height:1.5}
+  .hero p{color:var(--fg2);margin:0 0 22px;max-width:60ch;font-family:var(--prose);font-size:17px;line-height:1.5}
   .tuner{position:relative}
   .tuner input{width:100%;background:var(--bg1);border:1px solid var(--bg2);color:var(--fg);font:500 20px/1.2 var(--body);padding:18px 54px 18px 20px;border-radius:14px;outline:none;transition:border-color .15s,box-shadow .15s}
   .tuner input::placeholder{color:var(--fg3)}
@@ -72,7 +86,7 @@
   .card h3{font-family:var(--heading);font-weight:600;font-size:19px;line-height:1.2;margin:2px 0 0}
   .card h3 mark,.card .sub mark,.card .ex mark{background:var(--pop-40);color:var(--fg);border-radius:3px;padding:0 1px}
   .card .sub{font-family:var(--heading);font-style:italic;color:var(--fg2);font-size:14px;margin-top:-2px}
-  .card .ex{color:var(--fg2);font-size:13.5px;line-height:1.5;flex:1}
+  .card .ex{color:var(--fg2);font-family:var(--prose);font-size:15px;line-height:1.5;flex:1}
   .card .tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:4px}
   .card .tags span{font-size:11px;color:var(--fg3);border:1px solid var(--bg2);padding:2px 7px;border-radius:999px}
   .card .tags span.band{color:var(--pop);border-color:var(--pop-40)}
@@ -108,7 +122,7 @@
   .md .top .no{color:var(--pop);font-weight:600}
   .md h2{font-family:var(--heading);font-weight:600;font-size:30px;line-height:1.15;margin:8px 0 2px}
   .md .sub{font-family:var(--heading);font-style:italic;color:var(--fg2);font-size:17px;margin-bottom:12px}
-  .md .ex{color:var(--fg);font-size:15.5px;line-height:1.6}
+  .md .ex{color:var(--fg);font-family:var(--prose);font-size:17px;line-height:1.6}
   .md .key{font-family:var(--heading);font-style:italic;font-size:19px;line-height:1.35;color:var(--fg);border-left:3px solid var(--pop);padding:4px 0 4px 14px;margin:18px 0}
   .md .lbl{font-size:11px;letter-spacing:1.2px;text-transform:uppercase;color:var(--fg3);margin:18px 0 6px}
   .md .lst a{display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-bottom:1px solid var(--bg2);color:var(--fg)} .md .lst a:hover{color:var(--pop)}

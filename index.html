@@ -80,7 +80,7 @@
   .card .foot .read{color:var(--pop);font-weight:500}
   .card .foot .read::after{content:" →"}
   .card .links{cursor:pointer} .card .links:hover{color:var(--fg)}
-  .card.open .ex{-webkit-line-clamp:unset}
+  .card .ex{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
   .card .more{display:none;border-top:1px solid var(--bg2);padding-top:10px;margin-top:6px;font-size:13px;color:var(--fg2)}
   .card.open .more{display:block}
   .card .more a{display:block;padding:4px 0;color:var(--fg)}
@@ -92,8 +92,40 @@
   .empty b{display:block;font-family:var(--heading);font-size:20px;color:var(--fg);margin-bottom:6px}
 
   .perma{color:var(--fg3);font-size:12px;margin-left:8px;text-decoration:none} .perma:hover{color:var(--pop)}
-  .card .cover{display:none;width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:6px;margin:4px 0 2px;background:var(--bg2)}
-  .card.open .cover{display:block}
+  .card{cursor:pointer;overflow:hidden;padding-top:0}
+  .card .cover{display:block;width:calc(100% + 36px);margin:0 -18px 12px;aspect-ratio:16/9;object-fit:cover;background:var(--bg2)}
+  .card .cover.none{height:6px;aspect-ratio:auto;background:linear-gradient(90deg,var(--pop-40),transparent)}
+  .card .more{display:none !important}
+  /* modal */
+  .ov{position:fixed;inset:0;background:rgba(0,0,0,.72);backdrop-filter:blur(6px);z-index:50;display:none;align-items:center;justify-content:center;padding:24px}
+  .ov.on{display:flex}
+  .md{background:var(--bg1);border:1px solid var(--bg2);border-radius:16px;width:min(760px,100%);max-height:calc(100vh - 48px);overflow:auto;position:relative;box-shadow:0 30px 80px rgba(0,0,0,.6)}
+  .md .x{position:absolute;top:12px;right:12px;width:36px;height:36px;border-radius:50%;background:rgba(28,28,30,.8);border:1px solid var(--bg3);color:var(--fg);font-size:20px;line-height:34px;text-align:center;cursor:pointer;z-index:2}
+  .md .hero{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;background:var(--bg2)}
+  .md .body{padding:20px 24px 24px}
+  .md .top{display:flex;justify-content:space-between;font-size:12px;color:var(--fg3);letter-spacing:.4px}
+  .md .top .no{color:var(--pop);font-weight:600}
+  .md h2{font-family:var(--heading);font-weight:600;font-size:30px;line-height:1.15;margin:8px 0 2px}
+  .md .sub{font-family:var(--heading);font-style:italic;color:var(--fg2);font-size:17px;margin-bottom:12px}
+  .md .ex{color:var(--fg);font-size:15.5px;line-height:1.6}
+  .md .key{font-family:var(--heading);font-style:italic;font-size:19px;line-height:1.35;color:var(--fg);border-left:3px solid var(--pop);padding:4px 0 4px 14px;margin:18px 0}
+  .md .lbl{font-size:11px;letter-spacing:1.2px;text-transform:uppercase;color:var(--fg3);margin:18px 0 6px}
+  .md .lst a{display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-bottom:1px solid var(--bg2);color:var(--fg)} .md .lst a:hover{color:var(--pop)}
+  .md .lst a small{color:var(--fg3);flex:none}
+  .md .lst a .tick{margin-right:8px}
+  .md .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+  .md .tags span{font-size:11.5px;color:var(--fg3);border:1px solid var(--bg2);padding:3px 8px;border-radius:999px} .md .tags span.band{color:var(--pop);border-color:var(--pop-40)}
+  .md .cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px;position:sticky;bottom:0;background:linear-gradient(transparent,var(--bg1) 30%);padding-top:18px}
+  .btn{display:inline-block;padding:12px 18px;border-radius:12px;font:600 14px var(--body);border:1px solid var(--bg3);color:var(--fg);cursor:pointer;background:var(--bg)}
+  .btn.primary{background:var(--pop);border-color:var(--pop);color:#1C1C1E}
+  .btn:hover{border-color:var(--pop)}
+  body.locked{overflow:hidden}
+  @media (max-width:640px){
+    .ov{padding:0;align-items:flex-end}
+    .md{width:100%;max-height:100vh;height:100vh;border-radius:0;border:0}
+    .md .body{padding:16px 18px 24px} .md h2{font-size:26px}
+    .md .cta{padding-bottom:env(safe-area-inset-bottom)}
+  }
   .card .more .cite{display:flex;justify-content:space-between;gap:10px} .card .more .cite small{color:var(--fg3);flex:none}
   .now{border:1px solid var(--pop-40);background:var(--pop-20);border-radius:var(--r);padding:12px 16px;margin:0 0 14px;font-size:13.5px;color:var(--fg)}
   .now b{color:var(--pop);font-weight:600;letter-spacing:.8px;text-transform:uppercase;font-size:11px;margin-right:10px}
@@ -105,7 +137,7 @@
   .card.open .titles{display:block}
   /* library */
   .shelf-note{color:var(--fg2);font-size:14px;line-height:1.55;max-width:62ch;margin:0 0 18px}
-  .book .top .no{color:var(--fg2);text-transform:uppercase;letter-spacing:.8px;font-size:10.5px}
+  .book{padding-top:18px} .book .top .no{color:var(--fg2);text-transform:uppercase;letter-spacing:.8px;font-size:10.5px}
   .book h3{font-size:18px}
   .book .by{color:var(--fg2);font-size:13px;margin-top:-4px}
 
@@ -177,6 +209,7 @@
   </section>
 </main>
 
+<div class="ov" id="ov" role="dialog" aria-modal="true"><div class="md" id="md"></div></div>
 <footer class="wrap">
   <span>© Eddy Simmons · <a href="https://pulse.itesydht.com">pulse.itesydht.com</a></span>
   <span class="tag">Uncomplicated systems. Uncommon results.</span>
@@ -278,31 +311,75 @@
     return {list,terms};
   }
 
+  const known=slugs=>(slugs||[]).filter(x=>bySlug[x]);
   function card(p,terms){
     const band=p.series.name!=='Standalone'?p.series.name:null;
     const tags=[band?`<span class="band">${esc(band)}</span>`:'',...(p.keywords||[]).slice(0,4).map(k=>`<span>${esc(k)}</span>`)].join('');
-    const nLinks=(p.links_to||[]).length+(p.linked_from||[]).length+(p.books||[]).length+(p.cites||[]).length;
-    const more=`
-      ${p.cover_image?`<img class="cover" loading="lazy" src="${esc(p.cover_image)}" alt="">`:''}
-      ${(p.bold_lines||[]).length?`<div class="mlbl">The line</div><div class="key">${esc(p.bold_lines[0])}</div>`:''}
-      ${(p.links_to||[]).length?`<div class="mlbl">Builds on</div>${p.links_to.map(s=>bySlug[s]?`<a href="${bySlug[s].url}">№${bySlug[s].n} · ${esc(bySlug[s].title)}</a>`:'').join('')}`:''}
-      ${(p.linked_from||[]).length?`<div class="mlbl">Picked up in</div>${p.linked_from.map(s=>`<a href="${bySlug[s].url}">№${bySlug[s].n} · ${esc(bySlug[s].title)}</a>`).join('')}`:''}
-      ${(p.books||[]).length?`<div class="mlbl">From the library</div>${p.books.map(b=>`<a href="${b.url?esc(b.url):'#library'}">${esc(b.title)}${b.author?` <small style="color:var(--fg3)">· ${esc(b.author)}</small>`:''}</a>`).join('')}`:''}
-      ${(p.cites||[]).length?`<div class="mlbl">Cited</div>${p.cites.map(c=>`<a class="cite" href="${esc(c.url)}"><span>${esc(c.label)}</span><small>${esc(c.host)}</small></a>`).join('')}`:''}
-      <div class="mlbl" style="margin-top:10px"><a class="perma" style="margin:0" href="${esc(p.url)}">Read the story →</a> <a class="perma" href="#${esc(p.slug)}" title="Link to this card">§ link</a></div>`;
-    return `<article class="card ${openSlug===p.slug?'open':''}" data-slug="${esc(p.slug)}">
+    const nLinks=known(p.links_to).length+(p.linked_from||[]).length+(p.books||[]).length+(p.cites||[]).length;
+    return `<article class="card" data-slug="${esc(p.slug)}">
+      ${p.cover_image?`<img class="cover" loading="lazy" src="${esc(p.cover_image)}" alt="">`:'<div class="cover none"></div>'}
       <div class="top"><span class="no">№ ${p.n}</span><span>${fmt(p.date)}</span></div>
-      <h3><a href="${esc(p.url)}">${hl(p.title,terms)}</a></h3>
+      <h3>${hl(p.title,terms)}</h3>
       ${p.subtitle?`<div class="sub">${hl(p.subtitle,terms)}</div>`:''}
       <div class="ex">${hl(p.excerpt,terms)}</div>
       <div class="tags">${tags}</div>
-      <div class="foot">
-        <span class="links" data-toggle="${esc(p.slug)}">${nLinks?`${nLinks} connection${nLinks>1?'s':''} · ${p.wordcount||''} words`:`${p.wordcount||''} words`}</span>
-        <a class="read" href="${esc(p.url)}">Read</a>
-      </div>
-      <div class="more">${more}</div>
+      <div class="foot"><span>${nLinks?`${nLinks} connection${nLinks>1?'s':''} · `:''}${p.wordcount||''} words</span><span class="read">Open</span></div>
     </article>`;
   }
+  // ---- modal ----
+  let modalSlug=null;
+  function storyModal(p){
+    const band=p.series.name!=='Standalone'?p.series.name:null;
+    const row=(s)=>bySlug[s]?`<a href="#${esc(s)}" data-open="${esc(s)}"><span>№${bySlug[s].n} · ${esc(bySlug[s].title)}</span><small>${fmt(bySlug[s].date)}</small></a>`:'';
+    const bo=known(p.links_to), pu=p.linked_from||[];
+    return `<button class="x" data-close aria-label="Close">×</button>
+      ${p.cover_image?`<img class="hero" src="${esc(p.cover_image)}" alt="">`:''}
+      <div class="body">
+        <div class="top"><span class="no">№ ${p.n}${band?` · ${esc(band)}`:''}</span><span>${fmt(p.date)} · ${p.wordcount||''} words</span></div>
+        <h2>${esc(p.title)}</h2>
+        ${p.subtitle?`<div class="sub">${esc(p.subtitle)}</div>`:''}
+        <div class="ex">${esc(p.excerpt)}</div>
+        ${(p.bold_lines||[]).length?`<div class="key">${esc(p.bold_lines[0])}</div>`:''}
+        ${bo.length?`<div class="lbl">Builds on</div><div class="lst">${bo.map(row).join('')}</div>`:''}
+        ${pu.length?`<div class="lbl">Picked up in</div><div class="lst">${pu.map(row).join('')}</div>`:''}
+        ${(p.books||[]).length?`<div class="lbl">From the library</div><div class="lst">${p.books.map(b=>`<a href="#library" data-lib="${b.i}"><span>${esc(b.title)}</span><small>${esc(b.author||'')}</small></a>`).join('')}</div>`:''}
+        ${(p.cites||[]).length?`<div class="lbl">Cited</div><div class="lst">${p.cites.map(c=>`<a href="${esc(c.url)}" target="_blank" rel="noopener"><span>${esc(c.label)}</span><small>${esc(c.host)}</small></a>`).join('')}</div>`:''}
+        <div class="tags">${(p.keywords||[]).map(k=>`<span>${esc(k)}</span>`).join('')}</div>
+        <div class="cta"><a class="btn primary" href="${esc(p.url)}">Read the story →</a><button class="btn" data-copy="${esc(p.slug)}">Copy link</button></div>
+      </div>`;
+  }
+  function libModal(b){
+    const prog=b.count>1?`${b.finished} of ${b.count} finished`:(b.titles?.[0]?.finished?'finished':(b.titles?.[0]?.in_progress?'in progress':''));
+    const row=(s)=>bySlug[s]?`<a href="#${esc(s)}" data-open="${esc(s)}"><span>№${bySlug[s].n} · ${esc(bySlug[s].title)}</span><small>${fmt(bySlug[s].date)}</small></a>`:'';
+    const rel=(b.stories||[]).filter(s=>!(b.cited||[]).includes(s));
+    return `<button class="x" data-close aria-label="Close">×</button>
+      <div class="body">
+        <div class="top"><span class="no">${esc(KINDS[b.kind]||b.kind)} · ${esc(b.shelf)}${b.bands.includes('namesakes')?' · Namesake':''}</span><span>${esc(prog)}</span></div>
+        <h2>${esc(b.title)}</h2>
+        ${b.author?`<div class="sub">${esc(b.author)}${b.narrator&&b.kind!=='series'?` · read by ${esc(b.narrator)}`:''}</div>`:''}
+        ${b.why?`<div class="key">${esc(b.why)}</div>`:''}
+        ${b.summary?`<div class="ex">${esc(b.summary)}</div>`:''}
+        ${b.named?`<div class="lbl">Named</div><div class="ex">${esc(b.named)}</div>`:''}
+        ${(b.cited||[]).length?`<div class="lbl">Cited in</div><div class="lst">${b.cited.map(row).join('')}</div>`:''}
+        ${rel.length?`<div class="lbl">Related</div><div class="lst">${rel.map(row).join('')}</div>`:''}
+        ${b.count>1?`<div class="lbl">${b.count} titles</div><div class="lst">${b.titles.map(t=>`<a href="${esc(t.url)}" target="_blank" rel="noopener"><span><span class="tick ${t.finished?'done':(t.in_progress?'part':'')}" style="display:inline-block"></span>${t.n<999?`<small>${t.n}</small> `:''}${esc(t.title)}</span></a>`).join('')}</div>`:''}
+        <div class="tags">${(b.tags||[]).map(k=>`<span>${esc(k)}</span>`).join('')}</div>
+        <div class="cta">${b.url?`<a class="btn primary" href="${esc(b.url)}" target="_blank" rel="noopener">${b.kind==='series'?'Series on Audible →':'On Audible →'}</a>`:''}</div>
+      </div>`;
+  }
+  function openModal(html,slug){
+    $('#md').innerHTML=html; $('#ov').classList.add('on'); document.body.classList.add('locked'); $('#md').scrollTop=0;
+    modalSlug=slug||null;
+    if(slug && location.hash!=='#'+slug) history.pushState({m:slug},'','#'+slug);
+  }
+  function closeModal(viaHash){
+    if(!$('#ov').classList.contains('on')) return;
+    $('#ov').classList.remove('on'); document.body.classList.remove('locked');
+    const had=modalSlug; modalSlug=null;
+    if(!viaHash && had && location.hash==='#'+had) history.pushState({},'',location.pathname+(view==='library'?'#library':''));
+  }
+  function openStory(slug){ const p=bySlug[slug]; if(p) openModal(storyModal(p),slug); }
+  function openLib(i){ const b=books[i]; if(b) openModal(libModal(b),null); }
 
   function renderDial(hits){
     const el=$('#dial');
@@ -360,9 +437,8 @@
       ${b.summary?`<div class="ex">${esc(b.summary)}</div>`:'<div class="ex"></div>'}
       ${b.named?`<div class="named"><span>Named</span> ${esc(b.named)}</div>`:''}
       <div class="tags">${(b.tags||[]).map(k=>`<span>${esc(k)}</span>`).join('')}</div>
-      ${(b.cited||[]).length||(b.stories||[]).length?`<div class="more" style="display:block">${(b.cited||[]).length?`<div class="mlbl">Cited in</div>${b.cited.map(s=>bySlug[s]?`<a href="#${esc(s)}">№${bySlug[s].n} · ${esc(bySlug[s].title)}</a>`:'').join('')}`:''}${(b.stories||[]).filter(s=>!(b.cited||[]).includes(s)).length?`<div class="mlbl">Related</div>${b.stories.filter(s=>!(b.cited||[]).includes(s)).map(s=>bySlug[s]?`<a href="#${esc(s)}">№${bySlug[s].n} · ${esc(bySlug[s].title)}</a>`:'').join('')}`:''}</div>`:''}
-      ${b.count>1?`<div class="foot"><span class="links" data-titles="${b.i}">${b.count} titles</span>${b.url?`<a class="read" href="${esc(b.url)}">Audible</a>`:''}</div>
-      <div class="more titles">${b.titles.map(t=>`<a href="${esc(t.url)}"><span class="tick ${t.finished?'done':(t.in_progress?'part':'')}"></span>${t.n<999?`<small>${t.n}</small> `:''}${esc(t.title)}</a>`).join('')}</div>`:''}
+      ${false?`<div class="more" style="display:block">${(b.cited||[]).length?`<div class="mlbl">Cited in</div>${b.cited.map(s=>bySlug[s]?`<a href="#${esc(s)}">№${bySlug[s].n} · ${esc(bySlug[s].title)}</a>`:'').join('')}`:''}${(b.stories||[]).filter(s=>!(b.cited||[]).includes(s)).length?`<div class="mlbl">Related</div>${b.stories.filter(s=>!(b.cited||[]).includes(s)).map(s=>bySlug[s]?`<a href="#${esc(s)}">№${bySlug[s].n} · ${esc(bySlug[s].title)}</a>`:'').join('')}`:''}</div>`:''}
+      <div class="foot"><span>${b.count>1?`${b.count} titles`:''}${(b.cited||[]).length?` · cited in ${b.cited.length}`:''}</span><span class="read">Open</span></div>
     </article>`).join(''):`<div class="empty"><b>Nothing on that frequency.</b>Try another word or clear a chip.</div>`;
     renderDial([]); $('#dial').style.display='none'; $('.dial-cap').style.display='none';
   }
@@ -376,8 +452,7 @@
     $('#lede').textContent=v==='library'?'What I\'ve listened to and read, on my own shelves, with the stories each one shaped and the names it gave this place. Gold dot: finished. Type to tune.':'Pulse is the Tuesday transmission. Spectrum is the whole band: every story, every series, every thread, on one dial. Start typing.';
     $('#q').placeholder=v==='library'?'Expanse, Dune, leadership, habits…':'memory, agents, Skippy, leadership, Claude…';
     if(v==='library') renderLibrary(); else { $('#dial').style.display=''; $('.dial-cap').style.display=''; render(); }
-    if(v==='stories'&&openSlug){ const el=document.querySelector(`.card[data-slug="${openSlug}"]`); if(el){ setTimeout(()=>el.scrollIntoView({behavior:'smooth',block:'start'}),50); } }
-    else if(switched) window.scrollTo({top:0,behavior:'smooth'});
+    if(switched&&!openSlug) window.scrollTo({top:0,behavior:'smooth'});
   }
 
   // events
@@ -387,15 +462,22 @@
   document.addEventListener('keydown',e=>{ if(e.key==='/'&&document.activeElement!==$('#q')){e.preventDefault();$('#q').focus();} if(e.key==='Escape'){$('#q').blur();} });
   $('#bands').addEventListener('click',e=>{const b=e.target.closest('[data-band]'); if(!b) return; band=b.dataset.band==='All'?null:b.dataset.band; render();});
   $('#freqs').addEventListener('click',e=>{ if(e.target.closest('[data-more]')){ $('#freqs').classList.toggle('all'); renderChips(); return; } const b=e.target.closest('[data-kw]'); if(!b) return; const k=b.dataset.kw; freqs.has(k)?freqs.delete(k):freqs.add(k); render();});
-  $('#grid').addEventListener('click',e=>{const t=e.target.closest('[data-toggle]'); if(!t) return; t.closest('.card').classList.toggle('open');});
-  $('#dial').addEventListener('click',e=>{const i=e.target.closest('i[data-n]'); if(!i) return; const el=document.querySelector(`.card[data-slug="${posts[+i.dataset.n-1].slug}"]`); el&&el.scrollIntoView({behavior:'smooth',block:'center'}); el&&el.classList.add('open');});
+  $('#grid').addEventListener('click',e=>{ if(e.target.closest('a')) return; const c=e.target.closest('.card[data-slug]'); if(c) openStory(c.dataset.slug);});
+  $('#library').addEventListener('click',e=>{ if(e.target.closest('a')) return; const c=e.target.closest('.card[data-i]'); if(c) openLib(+c.dataset.i);});
+  // modal interactions
+  $('#ov').addEventListener('click',e=>{
+    if(e.target===$('#ov')||e.target.closest('[data-close]')) { closeModal(); return; }
+    const o=e.target.closest('[data-open]'); if(o){ e.preventDefault(); openStory(o.dataset.open); return; }
+    const l=e.target.closest('[data-lib]'); if(l){ e.preventDefault(); openLib(+l.dataset.lib); return; }
+    const c=e.target.closest('[data-copy]'); if(c){ const u=location.origin+location.pathname+'#'+c.dataset.copy; navigator.clipboard?.writeText(u).then(()=>{c.textContent='Copied';setTimeout(()=>c.textContent='Copy link',1500)}).catch(()=>{c.textContent=u;}); }
+  });
+  document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeModal(); });
+  window.addEventListener('popstate',()=>{ readHash(); if(openSlug) openStory(openSlug); else closeModal(true); if(view!==shown) setView(view); });
+  $('#dial').addEventListener('click',e=>{const i=e.target.closest('i[data-n]'); if(!i) return; openStory(posts[+i.dataset.n-1].slug);});
   ['new','old','rel'].forEach(s=>$('#s-'+s).addEventListener('click',()=>{sort=s;render();}));
-  $('#library').addEventListener('click',e=>{const t=e.target.closest('[data-titles]'); if(!t) return; t.closest('.card').classList.toggle('open');});
   $('#lbands').addEventListener('click',e=>{const b=e.target.closest('[data-lband]'); if(!b) return; lband=b.dataset.lband||null; renderLibrary();});
   $('#lkinds').addEventListener('click',e=>{const b=e.target.closest('[data-lkind]'); if(!b) return; lkind=lkind===b.dataset.lkind?null:b.dataset.lkind; renderLibrary();});
-  window.addEventListener('hashchange',()=>{ readHash(); setView(view); });
-
-  readHash(); setView(view);
+  readHash(); setView(view); if(openSlug) openStory(openSlug);
   if(window.matchMedia('(min-width:700px)').matches) $('#q').focus();
 })();
 </script>

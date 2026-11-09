@@ -39,11 +39,12 @@
   header{border-bottom:1px solid var(--bg2);padding:18px 0 14px}
   .brand{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
   .brand a.home{display:flex;align-items:center;gap:12px}
-  .brand .dot{width:12px;height:12px;border-radius:50%;background:var(--pop);box-shadow:0 0 0 4px var(--pop-20)}
+  .brand .logo{width:40px;height:40px;border-radius:8px;object-fit:cover;flex:none}
   .brand .pub{font-family:var(--heading);font-weight:600;font-size:17px;letter-spacing:.1px}
   .brand .pub small{display:block;font-family:var(--body);font-weight:400;font-size:12px;color:var(--fg2);letter-spacing:.3px}
-  nav{display:flex;gap:18px;font-size:13.5px;color:var(--fg2)}
+  nav{display:flex;align-items:center;gap:18px;font-size:13.5px;color:var(--fg2)}
   nav a:hover{color:var(--fg)} nav a.on{color:var(--pop)}
+  nav a.sub{background:var(--pop);color:#1C1C1E;font-weight:600;padding:8px 14px;border-radius:8px;font-family:var(--body)} nav a.sub:hover{background:#a0740a;color:#1C1C1E}
 
   /* hero / tuner */
   .hero{padding:44px 0 10px}
@@ -174,7 +175,7 @@
 <header>
   <div class="wrap brand">
     <a class="home" href="https://pulse.itesydht.com" title="Back to the newsletter">
-      <span class="dot"></span>
+      <img class="logo" src="/assets/logo-160.png" alt="" width="40" height="40">
       <span class="pub">I Tried Everything So You Don't Have To<small>Spectrum · every story, tuned</small></span>
     </a>
     <nav>
@@ -182,6 +183,7 @@
       <a href="#stories" id="nav-stories" class="on">Stories</a>
       <a href="#library" id="nav-library">Library</a>
       <a href="https://pulse.itesydht.com/about">About</a>
+      <a class="sub" href="https://pulse.itesydht.com/subscribe">Subscribe</a>
     </nav>
   </div>
 </header>

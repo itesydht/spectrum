@@ -203,6 +203,9 @@ def main(check=False):
         if not r["keywords"]:
             untagged.append(r["slug"])
         r.pop("_type", None)
+    synopses = load_json(DATA / "synopses.json", {})
+    for r in posts:
+        r["synopsis"] = synopses.get(r["slug"], "")
     library = load_json(DATA / "library.json", [])
     auto_cite(posts, library)
     for r in posts:

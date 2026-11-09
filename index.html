@@ -274,7 +274,7 @@
   const words=s=>norm(s).split(/[^a-z0-9']+/).filter(Boolean).map(stem);
   const hitsIn=(ws,t)=>ws.some(w=>w.startsWith(t));
   posts.forEach(p=>{
-    p._w={ T:words(p.title), S:words(p.subtitle), K:words((p.keywords||[]).join(' ')), B:words((p.bold_lines||[]).join(' ')), E:words(p.excerpt), X:(p.terms||[]).map(stem), Ser:words(p.series?.name) };
+    p._w={ T:words(p.title), S:words(p.subtitle), K:words((p.keywords||[]).join(' ')), B:words((p.bold_lines||[]).join(' ')), E:words((p.synopsis||'')+' '+p.excerpt), X:(p.terms||[]).map(stem), Ser:words(p.series?.name) };
   });
   function score(p,terms){
     if(!terms.length) return 1;
@@ -322,7 +322,7 @@
       <div class="top"><span class="no">№ ${p.n}</span><span>${fmt(p.date)}</span></div>
       <h3>${hl(p.title,terms)}</h3>
       ${p.subtitle?`<div class="sub">${hl(p.subtitle,terms)}</div>`:''}
-      <div class="ex">${hl(p.excerpt,terms)}</div>
+      <div class="ex">${hl(p.synopsis||p.excerpt,terms)}</div>
       <div class="tags">${tags}</div>
       <div class="foot"><span>${nLinks?`${nLinks} connection${nLinks>1?'s':''} · `:''}${p.wordcount||''} words</span><span class="read">Open</span></div>
     </article>`;
@@ -339,7 +339,7 @@
         <div class="top"><span class="no">№ ${p.n}${band?` · ${esc(band)}`:''}</span><span>${fmt(p.date)} · ${p.wordcount||''} words</span></div>
         <h2>${esc(p.title)}</h2>
         ${p.subtitle?`<div class="sub">${esc(p.subtitle)}</div>`:''}
-        <div class="ex">${esc(p.excerpt)}</div>
+        <div class="ex">${esc(p.synopsis||p.excerpt)}</div>
         ${(p.bold_lines||[]).length?`<div class="key">${esc(p.bold_lines[0])}</div>`:''}
         ${bo.length?`<div class="lbl">Builds on</div><div class="lst">${bo.map(row).join('')}</div>`:''}
         ${pu.length?`<div class="lbl">Picked up in</div><div class="lst">${pu.map(row).join('')}</div>`:''}

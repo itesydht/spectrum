@@ -68,8 +68,18 @@ def nodash(t):
     # house style: no em dashes; " — " or "—" becomes a comma
     return re.sub(r"\s*[—–]\s*", ", ", t or "").replace(", and", ", and").replace(",,", ",")
 
+BLURBS = json.loads((ROOT / "shelf" / "blurbs.json").read_text()) if (ROOT / "shelf" / "blurbs.json").exists() else {}
+
+def trim_to(d, n):
+    """Cut at a sentence end at or before n chars; never mid-word, never with an ellipsis."""
+    if len(d) <= n: return d
+    cut = d[:n]
+    for m in (cut.rfind(". "), cut.rfind("! "), cut.rfind("? ")):
+        if m > n * 0.5: return cut[:m+1]
+    return cut.rsplit(" ", 1)[0].rstrip(",;:") + "."
+
 def clean_blurb(d):
-    d = nodash(d)
+    d = nodash(d).replace("**", "").replace("*", "")
     d = re.sub(r"^[A-Z0-9 #'’,.!-]{12,}(?=[A-Z][a-z])", "", d).strip()   # leading ALL-CAPS marketing
     parts = re.split(r"(?<=[.!?])\s+", d)
     while parts and HYPE.search(parts[0]) and len(parts) > 1: parts.pop(0)
@@ -94,9 +104,11 @@ def main():
         c = cards.setdefault(key, {"title": key if ser else short_title(title), "kind": "series" if ser else "book", "author": clean_author(r["author"]),
             "narrator": r["narrator"].split(",")[0].strip(), "titles": [], "url": r["url"], "summary": sums.get(key, ""),
             "bands": [], "why": "", "named": "", "stories": [], "tags": []})
-        if not ser:
+        if not ser and not c["summary"]:
             d = clean_blurb(r["desc"])
-            c["summary"] = c["summary"] or (d[:260].rsplit(" ",1)[0] + "…" if len(d) > 260 else d)
+            if len(d) < 200:            # thin Audible blurb: prefer Open Library (shelf/enrich.py)
+                d = clean_blurb(BLURBS.get(short_title(title)) or BLURBS.get(title) or "") or d
+            c["summary"] = trim_to(d, 650)
         c["titles"].append({"title": short_title(title) if ser else title, "n": book_no(r), "finished": r["finished"],
             "in_progress": bool(r["remaining"] and "left" in r["remaining"] and not r["finished"]), "url": r["url"]})
     out = []
@@ -123,7 +135,7 @@ def main():
         dec = DECISIONS.get("cards", {}).get(key) or DECISIONS.get("cards", {}).get(c["title"])
         c["cited"] = []
         if dec:
-            for f in ("why", "named", "tags", "stories", "cited", "match"):
+            for f in ("why", "named", "tags", "stories", "cited", "match", "summary"):
                 if dec.get(f): c[f] = dec[f]
             c["bands"] = [c["bands"][0]] + [b for b in dec.get("bands", []) if b in ("behind", "namesakes")]
         if c["cited"] and "behind" not in c["bands"]: c["bands"].append("behind")

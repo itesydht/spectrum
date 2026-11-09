@@ -372,7 +372,8 @@
    ],
    "match": [
     "Goggins"
-   ]
+   ],
+   "summary": "David Goggins's follow-up to Can't Hurt Me. Less memoir, more method: the mental drills he uses to keep going after the first breakthrough wears off, built around the idea that there is no finish line, only the next hard thing you choose."
   },
   "Never Split the Difference": {
    "why": "",
@@ -571,6 +572,15 @@
    "match": [
     "Kahneman"
    ]
+  },
+  "Networking for People Who Hate Networking, Second Edition": {
+   "summary": "Devora Zack's case that introverts don't need to fake extroversion to build a network. Fewer rooms, deeper conversations, follow-up that actually happens; a plan for people who find the standard advice exhausting and a little dishonest."
+  },
+  "Notes on Being a Man": {
+   "summary": "Scott Galloway on why boys and young men are falling behind in school, work, and relationships, and what a decent modern masculinity looks like: provide, protect, procreate reframed as responsibility, physical and financial strength, and showing up for other people."
+  },
+  "Dune": {
+   "summary": "Frank Herbert's Dune and its sequels, with the prequels Brian Herbert and Kevin J. Anderson wrote from his notes: Arrakis, the spice, the Fremen, and Paul Atreides becoming something his own mother fears. Politics, ecology, and religion as one system, written in 1965 and still the template for the genre."
   }
  }
 }

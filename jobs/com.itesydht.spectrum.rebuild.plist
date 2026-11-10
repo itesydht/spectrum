@@ -4,13 +4,9 @@
   <key>Label</key><string>com.itesydht.spectrum.rebuild</string>
   <key>ProgramArguments</key><array><string>/Users/eddysimmons/projects/spectrum/jobs/rebuild.sh</string></array>
   <key>StartCalendarInterval</key><array>
-    <dict><key>Weekday</key><integer>2</integer><key>Minute</key><integer>0</integer></dict>
-    <dict><key>Weekday</key><integer>2</integer><key>Minute</key><integer>30</integer></dict>
-    <dict><key>Weekday</key><integer>2</integer><key>Hour</key><integer>7</integer><key>Minute</key><integer>47</integer></dict>
-    <dict><key>Weekday</key><integer>2</integer><key>Hour</key><integer>7</integer><key>Minute</key><integer>49</integer></dict>
-    <dict><key>Weekday</key><integer>2</integer><key>Hour</key><integer>7</integer><key>Minute</key><integer>51</integer></dict>
-    <dict><key>Weekday</key><integer>2</integer><key>Hour</key><integer>7</integer><key>Minute</key><integer>54</integer></dict>
+    <dict><key>Weekday</key><integer>2</integer><key>Hour</key><integer>7</integer><key>Minute</key><integer>50</integer></dict>
     <dict><key>Weekday</key><integer>2</integer><key>Hour</key><integer>7</integer><key>Minute</key><integer>57</integer></dict>
+    <dict><key>Weekday</key><integer>2</integer><key>Hour</key><integer>14</integer><key>Minute</key><integer>0</integer></dict>
   </array>
   <key>StandardOutPath</key><string>/Users/eddysimmons/Library/Logs/spectrum-rebuild.log</string>
   <key>StandardErrorPath</key><string>/Users/eddysimmons/Library/Logs/spectrum-rebuild.log</string>

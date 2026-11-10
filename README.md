@@ -28,4 +28,4 @@ python3 build.py          # rebuild data/posts.json
 python3 build.py --check  # exit 1 if a rebuild would change it
 ```
 
-A launchd job on Tycho runs the build every 30 minutes on Tuesdays and commits when `--check` says something moved.
+A launchd job on Tycho runs the build on Tuesdays at 7:50am, 7:57am and 2:00pm ET (stories publish at 7:45am) and commits when `--check` says something moved.

@@ -218,7 +218,7 @@
     <h1 id="h1">Every <span>story</span>. One dial.</h1>
     <p id="lede">Find the signal. A word, a name, or a feeling, and the dial narrows to the stories that match.</p>
     <div class="tuner" id="tuner">
-      <input id="q" type="search" autocomplete="off" spellcheck="false" placeholder="memory, agents, Skippy, leadership, Claude…" aria-label="Tune the archive">
+      <input id="q" name="search" type="search" role="searchbox" inputmode="search" enterkeyhint="search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" data-1p-ignore data-lpignore="true" data-form-type="other" placeholder="memory, agents, Skippy, leadership, Claude…" aria-label="Search stories">
       <span class="k">/</span>
       <button class="clear" id="clear" aria-label="Clear">×</button>
     </div>
@@ -613,7 +613,7 @@
     $('#dnav-stories').classList.toggle('on',v==='stories'); $('#dnav-library').classList.toggle('on',v==='library');
     $('#h1').innerHTML=COPY[v==='library'?'library':'stories'].h1;
     $('#lede').textContent=COPY[v==='library'?'library':'stories'].lede();
-    $('#q').placeholder=v==='library'?'Expanse, Dune, leadership, habits…':'memory, agents, Skippy, leadership, Claude…';
+    $('#q').placeholder=v==='library'?'Expanse, Dune, leadership, habits…':'memory, agents, Skippy, leadership, Claude…'; $('#q').setAttribute('aria-label',v==='library'?'Search sources':'Search stories');
     if(v==='library') renderLibrary(); else { $('#dial').style.display=''; $('.dial-cap').style.display=''; render(); }
     if(switched&&!openSlug) window.scrollTo({top:0,behavior:'smooth'});
   }

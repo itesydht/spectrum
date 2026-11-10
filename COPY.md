@@ -44,6 +44,10 @@ The end button used to deep link to the story's own card, which showed a reader 
 - Under the button, one centered text line: "Behind this story: what it builds on and the source material." with "Behind this story" linked to `https://spectrum.itesydht.com/#<slug>` (the only per-story edit).
 - On Spectrum, the story card carries "Browse all stories" beside "Read the story" so a deep link is never a dead end.
 
+## Source Material default (revised 2026-11-10)
+
+The view now opens on everything (67), with the source cards (behind a story or a namesake) sorted to the top, instead of opening filtered to those 23. Eddy: landing on a filtered list "feels a little bit off." The "Source material" chip still filters to the 23. Lede: "{N} I've listened to. The {M} that shaped a story or gave this place a name come first: Holden, Skippy, Tycho, Bob. Each card says which stories it stands behind."
+
 ## Open
 
 - Why-lines for the 23 source cards (Eddy to dictate).

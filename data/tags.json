@@ -235,5 +235,12 @@
   "skippy",
   "verification",
   "coordination"
+ ],
+ "spectrum": [
+  "writing",
+  "product design",
+  "claude",
+  "verification",
+  "agents"
  ]
 }
